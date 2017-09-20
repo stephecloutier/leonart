@@ -1,5 +1,7 @@
 # Saint Léon'Art
-school project for the artistic exposition, Saint Léon'Art. The rest of the repo will be in French, since my school is a French speaking one. Sorry.
+school project for the artistic exposition, Saint Léon'Art.
+
+The rest of the repo will be in French, since my school is a French speaking one. Sorry.
 
 
 # Cahier des charges
