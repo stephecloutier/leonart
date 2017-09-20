@@ -7,6 +7,8 @@ school project for the artistic exposition, Saint Léon'Art
 
 Un vaste parcours artistique citoyen, mis sur pied par les artistes eux-mêmes et les associations du quartier, va être organisé, pour la quatrième fois en septembre 2018 : Saint Léon’ART!
 
+Ancienne zone industrielle, ce quartier, qui regroupe plus de 200 artistes et artisans, toutes disciplines confondues, dispose d’une richesse culturelle indéniable et d’un dynamisme important, qu’il veut valoriser et partager avec ses habitants mais aussi avec les liégeois de tous horizons.
+
 Saint-Léon’ART vise à favoriser la rencontre entre la population du quartier, largement multiculturelle, et l’art sous toutes ses formes, tout en créant des liens durables entre habitants et artistes qui se côtoient chaque jour. Cette initiative a également pour objectif de rendre l’art et la culture accessibles à tous, toutes origines et toutes classes sociales confondues, en offrant un accès libre et gratuit à l’événement.
 
 ## Objectifs du projet
@@ -30,6 +32,3 @@ Plusieurs événements et animations artistiques vont être organisés dans diff
 - Des expositions : une septantaine d’artistes exposeront dans des lieux emblématiques du quartier ou ouvriront leurs ateliers.
 - Des œuvres dans l’espace urbain : les visiteurs seront invités à découvrir différentes œuvres et/ou animations, se déroulant sur l’espace public, tout au long du parcours.
 - Une ambiance musicale conviviale : concerts, spectacles, bal aux lampions,...
-
-
-# Recherches sur le web
