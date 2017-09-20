@@ -1,7 +1,8 @@
 # Saint Léon'Art
-school project for the artistic exposition, Saint Léon'Art
+school project for the artistic exposition, Saint Léon'Art. The rest of the repo will be in French, since my school is a French speaking one. Sorry.
 
 
+# Cahier des charges
 
 ## Informations générales et contexte
 
@@ -32,3 +33,22 @@ Plusieurs événements et animations artistiques vont être organisés dans diff
 - Des expositions : une septantaine d’artistes exposeront dans des lieux emblématiques du quartier ou ouvriront leurs ateliers.
 - Des œuvres dans l’espace urbain : les visiteurs seront invités à découvrir différentes œuvres et/ou animations, se déroulant sur l’espace public, tout au long du parcours.
 - Une ambiance musicale conviviale : concerts, spectacles, bal aux lampions,...
+
+## Réseaux sociaux
+
+- [La page Facebook de Saint Léon'Art](https://www.facebook.com/Saint.Leon.Art/)
+- Un futur Twitter
+- Un futur Instagram
+
+
+
+# Plan d'attaque
+
+1. Définition : Le site web devra viser principalement les habitants, usager et associations du quartier Saint-Léonard à Liège, mais aussi un public plus large grâce à l'utilisation des réseaux sociaux. Beaucoup d'éléments du site devront donc rediriger vers ces derniers. Le site doit rester simple d'utilisation puisque ceux qui le consulteront ne seront pas forcément des experts en web.
+2. [Stratégie](https://github.com/stephecloutier/leonart/blob/master/strategie.jpg)
+3. [S'inspirer]()
+4. Wireframes (à venir) (28 septembre)
+5. Design (à venir) (5 octobre)
+6. Développement front-end (à venir) (v1 le 24 octobre)
+7. Développement back-end (à venir) (v1 le 24 octobre)
+8. Check-up et conclusions (à venir) (janvier 2018)
