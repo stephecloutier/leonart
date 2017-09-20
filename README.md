@@ -46,7 +46,7 @@ Plusieurs événements et animations artistiques vont être organisés dans diff
 
 # Plan d'attaque
 
-1. Définition : Le site web devra viser principalement les habitants, usager et associations du quartier Saint-Léonard à Liège, mais aussi un public plus large grâce à l'utilisation des réseaux sociaux. Beaucoup d'éléments du site devront donc rediriger vers ces derniers. Le site doit rester simple d'utilisation puisque ceux qui le consulteront ne seront pas forcément des experts en web.
+1. *Définition* : Le site web devra viser principalement les habitants, usager et associations du quartier Saint-Léonard à Liège, mais aussi un public plus large grâce à l'utilisation des réseaux sociaux. Beaucoup d'éléments du site devront donc rediriger vers ces derniers. Le site doit rester simple d'utilisation puisque ceux qui le consulteront ne seront pas forcément des experts en web.
 2. [Stratégie](https://github.com/stephecloutier/leonart/blob/master/strategie.jpg)
 3. [S'inspirer]()
 4. Wireframes (à venir) (28 septembre)
