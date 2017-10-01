@@ -49,7 +49,7 @@ Plusieurs événements et animations artistiques vont être organisés dans diff
 1. *Définition* : Le site web devra viser principalement les habitants, usager et associations du quartier Saint-Léonard à Liège, mais aussi un public plus large grâce à l'utilisation des réseaux sociaux. Beaucoup d'éléments du site devront donc rediriger vers ces derniers. Le site doit rester simple d'utilisation puisque ceux qui le consulteront ne seront pas forcément des experts en web. [Voir le plan du site](https://github.com/stephecloutier/leonart/blob/master/plan.md)
 2. [Stratégie](https://github.com/stephecloutier/leonart/blob/master/strategie.jpg)
 3. [S'inspirer](https://github.com/stephecloutier/leonart/blob/master/moodboard.pdf)
-4. Wireframes (à venir) (28 septembre)
+4. [Wireframes](https://github.com/stephecloutier/leonart/tree/master/wireframes)
 5. Design (à venir) (5 octobre)
 6. Développement front-end (à venir) (v1 le 24 octobre)
 7. Développement back-end (à venir) (v1 le 24 octobre)
