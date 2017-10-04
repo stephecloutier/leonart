@@ -50,7 +50,7 @@ Plusieurs événements et animations artistiques vont être organisés dans diff
 2. [Stratégie](https://github.com/stephecloutier/leonart/blob/master/strategie.jpg)
 3. [S'inspirer](https://github.com/stephecloutier/leonart/blob/master/moodboard.pdf)
 4. [Wireframes](https://github.com/stephecloutier/leonart/tree/master/wireframes)
-5. [Design](https://projects.invisionapp.com/d/main#/projects/prototypes/12180626) (non terminé)
+5. [Design](https://invis.io/RADRSNW8X) (non terminé)
 6. Développement front-end (à venir) (v1 le 24 octobre)
 7. Développement back-end (à venir) (v1 le 24 octobre)
 8. Check-up et conclusions (à venir) (janvier 2018)
