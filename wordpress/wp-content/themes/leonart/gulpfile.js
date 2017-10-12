@@ -1,9 +1,9 @@
-/* stephe/mariam-faso
+/* stephe/leonart
  *
  * /gulpfile.js - Gulp tasks
  *
  * coded by stephecloutier@gmail.com
- * started at 07/05/2017
+ * started at 12/10/2017
  */
 
 var gulp = require("gulp"),
@@ -12,7 +12,7 @@ var gulp = require("gulp"),
     autoprefixer = require("gulp-autoprefixer"),
     csso = require("gulp-csso"),
     babel = require("gulp-babel"),
-    //sourcemaps = require("gulp-sourcemaps")
+    sourcemaps = require("gulp-sou  rcemaps")
 
 // --- Tasks for images
 
@@ -29,11 +29,11 @@ var gulp = require("gulp"),
 
     gulp.task("css", function() {
         gulp.src("src/sass/**/*.scss")
-            //.pipe(sourcemaps.init())
+            .pipe(sourcemaps.init())
                 .pipe(sass().on("error", sass.logError))
                 .pipe(autoprefixer())
                 .pipe(csso())
-            //.pipe(sourcemaps.write())
+            .pipe(sourcemaps.write())
             .pipe(gulp.dest("assets/css"))
    });
 
