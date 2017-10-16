@@ -1,11 +1,10 @@
-<!DOCTYPE html>
-<html lang="fr">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title><?php wp_title(''); ?></title>
-    </head>
-    <body>
-        <h1>Hello world!</h1>
-    </body>
-</html>
+<?php
+/*
+    Template Name: Homepage
+*/
+get_header();
+?>
+<h1>Hello world!</h1>
+
+
+<?php get_footer(); ?>
