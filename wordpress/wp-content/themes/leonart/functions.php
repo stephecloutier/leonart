@@ -27,3 +27,36 @@ function custom_wp_title($title) {
     $title .= ' | ' . get_bloginfo('name');
     return trim($title);
 }
+
+/*
+    Get navigation links (objects) for given location
+*/
+
+function sl_get_nav_items($location) {
+    $id = sl_get_nav_id($location);
+    $nav = [];
+    if(!$id) {
+        return $nav;
+    }
+
+    foreach(wp_get_nav_menu_items($id) as $object) {
+        $item = new stdClass();
+        $item->url = $object->url;
+        $item->label = $object->title;
+        $nav[$object->ID] = $item;
+    }
+    return $nav;
+}
+
+/*
+    Get navigation id for given location
+*/
+
+function sl_get_nav_id($location) {
+    foreach (get_nav_menu_locations() as $navLocation => $id) {
+        if($navLocation == $location) {
+            return $id;
+        }
+    }
+    return false;
+}
