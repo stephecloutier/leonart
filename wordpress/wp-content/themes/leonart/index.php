@@ -17,8 +17,46 @@ get_header();
     </div>
 
     <section class="home-artists">
-        
+        <h2 class="home-artists__title home-title">
+            Quelques artistes
+        </h2>
+        [insérer les artistes ici]
+        <a href="" title="Aller sur la page de tous les artistes">Voir tous les artistes</a>
     </section>
+
+    <section class="home-agenda">
+        <h2 class="home-agenda__title home-title">
+            Les évènements à venir
+        </h2>
+        [insérer l'agenda ici]
+        <a href="" title="Aller sur la page de l'agenda">Voir l'agenda complet</a>
+    </section>
+
+    <section class="home-newsletter">
+        <h2 class="home-newsletter__title home-title">
+            Vous voulez rester informé&nbsp;?
+        </h2>
+        <span class="home-newsletter__subtitle">Inscrivez-vous à la <em>newsletter&nbsp;!</em></span>
+        [insérer le form ici]
+    </section>
+
+    <section class="home-news">
+        <h2 class="home-news__title home-title">
+            Les dernières news
+        </h2>
+        [insérer les news ici]
+        <a href="" title="Aller sur la page des news">Voir toute l'actualité</a>
+    </section>
+
+    <?php if(get_field('enable-instagram')): ?>
+    <section class="home-instagram">
+        <h2 class="home-instagram__title home-title">
+            Notre fil instagram
+        </h2>
+        [insérer le fil instagram ici]
+        <a href="" title="Aller sur notre fil instagram">Aller sur notre fil instagram</a>
+    </section>
+    <?php endif; ?>
 </main>
 
 
