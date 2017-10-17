@@ -1,5 +1,6 @@
 <?php
 
+add_action('init', 'sl_register_types');
 add_filter('wp_title', 'custom_wp_title');
 
 
@@ -15,6 +16,23 @@ register_nav_menus( array(
     'main' => 'La navigation principale du site',
     'social_media' => 'La navigation des réseaux sociaux',
 ) );
+
+/*
+    Register custom post types and taxonomies during initialization
+*/
+function sl_register_types() {
+    register_post_type('artist', [
+        'label' => 'Artistes',
+        'labels' => [
+            'singular_name' => 'artiste',
+            'add_new_item' => 'Ajouter un nouvel artiste'
+        ],
+        'description' => 'Permet d’administrer les artistes affichés sur le site',
+        'public' => true,
+        'menu_position' => 20,
+        'menu_icon' => 'dashicons-admin-customizer',
+    ]);
+}
 
 /*
     Hooks into wp_title() content formatting
