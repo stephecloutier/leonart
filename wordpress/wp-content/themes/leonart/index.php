@@ -21,6 +21,7 @@ get_header();
             Quelques artistes
         </h2>
         [insérer les artistes ici]
+        <!-- $image['sizes']['smallest'] -->
         <a href="" title="Aller sur la page de tous les artistes">Voir tous les artistes</a>
     </section>
 
@@ -36,7 +37,7 @@ get_header();
         <h2 class="home-newsletter__title home-title">
             Vous voulez rester informé&nbsp;?
         </h2>
-        <span class="home-newsletter__subtitle">Inscrivez-vous à la <em>newsletter&nbsp;!</em></span>
+        <h3 class="home-newsletter__subtitle">Inscrivez-vous à la <em>newsletter&nbsp;!</em></h3>
         [insérer le form ici]
     </section>
 
@@ -58,6 +59,5 @@ get_header();
     </section>
     <?php endif; ?>
 </main>
-
 
 <?php get_footer(); ?>
