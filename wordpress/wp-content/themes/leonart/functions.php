@@ -32,6 +32,54 @@ function sl_register_types() {
         'menu_position' => 20,
         'menu_icon' => 'dashicons-admin-customizer',
     ]);
+
+    register_post_type('place', [
+        'label' => 'Lieux',
+        'labels' => [
+            'singular_name' => 'lieu',
+            'add_new_item' => 'Ajouter un nouveau lieu clé'
+        ],
+        'description' => 'Permet d’administrer les lieux clés de Saint Léon’Art',
+        'public' => true,
+        'menu_position' => 20,
+        'menu_icon' => 'dashicons-location',
+    ]);
+
+    register_post_type('program', [
+        'label' => 'Programme',
+        'labels' => [
+            'singular_name' => 'évènement',
+            'add_new_item' => 'Ajouter un nouvel "évènement" au programme'
+        ],
+        'description' => 'Permet d’administrer les divers types d’évènements affichés sur le site',
+        'public' => true,
+        'menu_position' => 20,
+        'menu_icon' => 'dashicons-list-view',
+    ]);
+
+    register_post_type('agenda', [
+        'label' => 'Agenda',
+        'labels' => [
+            'singular_name' => 'activité',
+            'add_new_item' => 'Ajouter une nouvelle activité à l’agenda'
+        ],
+        'description' => 'Permet d’administrer les activités de l’évènement Saint Léon’Art',
+        'public' => true,
+        'menu_position' => 20,
+        'menu_icon' => 'dashicons-calendar-alt',
+    ]);
+
+    register_taxonomy('artistic-disciplines', array('artist', 'program', 'agenda'), [
+        'label' => 'Disciplines artistiques',
+        'labels' => [
+            'singular_name' =>'Discipline artistique',
+            'edit_item' => 'Éditer la discipline',
+            'add_new_item' => 'Ajouter une nouvelle discipline artistique'
+        ],
+        'description' => 'Permet de lier un artiste, un évènement ou une exposition à une discipline donnée',
+        'public' => true,
+        'hierarchical' => false,
+    ]);
 }
 
 /*
