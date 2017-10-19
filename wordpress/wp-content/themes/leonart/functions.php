@@ -57,19 +57,7 @@ function sl_register_types() {
         'menu_icon' => 'dashicons-list-view',
     ]);
 
-    register_post_type('agenda', [
-        'label' => 'Agenda',
-        'labels' => [
-            'singular_name' => 'activité',
-            'add_new_item' => 'Ajouter une nouvelle activité à l’agenda'
-        ],
-        'description' => 'Permet d’administrer les activités de l’évènement Saint Léon’Art',
-        'public' => true,
-        'menu_position' => 20,
-        'menu_icon' => 'dashicons-calendar-alt',
-    ]);
-
-    register_taxonomy('artistic-disciplines', array('artist', 'program', 'agenda'), [
+    register_taxonomy('artistic-disciplines', array('artist', 'program'), [
         'label' => 'Disciplines artistiques',
         'labels' => [
             'singular_name' =>'Discipline artistique',
