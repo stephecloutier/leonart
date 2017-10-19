@@ -20,8 +20,20 @@ get_header();
         <h2 class="home-artists__title home-title">
             Quelques artistes
         </h2>
-        [insérer les artistes ici]
-        <!-- $image['sizes']['smallest'] -->
+        <?php $posts = new WP_Query(['showposts' => 8, 'post_type' => 'artist']); ?>
+        <?php if($posts->have_posts()) : while($posts->have_posts()) : $posts->the_post(); ?>
+        <?php $fields = get_fields(); ?>
+        <a href="<?= the_permalink(); ?>" title="Aller sur la page de l’artiste <?= $fields['artist-name']; ?>">
+            <figure>
+                <?php $image = $fields['artist-img'];?>
+                <img src="<?= $image['url']; ?>" width="<?= $image['sizes']['smallest-width']; ?>" height="<?= $image['sizes']['smallest-height']; ?>" alt="Photo de l’artiste <?= $fields['artist-name']; ?>">
+                <span class="home-artists__name"></span>
+                <span class="home-artists__disciplines"></span>
+                <div class="home-artists__overlay"></div>
+            </figure>
+        </a>
+        <?php endwhile; endif; ?>
+
         <a href="" title="Aller sur la page de tous les artistes">Voir tous les artistes</a>
     </section>
 
