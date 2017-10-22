@@ -50,3 +50,5 @@
             </ul>
         </nav>
     </header>
+
+<?php setlocale(LC_ALL, 'fr_BE.utf8'); ?>
