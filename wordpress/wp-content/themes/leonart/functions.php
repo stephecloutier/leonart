@@ -59,6 +59,19 @@ function sl_register_types() {
         'menu_icon' => 'dashicons-list-view',
     ]);
 
+    register_post_type('news', [
+        'label' => 'News',
+        'labels' => [
+            'singular_name' => 'news',
+            'add_new_item' => 'Ajouter une nouvelle news'
+        ],
+        'description' => 'Permet d’administrer les news affichées sur le site',
+        'public' => true,
+        'menu_position' => 20,
+        'menu_icon' => 'dashicons-megaphone',
+        'has_archive' => true,
+    ]);
+
     register_taxonomy('artistic-disciplines', array('artist', 'program'), [
         'label' => 'Disciplines artistiques',
         'labels' => [
