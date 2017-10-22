@@ -49,6 +49,19 @@
                 <?php endforeach; ?>
             </ul>
         </nav>
+
+        <?php if(is_page(sl_get_page_id_from_template('template-program.php'))): ?>
+        <nav>
+            <h2 class="hidden">Navigation secondaire du programme</h2>
+            <ul>
+                <?php foreach(sl_get_nav_items('program_anchors') as $item): ?>
+                    <li>
+                        <a href="<?= $item->url; ?>"><?= $item->label; ?></a>
+                    </li>
+                <?php endforeach; ?>
+            </ul>
+        </nav>
+        <?php endif; ?>
     </header>
 
 <?php setlocale(LC_ALL, 'fr_BE.utf8'); ?>
