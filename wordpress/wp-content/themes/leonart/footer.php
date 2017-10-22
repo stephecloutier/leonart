@@ -1,4 +1,5 @@
         <footer class="footer">
+            <h1 class="hidden">Footer</h1>
             <div class="footer__l1">
                 <div class="footer__infos footer__column">
                     <img src="" alt="Logo géométrique Saint-Léon'Art">
