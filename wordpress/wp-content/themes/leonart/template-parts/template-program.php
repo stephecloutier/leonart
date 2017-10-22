@@ -4,6 +4,7 @@
     Template Name: Programme
 */
 get_header();
+$fields = get_fields();
  ?>
 
 <main>
@@ -11,6 +12,7 @@ get_header();
 
     <section id="expositions">
         <h2>Les expositions</h2>
+        <div><?= $fields['event-time']; ?></div>
     </section>
 
     <section id="concerts">
