@@ -15,6 +15,7 @@ if (function_exists('add_theme_support')) {
 register_nav_menus( array(
     'main' => 'La navigation principale du site',
     'social_media' => 'La navigation des réseaux sociaux',
+    'program_anchors' => 'La navigation des ancres de la page programme',
 ) );
 
 /*
@@ -86,6 +87,14 @@ function sl_register_types() {
 }
 
 /*
+    Retrieves the absolute URI for given asset in this theme
+*/
+
+function get_theme_asset($src = '') {
+    return get_template_directory_uri() . '/assets/' . trim($src, '/');
+}
+
+/*
     Hooks into wp_title() content formatting
 */
 
@@ -128,4 +137,27 @@ function sl_get_nav_id($location) {
         }
     }
     return false;
+}
+
+
+/*
+    Get page ID from template name
+*/
+function sl_get_page_id_from_template($templateName) {
+    $pages = get_pages(array(
+        'meta_key' => '_wp_page_template',
+        'meta_value' => 'template-parts/' . $templateName,
+        'hierarchical' => 0
+    ));
+
+    foreach($pages as $page){
+        return $page->ID;
+    }
+}
+
+/*
+    Get page url from ID
+*/
+function sl_get_page_url($templateName) {
+    return get_page_link(sl_get_page_id_from_template($templateName));
 }
