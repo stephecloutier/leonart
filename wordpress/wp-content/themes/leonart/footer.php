@@ -21,8 +21,14 @@
                 </div>
             </div>
             <div class="footer__l2">
-                <span class="footer__title">Avec la collaboration et le soutiens de</span>
-                [Insérer les partenaires ici]
+                <div class="footer__partenaires">
+                    <span class="footer__title">Avec la collaboration et le soutiens de</span>
+                    [Insérer les partenaires ici]
+                </div>
+
+                <div class="footer__twitter">
+                    <?= do_shortcode('[custom-twitter-feeds]'); ?>
+                </div>
             </div>
             <div class="footer__l3">
                 Icônes par Dave Gandy, Bogdan Rosu, SimpleIcon, Zurb,  Freepik et Smashicons sur <a href="www.flaticon.com" title="Aller sur le site flaticon">flaticon.com</a>
