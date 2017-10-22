@@ -21,7 +21,7 @@ register_nav_menus( array(
     Register custom post types and taxonomies during initialization
 */
 function sl_register_types() {
-    register_post_type('artist', [
+    register_post_type('artists', [
         'label' => 'Artistes',
         'labels' => [
             'singular_name' => 'artiste',
@@ -34,7 +34,7 @@ function sl_register_types() {
         'has_archive' => true,
     ]);
 
-    register_post_type('place', [
+    register_post_type('places', [
         'label' => 'Lieux',
         'labels' => [
             'singular_name' => 'lieu',
