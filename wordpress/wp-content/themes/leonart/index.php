@@ -20,7 +20,7 @@ get_header();
         <h2 class="home-artists__title home-title">
             Quelques artistes
         </h2>
-        <?php $posts = new WP_Query(['showposts' => 8, 'post_type' => 'artist']); ?>
+        <?php $posts = new WP_Query(['showposts' => 8, 'post_type' => 'artists']); ?>
         <?php if($posts->have_posts()) : while($posts->have_posts()) : $posts->the_post(); ?>
         <?php $fields = get_fields(); ?>
         <a href="<?= the_permalink(); ?>" title="Aller sur la page de l’artiste <?= $fields['artist-name']; ?>">
@@ -34,7 +34,7 @@ get_header();
         </a>
         <?php endwhile; endif; ?>
 
-        <a href="" title="Aller sur la page de tous les artistes">Voir tous les artistes</a>
+        <a href="<?= get_post_type_archive_link('artists'); ?>" title="Aller sur la page de tous les artistes">Voir tous les artistes</a>
     </section>
 
     <section class="home-agenda">
@@ -57,8 +57,19 @@ get_header();
         <h2 class="home-news__title home-title">
             Les dernières news
         </h2>
-        [insérer les news ici]
-        <a href="" title="Aller sur la page des news">Voir toute l'actualité</a>
+        <?php $posts = new WP_Query(['showposts' => 2, 'post_type' => 'news']); ?>
+        <?php if($posts->have_posts()) : while($posts->have_posts()) : $posts->the_post(); ?>
+        <?php $fields = get_fields(); ?>
+        <a href="<?= the_permalink(); ?>">
+            <h3 class="home-news__title"><?= $fields['news-title']; ?></h3>
+            <time datetime=""><?= the_date('j F Y'); ?></time>
+            <?php $image = $fields['news-img'];?>
+            <img src="<?= $image['url']; ?>" width="<?= $image['sizes']['smallest-width']; ?>" height="<?= $image['sizes']['smallest-height']; ?>" alt="Photo de la news <?= $fields['news-title']; ?>">
+            <div class="home-news__content"></div>
+            <a href="<?= the_permalink(); ?>" class="home-news__link">En lire plus <span class="hidden">sur <?= $fields['news-title']; ?></span></a>
+        </a>
+        <?php endwhile; endif; ?>
+        <a href="<?= get_post_type_archive_link('news'); ?>" title="Aller sur la page des news">Voir toutes les news</a>
     </section>
 
     <?php if(get_field('enable-instagram')): ?>
