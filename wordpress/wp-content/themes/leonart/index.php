@@ -65,7 +65,7 @@ get_header();
             <time datetime=""><?= the_date('j F Y'); ?></time>
             <?php $image = $fields['news-img'];?>
             <img src="<?= $image['url']; ?>" width="<?= $image['sizes']['smallest-width']; ?>" height="<?= $image['sizes']['smallest-height']; ?>" alt="Photo de la news <?= $fields['news-title']; ?>">
-            <div class="home-news__content"></div>
+            <div class="home-news__content"><?= $fields['news-content']; ?></div>
             <a href="<?= the_permalink(); ?>" class="home-news__link">En lire plus <span class="hidden">sur <?= $fields['news-title']; ?></span></a>
         </a>
         <?php endwhile; endif; ?>
