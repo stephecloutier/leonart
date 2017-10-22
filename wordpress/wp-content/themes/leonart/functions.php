@@ -31,6 +31,7 @@ function sl_register_types() {
         'public' => true,
         'menu_position' => 20,
         'menu_icon' => 'dashicons-admin-customizer',
+        'has_archive' => true,
     ]);
 
     register_post_type('place', [
@@ -43,15 +44,16 @@ function sl_register_types() {
         'public' => true,
         'menu_position' => 20,
         'menu_icon' => 'dashicons-location',
+        'has_archive' => true,
     ]);
 
-    register_post_type('program', [
-        'label' => 'Programme',
+    register_post_type('activities', [
+        'label' => 'Activités',
         'labels' => [
-            'singular_name' => 'évènement',
-            'add_new_item' => 'Ajouter un nouvel "évènement" au programme'
+            'singular_name' => 'activité',
+            'add_new_item' => 'Ajouter une nouvelle activité au programme'
         ],
-        'description' => 'Permet d’administrer les divers types d’évènements affichés sur le site',
+        'description' => 'Permet d’administrer les divers types d’activités affichées sur le site',
         'public' => true,
         'menu_position' => 20,
         'menu_icon' => 'dashicons-list-view',
