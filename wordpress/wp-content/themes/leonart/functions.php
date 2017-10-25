@@ -73,7 +73,7 @@ function sl_register_types() {
         'has_archive' => true,
     ]);
 
-    register_taxonomy('artistic-disciplines', array('artist', 'program'), [
+    register_taxonomy('artistic-disciplines', array('artists', 'activities'), [
         'label' => 'Disciplines artistiques',
         'labels' => [
             'singular_name' =>'Discipline artistique',
@@ -176,4 +176,24 @@ function sl_get_image_alt($fieldName) {
     if($image['description']) return $image['description'];
     if($image['caption']) return $image['caption'];
     return false;
+}
+
+/*
+    Echoes taxonomy list
+*/
+
+function sl_get_taxonomies($postID, $taxonomyName) {
+    $terms = wp_get_post_terms($postID, $taxonomyName);
+    $count = count($terms);
+    $taxonomies = '';
+    for($i = 0; $i < $count; $i++) {
+        if($i == $count - 2) {
+            $taxonomies .= $terms[$i]->name . ' &amp; ';
+        } elseif($i == $count - 1) {
+            $taxonomies .= $terms[$i]->name;
+        } else {
+            $taxonomies .= $terms[$i]->name . ', ';
+        }
+    }
+    return $taxonomies;
 }
