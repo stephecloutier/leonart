@@ -10,10 +10,14 @@ get_header();
     <h1>News</h1>
 
     <div class="news__sorting">
+        <span class="news__sorting-title"> Trier par &hellip;</span>
         <form action="#" method="GET">
             <select class="" name="dates">
-                <option value="up">Plus récentes</option>
-                <option value="down">Plus anciennces</option>
+                <option value="DESC">Plus récentes</option>
+                <option value="ASC">Plus anciennces</option>
+            </select>
+            <select class="" name="categories">
+                <option value="">Catégories</option>
             </select>
             <!-- Catégories de news ?? Création d'une autre taxonomie ? -->
         </form>
