@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="author" content="Stéphanie Cloutier">
         <meta name="description" content="Site web du parcours artistique Saint-Léon'Art, à Liège, en Belgique">
-
+        <?php setlocale(LC_ALL, 'fr_BE.utf8'); ?>
         <title><?php wp_title(''); ?></title>
     </head>
 
@@ -63,5 +63,3 @@
         </nav>
         <?php endif; ?>
     </header>
-
-<?php setlocale(LC_ALL, 'fr_BE.utf8'); ?>
