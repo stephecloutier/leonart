@@ -9,7 +9,7 @@ $currentID = $post->ID;
  ?>
 
 <main>
-    <a href="<?= sl_get_page_url('archive-news.php'); ?>" class="news__back">Retourner aux news</a>
+    <a href="<?= sl_get_page_url('archive-news.php'); ?>" class="link-back" title="Aller sur la page de news">Retourner aux news</a>
 
     <h1><?= $fields['news-title']; ?></h1>
     <div class="news__content">
