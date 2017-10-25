@@ -26,7 +26,7 @@ get_header();
         <a href="<?= the_permalink(); ?>" title="Aller sur la page de l’artiste <?= $fields['artist-name']; ?>">
             <figure>
                 <?php $image = $fields['artist-img'];?>
-                <img src="<?= $image['url']; ?>" width="<?= $image['sizes']['smallest-width']; ?>" height="<?= $image['sizes']['smallest-height']; ?>" alt="Photo de l’artiste <?= $fields['artist-name']; ?>">
+                <img src="<?= $image['sizes']['smallest']; ?>"  alt="Photo de l’artiste <?= $fields['artist-name']; ?>">
                 <span class="home-artists__name"></span>
                 <span class="home-artists__disciplines"></span>
                 <div class="home-artists__overlay"></div>
@@ -64,7 +64,7 @@ get_header();
             <h3 class="home-news__title"><?= $fields['news-title']; ?></h3>
             <time datetime=""><?= the_date('j F Y'); ?></time>
             <?php $image = $fields['news-img'];?>
-            <img src="<?= $image['url']; ?>" width="<?= $image['sizes']['smallest-width']; ?>" height="<?= $image['sizes']['smallest-height']; ?>" alt="<?php if(sl_get_image_alt('news-img')) echo sl_get_image_alt('news-img'); else echo 'Image de la news ' . $fields['news-title']; ?>">
+            <img src="<?= $image['sizes']['smallest']; ?>" alt="<?php if(sl_get_image_alt('news-img')) echo sl_get_image_alt('news-img'); else echo 'Image de la news ' . $fields['news-title']; ?>">
             <div class="home-news__content"><?= $fields['news-content']; ?></div>
             <a href="<?= the_permalink(); ?>" class="home-news__link">En lire plus <span class="hidden">sur <?= $fields['news-title']; ?></span></a>
         </a>
