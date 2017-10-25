@@ -32,7 +32,7 @@ $currentID = $post->ID;
                 <h3 class="home-news__title"><?= $fields['news-title']; ?></h3>
                 <time datetime=""><?= the_date('j F Y'); ?></time>
                 <?php $image = $fields['news-img'];?>
-                <img src="<?= $image['url']; ?>" width="<?= $image['sizes']['smallest-width']; ?>" height="<?= $image['sizes']['smallest-height']; ?>" alt="Photo de la news <?= $fields['news-title']; ?>">
+                <img src="<?= $image['url']; ?>" width="<?= $image['sizes']['smallest-width']; ?>" height="<?= $image['sizes']['smallest-height']; ?>" alt="<?php if(sl_get_image_alt('news-img')) echo sl_get_image_alt('news-img'); else echo 'Image de la news ' . $fields['news-title']; ?>">
                 <div class="news__content"><?= $fields['news-content']; ?></div>
                 <a href="<?= the_permalink(); ?>" class="home-news__link">En lire plus <span class="hidden">sur <?= $fields['news-title']; ?></span></a>
             </a>
