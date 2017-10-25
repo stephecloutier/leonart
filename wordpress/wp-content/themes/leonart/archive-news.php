@@ -48,6 +48,11 @@ get_header();
             </div>
         <?php endif; ?>
     </div>
+
+    <div class="cta--white cta--news">
+        Besoin d'informations sur Saint-Léon'Art&nbsp;?
+        <a href="<?= sl_get_page_url('template-infos.php'); ?>" class="button--white" title="Aller sur la page en pratique">Voir les infos pratiques</a>
+    </div>
 </main>
 
 
