@@ -28,10 +28,11 @@ $fields = get_fields();
             <a href="<?= $fields['artist-pinterest']; ?>" class="artist__social social-pinterest" title="Aller sur le pinterest de l'artiste <?= $fields['artist-name']; ?>">Pinterest</a>
         <?php endif; ?>
     </div>
-    <div class="artist__content">
+    <section class="artist__content">
+        <h2 class="hidden">À propos de <?= $fields['artist-name']; ?></h2>
         <div class="artist__c1">
             <?php $artistImage = $fields['artist-img']; ?>
-            <img src="<?= $artistImage['url']; ?>" alt="Photo de l'artiste <?= $fields['artist-name']; ?>" width="<?= $artistImage['sizes']['medium-width']; ?>" height="<?= $artistImage['sizes']['medium-height']; ?>">
+            <img src="<?= $artistImage['sizes']['medium']; ?>" alt="Photo de l'artiste <?= $fields['artist-name']; ?>">
             <div class="artist__contact">
                 <?php if($fields['artist-phone']): ?>
                 <span class="artist__phone"><?= $fields['artist-phone']; ?></span>
@@ -51,9 +52,34 @@ $fields = get_fields();
             <div class="artist__c2">
                 <?= $fields['artist-description']; ?>
             </div>
-        </div>
-
+        </section>
+        <?php
+            $images = $fields['artist-work'];
+            if($images):
+        ?>
+        <section class="artist__gallery">
+            <h2 class="artist__subtitle">Aperçu des &oelig;uvres de <?= $fields['artist-name']; ?></h2>
+            <ul>
+                <?php foreach($images as $image): ?>
+                    <?php $alt = sl_get_image_alt($image); ?>
+                <li>
+                    <img src="<?= $image['sizes']['smallest']; ?>" alt="<?= ($alt ? $alt : '&OElig;uvre de l’artiste ' . $fields['artist-name']); ?>">
+                </li>
+                <?php endforeach; ?>
+            </ul>
+        </section>
+        <?php endif; ?>
+        <section>
+            <h2>Où retrouver <?= $fields['artist-name']; ?> lors de l'évènements&nbsp;?</h2>
+        </section>
+        <?php
+                $activities = new WP_Query([
+                    'post_type' => 'activives',
+                ]);
+        ?>
+        <?php var_dump($activities->ID); ?>
     </div>
+    <a href="<?= sl_get_page_url('archive-artist.php'); ?>" class="link-back" title="Aller sur la page de tous les artistes">Retourner à tous les artistes</a>
 </main>
 
 <?php get_footer(); ?>
