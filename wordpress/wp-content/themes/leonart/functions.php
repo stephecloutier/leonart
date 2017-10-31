@@ -197,3 +197,21 @@ function sl_get_taxonomies($postID, $taxonomyName) {
     }
     return $taxonomies;
 }
+
+/*
+    Retrieves posts of a related post using the ID, the related post-type and the key that makes the relation
+*/
+
+function sl_get_relationship_posts($ID, $relatedPostType, $relatedPostKey) {
+    $posts = get_posts(array(
+                'post_type' => $relatedPostType,
+                'meta_query' => array(
+                    array(
+                        'key' => $relatedPostKey, // name of custom field
+                        'value' => '"' . $ID . '"', // matches exaclty "123", not just 123. This prevents a match for "1234"
+                        'compare' => 'LIKE'
+                    )
+                )
+            ));
+    return $posts;
+}

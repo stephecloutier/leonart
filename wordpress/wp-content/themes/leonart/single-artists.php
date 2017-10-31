@@ -69,15 +69,31 @@ $fields = get_fields();
             </ul>
         </section>
         <?php endif; ?>
+        <?php
+            $activities = sl_get_relationship_posts(get_the_ID(), 'activities', 'event-expo-artists');
+            $expositionsID = [];
+            foreach($activities as $activity) {
+                $id = $activity->ID;
+                $expositionsID[] = $id;
+            }
+            //$expositions = get_fields($relationship->ID);
+            //die();
+        ?>
+        <?php if($expositionsID): ?>
         <section>
             <h2>Où retrouver <?= $fields['artist-name']; ?> lors de l'évènements&nbsp;?</h2>
+            <ul>
+            <?php foreach($expositionsID as $id): ?>
+                <?php $exposition = get_fields($id); ?>
+                <li>
+                    <span><?= $exposition['event-expo-place'][0]->post_title; ?></span>
+                </li>
+            <?php endforeach; ?>
+            </ul>
         </section>
-        <?php
-                $activities = new WP_Query([
-                    'post_type' => 'activives',
-                ]);
-        ?>
-        <?php var_dump($activities->ID); ?>
+        <?php endif; ?>
+
+
     </div>
     <a href="<?= sl_get_page_url('archive-artist.php'); ?>" class="link-back" title="Aller sur la page de tous les artistes">Retourner à tous les artistes</a>
 </main>
