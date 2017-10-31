@@ -76,8 +76,6 @@ $fields = get_fields();
                 $id = $activity->ID;
                 $expositionsID[] = $id;
             }
-            //$expositions = get_fields($relationship->ID);
-            //die();
         ?>
         <?php if($expositionsID): ?>
         <section>
