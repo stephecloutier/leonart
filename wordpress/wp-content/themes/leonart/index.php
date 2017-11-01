@@ -27,9 +27,9 @@ get_header();
             <figure>
                 <?php $image = $fields['artist-img'];?>
                 <img src="<?= $image['sizes']['smallest']; ?>"  alt="Photo de l’artiste <?= $fields['artist-name']; ?>">
-                <span class="home-artists__name"></span>
-                <span class="home-artists__disciplines"></span>
-                <div class="home-artists__overlay"></div>
+                <span class="artists__name"></span>
+                <span class="artists__disciplines"></span>
+                <div class="artists__overlay"></div>
             </figure>
         </a>
         <?php endwhile; endif; ?>

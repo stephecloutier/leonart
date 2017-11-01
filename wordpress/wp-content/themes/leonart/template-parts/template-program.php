@@ -5,6 +5,7 @@
 */
 get_header();
 $fields = get_fields();
+var_dump($fields);
  ?>
 
 <main>
