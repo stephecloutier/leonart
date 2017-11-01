@@ -74,7 +74,9 @@ $fields = get_fields();
             <?php foreach($artistsID as $id): ?>
                 <?php $artist = get_fields($id); ?>
                 <li>
-                    <?= $artist['artist-name']; ?>
+                    <a href="<?= get_permalink($id); ?>">
+                        <?= $artist['artist-name']; ?>
+                    </a>
                 </li>
             <?php endforeach; ?>
             </ul>
