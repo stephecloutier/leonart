@@ -87,6 +87,14 @@ function sl_register_types() {
 }
 
 /*
+    Global variables
+*/
+
+$htmlTimestampFormat = '%Y-%m-%dT%H:%M';
+
+
+
+/*
     Retrieves the absolute URI for given asset in this theme
 */
 
