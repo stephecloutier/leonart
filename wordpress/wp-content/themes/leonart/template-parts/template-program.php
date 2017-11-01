@@ -64,7 +64,7 @@ $expoFields = get_fields(sl_get_page_id_from_template('template-expositions.php'
                 <?php foreach($artistsID as $id): ?>
                     <?php $artist = get_fields($id); ?>
                     <li>
-                        <a href="<?= get_permalink($id); ?>">
+                        <a href="<?= get_permalink($id); ?>" title="Aller sur la page de l'artiste <?= $artist['artist-name']; ?>">
                             <?= $artist['artist-name']; ?>
                         </a>
                     </li>
