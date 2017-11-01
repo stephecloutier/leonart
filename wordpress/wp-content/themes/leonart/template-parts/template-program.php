@@ -5,6 +5,7 @@
 */
 get_header();
 $fields = get_fields();
+$expoFields = get_fields(sl_get_page_id_from_template('template-expositions.php'));
 ?>
 
 <main>
@@ -12,7 +13,7 @@ $fields = get_fields();
 
     <section id="expositions">
         <h2>Les expositions</h2>
-        <div><?= $fields['event-time']; ?></div>
+        <div><?= $expoFields['expo-time']; ?></div>
         <div class="program__expos">
             <?php $posts = new WP_Query([
                 'showposts' => 4,
@@ -92,7 +93,7 @@ $fields = get_fields();
         <h2>Les artistes</h2>
     </section>
 
-    <div class="cta--white">
+    <div class="cta cta--white">
         Envie de voir un planning chronologique de l'évènement&nbsp;?
         <a href="<?= sl_get_page_url('template-agenda.php'); ?>" class="button--white" title="Aller sur l'agenda">Voir l'agenda complet</a>
     </div>
