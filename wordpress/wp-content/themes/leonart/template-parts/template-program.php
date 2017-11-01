@@ -34,7 +34,6 @@ $expoFields = get_fields(sl_get_page_id_from_template('template-expositions.php'
                 $place = get_fields($relationPlace[0]->ID);
                 $relationArtist = get_field('event-expo-artists');
                 $artistsID = sl_get_ids($relationArtist);
-
             ?>
             <div class="program__expo">
                 <span class="program__subtitle"><?= $place['place-name']; ?></span>
