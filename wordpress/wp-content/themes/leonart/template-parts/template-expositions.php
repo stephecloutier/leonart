@@ -46,7 +46,9 @@ $fields = get_fields();
             $artistsID = sl_get_ids($relationArtist);
         ?>
         <div class="expo">
-            <span class="program__subtitle"><?= $place['place-name']; ?></span>
+            <a href="<?= the_permalink(); ?>" title="Aller sur la page du lieu <?= $place['place-name']; ?>">
+                <span class="program__subtitle"><?= $place['place-name']; ?></span>
+            </a>
             <p class="place__address"><?= $place['place-address']; ?></p>
             <?php if($place['place-website']): ?>
             <a href="<?= $place['place-website']; ?>" title="Aller sur le site web de <?= $place['place-name']; ?>">Website</a>
