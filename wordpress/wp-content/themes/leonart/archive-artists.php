@@ -8,7 +8,7 @@ get_header();
 <main>
     <a href="<?= sl_get_page_url('template-program.php'); ?>" class="link-back" title="Retourner sur la page du programme">Retourner au programme</a>
 
-    <h1>Les Artistes</h1>
+    <h1 class="main-title">Les Artistes</h1>
     <?php $posts = new WP_Query(['showposts' => -1, 'post_type' => 'artists']); ?>
     <?php if($posts->have_posts()) : while($posts->have_posts()) : $posts->the_post(); ?>
     <?php $fields = get_fields(); ?>

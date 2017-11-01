@@ -6,10 +6,10 @@
 get_header();
 $fields = get_fields();
 var_dump($fields);
- ?>
+?>
 
 <main>
-    <h1>Programme</h1>
+    <h1 class="main-title">Programme</h1>
 
     <section id="expositions">
         <h2>Les expositions</h2>
