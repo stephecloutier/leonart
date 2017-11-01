@@ -215,3 +215,16 @@ function sl_get_relationship_posts($ID, $relatedPostType, $relatedPostKey) {
             ));
     return $posts;
 }
+
+/*
+    Retrieves every ID for given field and returns an array
+*/
+
+function sl_get_ids($field) {
+    if(!$field) return false;
+    $array = [];
+    foreach($field as $item) {
+        $array[] = $item->ID;
+    }
+    return $array;
+}
