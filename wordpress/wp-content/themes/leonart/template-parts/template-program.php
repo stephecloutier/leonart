@@ -36,7 +36,7 @@ $expoFields = get_fields(sl_get_page_id_from_template('template-expositions.php'
                 $artistsID = sl_get_ids($relationArtist);
             ?>
             <div class="program__expo">
-                <a href="<?= the_permalink(); ?>" title="Aller sur la page du lieu <?= $place['place-name']; ?>">
+                <a href="<?= get_permalink($relationPlace[0]->ID); ?>" title="Aller sur la page du lieu <?= $place['place-name']; ?>">
                     <span class="program__subtitle"><?= $place['place-name']; ?></span>
                 </a>
                 <p class="place__address"><?= $place['place-address']; ?></p>

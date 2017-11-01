@@ -4,20 +4,6 @@
 */
 get_header();
 $fields = get_fields();
-// $expositions = get_posts(array(
-//             'post_type' => 'activities',
-//             'meta_query' => array(
-//                 array(
-//                     'key' => 'event-type',
-//                     'value' => 'expo',
-//                     'compare' => 'LIKE'
-//                 )
-//             )
-//         ));
-// $relationPlace = $expositions['event-expo-place'];
-// $place = get_fields($relationPlace[0]->ID);
-// $relationArtist = get_field('event-expo-artists');
-// $artistsID = sl_get_ids($relationArtist);
 ?>
 
 <main>
@@ -46,7 +32,7 @@ $fields = get_fields();
             $artistsID = sl_get_ids($relationArtist);
         ?>
         <div class="expo">
-            <a href="<?= the_permalink(); ?>" title="Aller sur la page du lieu <?= $place['place-name']; ?>">
+            <a href="<?= get_permalink($relationPlace[0]->ID); ?>" title="Aller sur la page du lieu <?= $place['place-name']; ?>">
                 <span class="program__subtitle"><?= $place['place-name']; ?></span>
             </a>
             <p class="place__address"><?= $place['place-address']; ?></p>
