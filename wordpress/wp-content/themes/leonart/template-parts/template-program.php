@@ -128,6 +128,27 @@ $expoFields = get_fields(sl_get_page_id_from_template('template-expositions.php'
 
     <section id="oeuvres">
         <h2>&OElig;uvres dans l'espace urbain</h2>
+        <div class="program__work">
+            <?php $posts = new WP_Query([
+                'showposts' => 4,
+                'post_type' => 'activities',
+                'meta_query' => array(
+                    array(
+                        'key' => 'event-type',
+                        'value' => 'work',
+                        'compare' => 'LIKE'
+                    )
+                ),
+                'orderby' => 'rand',
+            ]); ?>
+            <?php if($posts->have_posts()) : while($posts->have_posts()) : $posts->the_post(); ?>
+            <?php $shows = get_fields(); $image = $shows['event-work-img']; ?>
+            <a href="" title="Voir l'image de l'œuvre <?= $shows['event-work-title']; ?> en plus grand">
+                <img src="<?= $image['sizes']['smallest']; ?>" alt="<?php echo (sl_get_image_alt($image) ? sl_get_image_alt : 'Image de l\'œuvre ' . $shows['event-work-title']); ?>">
+            </a>
+            <?php endwhile; endif; ?>
+        </div>
+        <a href="<?= sl_get_page_url('template-work.php'); ?>" title="Aller sur la page des œuvres dans l'espace urbain">Voir toutes les &oelig;uvres</a>
     </section>
 
     <section id="divers">
