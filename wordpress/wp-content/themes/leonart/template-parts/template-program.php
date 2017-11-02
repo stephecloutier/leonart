@@ -201,6 +201,20 @@ $expoFields = get_fields(sl_get_page_id_from_template('template-expositions.php'
 
     <section id="artistes">
         <h2>Les artistes</h2>
+        <?php $posts = new WP_Query(['showposts' => 8, 'post_type' => 'artists']); ?>
+        <?php if($posts->have_posts()) : while($posts->have_posts()) : $posts->the_post(); ?>
+        <?php $artists = get_fields(); ?>
+        <a href="<?= the_permalink(); ?>" title="Aller sur la page de l’artiste <?= $artists['artist-name']; ?>">
+            <figure>
+                <?php $image = $artists['artist-img'];?>
+                <img src="<?= $image['sizes']['smallest']; ?>"  alt="Photo de l’artiste <?= $artists['artist-name']; ?>">
+                <span class="artists__name"><?= $artists['artist-name']; ?></span>
+                <span class="artists__disciplines"></span>
+                <div class="artists__overlay"></div>
+            </figure>
+        </a>
+        <?php endwhile; endif; ?>
+        <a href="<?= get_post_type_archive_link('artists'); ?>" title="Aller sur la page de tous les artistes">Voir tous les artistes</a>
     </section>
 
     <div class="cta cta--white">
