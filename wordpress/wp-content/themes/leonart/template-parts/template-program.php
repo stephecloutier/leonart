@@ -99,7 +99,7 @@ $expoFields = get_fields(sl_get_page_id_from_template('template-expositions.php'
             <div class="program__show">
                 <h3 class="program__subtitle program__subtitle--show"><?= $shows['event-show-title']; ?></h3>
                 <ul class="show__datimes">
-                    <?php foreach($shows['event-show-datetimes'] as $datetimes): ?>
+                    <?php foreach($shows['event-datetimes'] as $datetimes): ?>
                         <?php foreach($datetimes as $datetime): ?>
                         <?php
                             $date = new DateTime($datetime);
@@ -178,9 +178,9 @@ $expoFields = get_fields(sl_get_page_id_from_template('template-expositions.php'
                 <?php elseif($various['event-address']): ?>
                 <span class="place"><?= $various['event-address']; ?></span>
                 <?php endif; ?>
-                <?php if($various['event-various-datetimes']): ?>
+                <?php if($various['event-datetimes']): ?>
                 <ul class="various__datimes">
-                    <?php foreach($various['event-various-datetimes'] as $datetimes): ?>
+                    <?php foreach($various['event-datetimes'] as $datetimes): ?>
                         <?php foreach($datetimes as $datetime): ?>
                         <?php $date = new DateTime($datetime); ?>
                     <li>

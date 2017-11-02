@@ -33,9 +33,9 @@ get_header();
             <?php elseif($various['event-address']): ?>
             <span class="place"><?= $various['event-address']; ?></span>
             <?php endif; ?>
-            <?php if($various['event-various-datetimes']): ?>
+            <?php if($various['event-datetimes']): ?>
             <ul class="various__datimes">
-                <?php foreach($various['event-various-datetimes'] as $datetimes): ?>
+                <?php foreach($various['event-datetimes'] as $datetimes): ?>
                     <?php foreach($datetimes as $datetime): ?>
                     <?php $date = new DateTime($datetime); ?>
                 <li>

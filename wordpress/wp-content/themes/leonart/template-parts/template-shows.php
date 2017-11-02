@@ -27,7 +27,7 @@ get_header();
         <div class="show">
             <h3 class="subtitle subtitle--show"><?= $shows['event-show-title']; ?></h3>
             <ul class="show__datimes">
-                <?php foreach($shows['event-show-datetimes'] as $datetimes): ?>
+                <?php foreach($shows['event-datetimes'] as $datetimes): ?>
                     <?php foreach($datetimes as $datetime): ?>
                     <?php
                         $date = new DateTime($datetime);
