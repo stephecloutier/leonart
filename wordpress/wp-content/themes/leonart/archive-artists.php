@@ -16,8 +16,11 @@ get_header();
         <figure>
             <?php $image = $fields['artist-img'];?>
             <img src="<?= $image['sizes']['smallest']; ?>"  alt="Photo de l’artiste <?= $fields['artist-name']; ?>">
-            <span class="artists__name"></span>
-            <span class="artists__disciplines"></span>
+            <span class="artists__name"><?= $fields['artist-name']; ?></span>
+            <?php $artistID = $post->ID; ?>
+            <?php if(sl_get_taxonomies($artistID, 'artistic-disciplines')): ?>
+            <p class="artists__disciplines"><?= sl_get_taxonomies($artistID, 'artistic-disciplines'); ?></p>
+            <?php endif; ?>
             <div class="artists__overlay"></div>
         </figure>
     </a>

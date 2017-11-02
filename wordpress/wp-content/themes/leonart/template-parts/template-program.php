@@ -211,7 +211,10 @@ $expoFields = get_fields(sl_get_page_id_from_template('template-expositions.php'
                 <?php $image = $artists['artist-img'];?>
                 <img src="<?= $image['sizes']['smallest']; ?>"  alt="Photo de l’artiste <?= $artists['artist-name']; ?>">
                 <span class="artists__name"><?= $artists['artist-name']; ?></span>
-                <span class="artists__disciplines"></span>
+                <?php $artistID = $post->ID; ?>
+                <?php if(sl_get_taxonomies($artistID, 'artistic-disciplines')): ?>
+                <p class="artists__disciplines"><?= sl_get_taxonomies($artistID, 'artistic-disciplines'); ?></p>
+                <?php endif; ?>
                 <div class="artists__overlay"></div>
             </figure>
         </a>
