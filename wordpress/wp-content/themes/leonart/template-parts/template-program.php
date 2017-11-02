@@ -153,6 +153,50 @@ $expoFields = get_fields(sl_get_page_id_from_template('template-expositions.php'
 
     <section id="divers">
         <h2>Évènements divers</h2>
+        <div class="program__various">
+            <?php $posts = new WP_Query([
+                'showposts' => 4,
+                'post_type' => 'activities',
+                'meta_query' => array(
+                    array(
+                        'key' => 'event-type',
+                        'value' => 'various',
+                        'compare' => 'LIKE'
+                    )
+                ),
+                'orderby' => 'rand',
+            ]); ?>
+            <?php if($posts->have_posts()) : while($posts->have_posts()) : $posts->the_post(); ?>
+            <?php $various = get_fields(); ?>
+            <div>
+                <h3 class="program__subtitle"><?= $various['event-various-title']; ?></h3>
+                <?php if($various['event-has-place']): ?>
+                <?php $place = get_fields($various['event-place'][0]->ID); ?>
+                <a href="<?= get_permalink($various['event-place'][0]->ID); ?>">
+                    <span class="place"><?= $place['place-name']; ?></span> - <?= $place['place-address']; ?>
+                </a>
+                <?php elseif($various['event-address']): ?>
+                <span class="place"><?= $various['event-address']; ?></span>
+                <?php endif; ?>
+                <?php if($various['event-various-datetimes']): ?>
+                <ul class="various__datimes">
+                    <?php foreach($various['event-various-datetimes'] as $datetimes): ?>
+                        <?php foreach($datetimes as $datetime): ?>
+                        <?php $date = new DateTime($datetime); ?>
+                    <li>
+                        <time datetime="<?= strftime($htmlTimestampFormat, $date->getTimestamp()); ?>"><?= strftime("%A %e %B - %kh%M", $date->getTimestamp()); ?></time>
+                    </li>
+                        <?php endforeach; ?>
+                    <?php endforeach; ?>
+                </ul>
+                <?php endif; ?>
+                <div class="various__description">
+                    <?= $various['event-various-desc']; ?>
+                </div>
+            </div>
+            <?php endwhile; endif; ?>
+        </div>
+        <a href="<?= sl_get_page_url('template-various-events.php'); ?>" title="Aller sur la page des évènements divers">Voir tous les évènements divers</a>
     </section>
 
     <section id="artistes">
