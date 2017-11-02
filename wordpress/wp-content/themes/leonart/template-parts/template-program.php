@@ -190,9 +190,11 @@ $expoFields = get_fields(sl_get_page_id_from_template('template-expositions.php'
                     <?php endforeach; ?>
                 </ul>
                 <?php endif; ?>
+                <?php if($various['event-various-desc']): ?>
                 <div class="various__description">
                     <?= $various['event-various-desc']; ?>
                 </div>
+                <?php endif; ?>
             </div>
             <?php endwhile; endif; ?>
         </div>

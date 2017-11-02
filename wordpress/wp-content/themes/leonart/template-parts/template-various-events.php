@@ -24,28 +24,31 @@ get_header();
         <?php if($posts->have_posts()) : while($posts->have_posts()) : $posts->the_post(); ?>
         <?php $various = get_fields(); ?>
         <div class="various-event">
-            <h3 class="subtitle subtitle--various"><?= $various['event-various-title']; ?></h3>
-            <ul class="various-event__datimes">
+            <h2 class="subtitle subtitle--various"><?= $various['event-various-title']; ?></h2>
+            <?php if($various['event-has-place']): ?>
+            <?php $place = get_fields($various['event-place'][0]->ID); ?>
+            <a href="<?= get_permalink($various['event-place'][0]->ID); ?>">
+                <span class="place"><?= $place['place-name']; ?></span> - <?= $place['place-address']; ?>
+            </a>
+            <?php elseif($various['event-address']): ?>
+            <span class="place"><?= $various['event-address']; ?></span>
+            <?php endif; ?>
+            <?php if($various['event-various-datetimes']): ?>
+            <ul class="various__datimes">
                 <?php foreach($various['event-various-datetimes'] as $datetimes): ?>
                     <?php foreach($datetimes as $datetime): ?>
-                    <?php
-                        $date = new DateTime($datetime);
-                    ?>
+                    <?php $date = new DateTime($datetime); ?>
                 <li>
                     <time datetime="<?= strftime($htmlTimestampFormat, $date->getTimestamp()); ?>"><?= strftime("%A %e %B - %kh%M", $date->getTimestamp()); ?></time>
                 </li>
                     <?php endforeach; ?>
                 <?php endforeach; ?>
             </ul>
-            <?php if($various['event-has-place']): ?>
-                <?php
-                    $relationPlace = $various['event-place'];
-                    $place = get_fields($relationPlace[0]->ID);
-                ?>
-            <a href="<?= get_permalink($relationPlace[0]->ID); ?>" class="key-place" title="Aller sur la page du lieu <?= $place['place-name']; ?>"><?= $place['place-name']; ?></a>
-            <span class="place"><?= $place['place-address']; ?></span>
-            <?php else: ?>
-            <span class="place"><?= $various['event-address']; ?></span>
+            <?php endif; ?>
+            <?php if($various['event-various-desc']): ?>
+            <div class="various__description">
+                <?= $various['event-various-desc']; ?>
+            </div>
             <?php endif; ?>
         </div>
         <?php endwhile; endif; ?>
