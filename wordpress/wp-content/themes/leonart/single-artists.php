@@ -84,7 +84,7 @@ $fields = get_fields();
             <?php foreach($expositionsID as $id): ?>
                 <?php $exposition = get_fields($id); ?>
                 <li>
-                    <span><?= $exposition['event-expo-place'][0]->post_title; ?></span>
+                    <a href="<?= get_permalink($exposition['event-expo-place'][0]->ID); ?>"><?= $exposition['event-expo-place'][0]->post_title; ?></a>
                 </li>
             <?php endforeach; ?>
             </ul>
