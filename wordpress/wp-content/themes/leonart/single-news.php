@@ -24,7 +24,13 @@ $currentID = $post->ID;
 
     <h2>Les dernières news</h2>
     <div class="news__last">
-        <?php $posts = new WP_Query(['showposts' => 2, 'post_type' => 'news']); ?>
+        <?php
+            $posts = new WP_Query([
+                'showposts' => 2,
+                'post_type' => 'news',
+                'post__not_in' => array($post->ID),
+            ]);
+        ?>
         <?php if($posts->have_posts()) : while($posts->have_posts()) : $posts->the_post(); ?>
         <?php $fields = get_fields(); ?>
         <div class="news__other  <?php if(get_the_ID() == $currentID) echo 'news__current'; ?>">
