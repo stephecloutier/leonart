@@ -54,11 +54,18 @@
         <nav>
             <h2 class="hidden">Navigation secondaire du programme</h2>
             <ul>
-                <?php foreach(sl_get_nav_items('program_anchors') as $item): ?>
-                    <li>
-                        <a href="<?= $item->url; ?>"><?= $item->label; ?></a>
-                    </li>
-                <?php endforeach; ?>
+                <li>
+                    <a href="#expositions">Expositions</a>
+                </li>
+                <li>
+                    <a href="#concerts">Concerts &amp; spectacles</a>
+                </li>
+                <li>
+                    <a href="#oeuvres">&OElig;uvres dans l'espace urbain</a>
+                </li>
+                <li>
+                    <a href="#divers">Évènements divers</a>
+                </li>
             </ul>
         </nav>
         <?php endif; ?>

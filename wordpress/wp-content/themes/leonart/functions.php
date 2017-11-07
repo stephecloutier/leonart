@@ -15,7 +15,6 @@ if (function_exists('add_theme_support')) {
 register_nav_menus( array(
     'main' => 'La navigation principale du site',
     'social_media' => 'La navigation des réseaux sociaux',
-    'program_anchors' => 'La navigation des ancres de la page programme',
 ) );
 
 /*
