@@ -73,6 +73,19 @@ function sl_register_types() {
         'has_archive' => true,
     ]);
 
+    register_post_type('partners', [
+        'label' => 'Partenaires',
+        'labels' => [
+            'singular_name' => 'partenaire',
+            'add_new_item' => 'Ajouter un nouveau partenaire'
+        ],
+        'description' => 'Permet d’administrer les partenaires affichés sur le site',
+        'public' => true,
+        'menu_position' => 20,
+        'menu_icon' => 'dashicons-groups',
+        'has_archive' => false,
+    ]);
+
     register_taxonomy('artistic-disciplines', array('artists', 'activities'), [
         'label' => 'Disciplines artistiques',
         'labels' => [
