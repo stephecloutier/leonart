@@ -38,13 +38,13 @@ get_header();
         <?php $postnb = 0; ?>
         <?php $posttotal = wp_count_posts('news')->publish; ?>
         <?php if($posts->have_posts()) : while($posts->have_posts()) : $posts->the_post(); ?>
-            <?php $fields = get_fields(); ?>
+            <?php $fields = get_fields(); $newsContent = sl_remove_all_tags($fields['news-content']); ?>
             <a href="<?= the_permalink(); ?>">
                 <h3 class="news__title"><?= $fields['news-title']; ?></h3>
                 <time datetime=""><?= the_date('j F Y'); ?></time>
                 <?php $image = $fields['news-img'];?>
                 <img src="<?= $image['url']; ?>" width="<?= $image['sizes']['smallest-width']; ?>" height="<?= $image['sizes']['smallest-height']; ?>" alt="<?php if(sl_get_image_alt('news-img')) echo sl_get_image_alt('news-img'); else echo 'Image de la news ' . $fields['news-title']; ?>">
-                <div class="news__content"><?= $fields['news-content']; ?></div>
+                <p class="news__content"><?= sl_get_the_excerpt($newsContent, 280); ?></p>
                 <a href="<?= the_permalink(); ?>" class="news__link">En lire plus <span class="hidden">sur <?= $fields['news-title']; ?></span></a>
             </a>
             <?php $postnb++; ?>
