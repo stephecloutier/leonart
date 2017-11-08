@@ -248,3 +248,33 @@ function sl_get_ids($field) {
     }
     return $array;
 }
+
+
+/*
+ * Function to remove all tags from given fields
+*/
+
+function sl_remove_all_tags($field) {
+    $newString = str_replace(['<p>', '</p>'], ' ', $field);
+    $newString = preg_replace('/<.*?>/', '', $newString);
+    return trim($newString);
+}
+
+/*
+ *  Return custom excerpt from given field for given length
+*/
+function sl_get_the_excerpt($content, $length = null) {
+    if(!$toGet) $excerpt = $content;
+    if(is_null($length) || strlen($excerpt) <= $length) {
+        return $excerpt;
+    }
+
+    $string = '';
+    $words = explode(' ', $excerpt);
+    foreach($words as $word) {
+        // +2 is needed in order to include the next space and the &hellip; in the character count.
+        if(strlen($string) + strlen($word) + 2 > $length) break;
+        $string .= ' ' . $word;
+    }
+    return trim($string) . '&hellip;';
+}
