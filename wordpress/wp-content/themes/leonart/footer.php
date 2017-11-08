@@ -24,7 +24,16 @@
             <div class="footer__l2">
                 <div class="footer__partenaires">
                     <span class="footer__title">Avec la collaboration et le soutiens de</span>
-                    [Insérer les partenaires ici]
+                    <ul>
+                        <?php $posts = new WP_Query(['showposts' => -1, 'post_type' => 'partners']); ?>
+                        <?php if($posts->have_posts()) : while($posts->have_posts()) : $posts->the_post(); ?>
+                            <?php $fields = get_fields(); ?>
+                            <li>
+                                <img src="<?= $fields['partner-img']['sizes']['partner-footer']; ?>" alt="<?= $fields['partner-name']; ?>">
+                            </li>
+                        <?php endwhile; endif; ?>
+                    </ul>
+
                 </div>
 
                 <div class="footer__twitter">
