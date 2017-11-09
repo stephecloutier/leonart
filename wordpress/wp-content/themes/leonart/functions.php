@@ -86,6 +86,19 @@ function sl_register_types() {
         'has_archive' => false,
     ]);
 
+    register_post_type('documents', [
+        'label' => 'Documents',
+        'labels' => [
+            'singular_name' => 'document',
+            'add_new_item' => 'Ajouter un nouveau document'
+        ],
+        'description' => 'Permet d’administrer les documents (par exemple de presse) affichés et téléchargeables sur le site',
+        'public' => true,
+        'menu_position' => 20,
+        'menu_icon' => 'dashicons-category',
+        'has_archive' => false,
+    ]);
+
     register_taxonomy('artistic-disciplines', array('artists', 'activities'), [
         'label' => 'Disciplines artistiques',
         'labels' => [
