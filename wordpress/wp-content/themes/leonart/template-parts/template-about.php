@@ -77,7 +77,23 @@ $fields = get_fields();
     <?php if($fields['about-show-press']): ?>
     <section id="press">
         <h2 class="subtitle--simple">Espace presse</h2>
-        [post-type pour doc. de l'espace presse]
+        <div>
+            <?php
+                $posts = new WP_Query([
+                    'showposts' => -1,
+                    'post_type' => 'documents',
+                ]);
+            ?>
+            <?php if($posts->have_posts()) : while($posts->have_posts()) : $posts->the_post(); ?>
+            <?php $doc = get_fields(); ?>
+            <div>
+                <h3><?= $doc['documents-name']; ?></h3>
+                <div><?= $doc['documents-desc']; ?></div>
+                <a href="<?= $doc['documents-file']['url']; ?>" title="Télécharger le document <?= $doc['documents-name']; ?>">Télécharger <span class="hidden">le document <?= $doc['documents-name']; ?></span></a>
+            </div>
+            <?php endwhile; endif; ?>
+        </div>
+
     </section>
     <?php endif; ?>
 </main>
