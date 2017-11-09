@@ -14,8 +14,15 @@
                 </div>
                 <div class="footer__contact footer__column">
                     <span class="footer__title">Des questions&nbsp;? Contactez-nous&nbsp;!</span>
-                    [insérer le numéro de téléphone]
-                    [insérer l'adresse mail]
+                    <?php $contact = get_fields(sl_get_page_id_from_template('template-contact')); ?>
+                    <h2><?= $contact['contact-organizer-name']; ?></h2>
+                    <div class="contact__infos">
+                        <span class="contact__infos--phone"><?= $contact['contact-organizer-phone']; ?></span>
+                        <div class="contact__infos--address">
+                            <?= $contact['contact-organizer-address']; ?>
+                        </div>
+                        <a href="mailto:<?= $contact['contact-organizer-mail']; ?>" class="contact__infos--mail" title="Envoyer un mail à <?= $contact['contact-organizer-name']; ?>"><?= $contact['contact-organizer-mail']; ?></a>
+                    </div>
                 </div>
                 <div class="footer__newsletter footer__column">
                     <span class="footer__title">Inscrivez-vous à notre <em class="english-word">newsletter</em>&nbsp;!</span>
