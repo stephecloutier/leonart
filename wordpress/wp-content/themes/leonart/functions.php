@@ -45,7 +45,7 @@ function sl_register_types() {
         'public' => true,
         'menu_position' => 20,
         'menu_icon' => 'dashicons-location',
-        'has_archive' => true,
+        'has_archive' => false,
     ]);
 
     register_post_type('activities', [
