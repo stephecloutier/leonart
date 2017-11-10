@@ -47,13 +47,11 @@ $fields = get_fields();
             <?php endif; ?>
             <?php if(have_rows('event-expo-list')): ?>
             <ul>
-                <?php foreach($expositions['event-expo-list'] as $items): ?>
-                    <?php foreach($items as $item): ?>
+                <?php while(have_rows('event-expo-list')) : the_row(); ?>
                 <li>
-                    <?php echo $item; ?>
+                    <?= get_sub_field('event-expo-item'); ?>
                 </li>
-                    <?php endforeach; ?>
-                <?php endforeach; ?>
+                <?php endwhile; ?>
             </ul>
             <?php endif; ?>
             <?php if($artistsID): ?>
