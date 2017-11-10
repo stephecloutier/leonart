@@ -51,13 +51,11 @@ $expoFields = get_fields(sl_get_page_id_from_template('template-expositions.php'
                 <?php endif; ?>
                 <?php if(have_rows('event-expo-list')): ?>
                 <ul>
-                    <?php foreach($fields['event-expo-list'] as $items): ?>
-                        <?php foreach($items as $item): ?>
+                    <?php while(have_rows('event-expo-list')) : the_row(); ?>
                     <li>
-                        <?php echo $item; ?>
+                        <?= get_sub_field('event-expo-item'); ?>
                     </li>
-                        <?php endforeach; ?>
-                    <?php endforeach; ?>
+                    <?php endwhile; ?>
                 </ul>
                 <?php endif; ?>
                 <?php if($artistsID): ?>
@@ -99,16 +97,12 @@ $expoFields = get_fields(sl_get_page_id_from_template('template-expositions.php'
             <div class="program__show">
                 <h3 class="program__subtitle program__subtitle--show"><?= $shows['event-show-title']; ?></h3>
                 <ul class="show__datimes">
-                    <?php foreach($shows['event-datetimes'] as $datetimes): ?>
-                        <?php foreach($datetimes as $datetime): ?>
-                        <?php
-                            $date = new DateTime($datetime);
-                        ?>
-                    <li>
-                        <time datetime="<?= strftime($htmlTimestampFormat, $date->getTimestamp()); ?>"><?= strftime("%A %e %B - %kh%M", $date->getTimestamp()); ?></time>
-                    </li>
-                        <?php endforeach; ?>
-                    <?php endforeach; ?>
+                    <?php while(have_rows('event-datetimes')) : the_row(); ?>
+                        <?php $date = new DateTime(get_sub_field('event-datetime')); ?>
+                        <li>
+                            <time datetime="<?= strftime($htmlTimestampFormat, $date->getTimestamp()); ?>"><?= strftime("%A %e %B - %kh%M", $date->getTimestamp()); ?></time>
+                        </li>
+                    <?php endwhile; ?>
                 </ul>
                 <?php if($shows['event-has-place']): ?>
                     <?php
@@ -180,14 +174,12 @@ $expoFields = get_fields(sl_get_page_id_from_template('template-expositions.php'
                 <?php endif; ?>
                 <?php if($various['event-datetimes']): ?>
                 <ul class="various__datimes">
-                    <?php foreach($various['event-datetimes'] as $datetimes): ?>
-                        <?php foreach($datetimes as $datetime): ?>
-                        <?php $date = new DateTime($datetime); ?>
+                    <?php while(have_rows('event-datetimes')) : the_row(); ?>
+                        <?php $date = new DateTime(get_sub_field('event-datetime')); ?>
                     <li>
                         <time datetime="<?= strftime($htmlTimestampFormat, $date->getTimestamp()); ?>"><?= strftime("%A %e %B - %kh%M", $date->getTimestamp()); ?></time>
                     </li>
-                        <?php endforeach; ?>
-                    <?php endforeach; ?>
+                    <?php endwhile; ?>
                 </ul>
                 <?php endif; ?>
                 <?php if($various['event-various-desc']): ?>
