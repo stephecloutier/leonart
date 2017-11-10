@@ -6,7 +6,7 @@ get_header();
 $fields = get_fields();
 ?>
 <main>
-    <a href="<?= sl_get_page_url('archive-artist.php'); ?>" class="link-back" title="Aller sur la page de tous les artistes">Retourner à tous les artistes</a>
+    <a href="<?= get_post_type_archive_link('artists') ?>" class="link-back" title="Aller sur la page de tous les artistes">Retourner à tous les artistes</a>
     <h1 class="main-title"><?= $fields['artist-name']; ?></h1>
     <div class="taxonomies">
         <?= sl_get_taxonomies($post->ID, 'artistic-disciplines'); ?>
@@ -93,7 +93,7 @@ $fields = get_fields();
 
 
     </div>
-    <a href="<?= sl_get_page_url('archive-artist.php'); ?>" class="link-back" title="Aller sur la page de tous les artistes">Retourner à tous les artistes</a>
+    <a href="<?= get_post_type_archive_link('artists'); ?>" class="link-back" title="Aller sur la page de tous les artistes">Retourner à tous les artistes</a>
 </main>
 
 <?php get_footer(); ?>
