@@ -20,7 +20,7 @@ get_header();
         <h2 class="home-artists__title home-title">
             Quelques artistes
         </h2>
-        <?php $posts = new WP_Query(['showposts' => 8, 'post_type' => 'artists']); ?>
+        <?php $posts = new WP_Query(['showposts' => 8, 'post_type' => 'artists', 'orderby' => 'rand',]); ?>
         <?php if($posts->have_posts()) : while($posts->have_posts()) : $posts->the_post(); ?>
         <?php $fields = get_fields(); ?>
         <a href="<?= the_permalink(); ?>" title="Aller sur la page de l’artiste <?= $fields['artist-name']; ?>">

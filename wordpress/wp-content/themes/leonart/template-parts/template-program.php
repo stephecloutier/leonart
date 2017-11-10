@@ -165,7 +165,7 @@ $expoFields = get_fields(sl_get_page_id_from_template('template-expositions.php'
 
     <section id="artistes">
         <h2>Les artistes</h2>
-        <?php $posts = new WP_Query(['showposts' => 8, 'post_type' => 'artists']); ?>
+        <?php $posts = new WP_Query(['showposts' => 8, 'post_type' => 'artists', 'orderby' => 'rand',]); ?>
         <?php if($posts->have_posts()) : while($posts->have_posts()) : $posts->the_post(); ?>
         <?php $artists = get_fields(); ?>
         <a href="<?= the_permalink(); ?>" title="Aller sur la page de l’artiste <?= $artists['artist-name']; ?>">
