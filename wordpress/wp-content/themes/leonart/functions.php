@@ -292,3 +292,44 @@ function sl_get_the_excerpt($content, $length = null) {
     }
     return trim($string) . '&hellip;';
 }
+
+/*
+    Return posts query containing 4 posts, ordering first by featured posts and then by random. (For use on the program page)
+*/
+
+function sl_get_featured_random_activities($eventType) {
+    $featuredPosts = new WP_Query([
+        'showposts' => 4,
+        'post_type' => 'activities',
+        'meta_query' => array(
+            array(
+                'key' => 'event-type',
+                'value' => $eventType,
+                'compare' => 'LIKE'
+            )
+        ),
+        'meta_key' => 'event-show-first',
+        'meta_value' => 'true',
+    ]);
+
+    $randomPosts = new WP_Query([
+        'showposts' => 4 - count($featuredPosts),
+        'post_type' => 'activities',
+        'meta_query' => array(
+            array(
+                'key' => 'event-type',
+                'value' => $eventType,
+                'compare' => 'LIKE'
+            )
+        ),
+        'meta_key' => 'event-show-first',
+        'meta_value' => 'false',
+        'orderby' => 'rand',
+    ]);
+
+    $posts = new WP_Query();
+    $posts->posts = array_merge( $featuredPosts->posts, $randomPosts->posts );
+    $posts->post_count = count( $posts->posts );
+
+    return $posts;
+}

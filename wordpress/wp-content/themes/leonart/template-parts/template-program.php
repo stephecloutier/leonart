@@ -15,18 +15,7 @@ $expoFields = get_fields(sl_get_page_id_from_template('template-expositions.php'
         <h2>Les expositions</h2>
         <div><?= $expoFields['expo-time']; ?></div>
         <div class="program__expos">
-            <?php $posts = new WP_Query([
-                'showposts' => 4,
-                'post_type' => 'activities',
-                'meta_query' => array(
-                    array(
-                        'key' => 'event-type',
-                        'value' => 'expo',
-                        'compare' => 'LIKE'
-                    )
-                ),
-                'orderby' => 'rand',
-            ]); ?>
+            <?php $posts = sl_get_featured_random_activities('expo'); ?>
             <?php if($posts->have_posts()) : while($posts->have_posts()) : $posts->the_post(); ?>
             <?php
                 $fields = get_fields();
@@ -35,6 +24,7 @@ $expoFields = get_fields(sl_get_page_id_from_template('template-expositions.php'
                 $relationArtist = get_field('event-expo-artists');
                 $artistsID = sl_get_ids($relationArtist);
             ?>
+
             <div class="program__expo">
                 <a href="<?= get_permalink($relationPlace[0]->ID); ?>" title="Aller sur la page du lieu <?= $place['place-name']; ?>">
                     <h3 class="program__subtitle"><?= $place['place-name']; ?></h3>
@@ -80,22 +70,12 @@ $expoFields = get_fields(sl_get_page_id_from_template('template-expositions.php'
     <section id="concerts">
         <h2>Concerts &amp; spectacles</h2>
         <div class="program__shows">
-            <?php $posts = new WP_Query([
-                'showposts' => 4,
-                'post_type' => 'activities',
-                'meta_query' => array(
-                    array(
-                        'key' => 'event-type',
-                        'value' => 'show',
-                        'compare' => 'LIKE'
-                    )
-                ),
-                'orderby' => 'rand',
-            ]); ?>
+            <?php $posts = sl_get_featured_random_activities('show'); ?>
+
             <?php if($posts->have_posts()) : while($posts->have_posts()) : $posts->the_post(); ?>
             <?php $shows = get_fields(); ?>
             <div class="program__show">
-                <h3 class="program__subtitle program__subtitle--show"><?= $shows['event-show-title']; ?></h3>
+                <h3 class="program__subtitle program__subtitle--show"><?= $shows['event-title']; ?></h3>
                 <ul class="show__datimes">
                     <?php while(have_rows('event-datetimes')) : the_row(); ?>
                         <?php $date = new DateTime(get_sub_field('event-datetime')); ?>
@@ -148,22 +128,12 @@ $expoFields = get_fields(sl_get_page_id_from_template('template-expositions.php'
     <section id="divers">
         <h2>Évènements divers</h2>
         <div class="program__various">
-            <?php $posts = new WP_Query([
-                'showposts' => 4,
-                'post_type' => 'activities',
-                'meta_query' => array(
-                    array(
-                        'key' => 'event-type',
-                        'value' => 'various',
-                        'compare' => 'LIKE'
-                    )
-                ),
-                'orderby' => 'rand',
-            ]); ?>
+            <?php $posts = sl_get_featured_random_activities('various'); ?>
+
             <?php if($posts->have_posts()) : while($posts->have_posts()) : $posts->the_post(); ?>
             <?php $various = get_fields(); ?>
             <div>
-                <h3 class="program__subtitle"><?= $various['event-various-title']; ?></h3>
+                <h3 class="program__subtitle"><?= $various['event-title']; ?></h3>
                 <?php if($various['event-has-place']): ?>
                 <?php $place = get_fields($various['event-place'][0]->ID); ?>
                 <a href="<?= get_permalink($various['event-place'][0]->ID); ?>">
