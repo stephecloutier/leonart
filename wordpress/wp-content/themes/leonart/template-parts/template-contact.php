@@ -23,7 +23,7 @@ $fields = get_fields();
 
     <section>
         <h2 class="hidden">Formulaire de contact</h2>
-        <?= do_shortcode('[ninja_form id=3]'); ?>
+        <?= do_shortcode('[ninja_form id=1]'); ?>
     </section>
 </main>
 
