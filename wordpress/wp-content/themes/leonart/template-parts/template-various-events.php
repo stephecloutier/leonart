@@ -35,14 +35,12 @@ get_header();
             <?php endif; ?>
             <?php if($various['event-datetimes']): ?>
             <ul class="various__datimes">
-                <?php foreach($various['event-datetimes'] as $datetimes): ?>
-                    <?php foreach($datetimes as $datetime): ?>
-                    <?php $date = new DateTime($datetime); ?>
+                <?php while(have_rows('event-datetimes')) : the_row(); ?>
+                    <?php $date = new DateTime(get_sub_field('event-datetime')); ?>
                 <li>
                     <time datetime="<?= strftime($htmlTimestampFormat, $date->getTimestamp()); ?>"><?= strftime("%A %e %B - %kh%M", $date->getTimestamp()); ?></time>
                 </li>
-                    <?php endforeach; ?>
-                <?php endforeach; ?>
+                <?php endwhile; ?>
             </ul>
             <?php endif; ?>
             <?php if($various['event-various-desc']): ?>
