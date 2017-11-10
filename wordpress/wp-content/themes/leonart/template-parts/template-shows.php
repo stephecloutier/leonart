@@ -25,7 +25,7 @@ get_header();
         <?php if($posts->have_posts()) : while($posts->have_posts()) : $posts->the_post(); ?>
         <?php $shows = get_fields(); ?>
         <div class="show">
-            <h3 class="subtitle subtitle--show"><?= $shows['event-show-title']; ?></h3>
+            <h3 class="subtitle subtitle--show"><?= $shows['event-title']; ?></h3>
             <ul class="show__datimes">
                 <?php while(have_rows('event-datetimes')) : the_row(); ?>
                     <?php $date = new DateTime(get_sub_field('event-datetime')); ?>

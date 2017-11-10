@@ -24,7 +24,7 @@ get_header();
         <?php if($posts->have_posts()) : while($posts->have_posts()) : $posts->the_post(); ?>
         <?php $various = get_fields(); ?>
         <div class="various-event">
-            <h2 class="subtitle subtitle--various"><?= $various['event-various-title']; ?></h2>
+            <h2 class="subtitle subtitle--various"><?= $various['event-title']; ?></h2>
             <?php if($various['event-has-place']): ?>
             <?php $place = get_fields($various['event-place'][0]->ID); ?>
             <a href="<?= get_permalink($various['event-place'][0]->ID); ?>">
