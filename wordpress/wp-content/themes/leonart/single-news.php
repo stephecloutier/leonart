@@ -9,7 +9,7 @@ $currentID = $post->ID;
  ?>
 
 <main>
-    <a href="<?= sl_get_page_url('archive-news.php'); ?>" class="link-back" title="Aller sur la page de news">Retourner aux news</a>
+    <a href="<?= get_post_type_archive_link('news'); ?>" class="link-back" title="Aller sur la page de news">Retourner aux news</a>
 
     <h1><?= $fields['news-title']; ?></h1>
     <div class="news__content">
@@ -31,22 +31,10 @@ $currentID = $post->ID;
                 'post__not_in' => array($post->ID),
             ]);
         ?>
-        <?php if($posts->have_posts()) : while($posts->have_posts()) : $posts->the_post(); ?>
-            <?php $fields = get_fields(); $newsContent = sl_remove_all_tags($fields['news-content']); ?>
-        <div class="news__other  <?php if(get_the_ID() == $currentID) echo 'news__current'; ?>">
-            <a href="<?= the_permalink(); ?>" class="news__thumb">
-                <h3 class="home-news__title"><?= $fields['news-title']; ?></h3>
-                <time datetime=""><?= the_date('j F Y'); ?></time>
-                <?php $image = $fields['news-img'];?>
-                <img src="<?= $image['url']; ?>" width="<?= $image['sizes']['smallest-width']; ?>" height="<?= $image['sizes']['smallest-height']; ?>" alt="<?php if(sl_get_image_alt('news-img')) echo sl_get_image_alt('news-img'); else echo 'Image de la news ' . $fields['news-title']; ?>">
-                <p class="news__content"><?= sl_get_the_excerpt($newsContent, 280); ?></p>
-                <a href="<?= the_permalink(); ?>" class="home-news__link">En lire plus <span class="hidden">sur <?= $fields['news-title']; ?></span></a>
-            </a>
-        </div>
-    <?php endwhile; endif; ?>
+        <?php get_template_part('parts/news'); ?>
     </div>
 
-    <a href="<?= sl_get_page_url('archive-news.php'); ?>" class="news__back">Retourner aux news</a>
+    <a href="<?= get_post_type_archive_link('news'); ?>" class="news__back">Retourner aux news</a>
 </main>
 
 <?php get_footer(); ?>

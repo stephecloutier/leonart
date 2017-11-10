@@ -27,7 +27,7 @@ get_header();
         <?php
                 $paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
                 $posts = new WP_Query([
-                    'posts_per_page' => 2,
+                    'posts_per_page' => 6,
                     'paged' => $paged,
                     'post_type' => 'news',
                     'orderby' => [
@@ -35,26 +35,7 @@ get_header();
                     ],
                 ]);
         ?>
-        <?php $postnb = 0; ?>
-        <?php $posttotal = wp_count_posts('news')->publish; ?>
-        <?php if($posts->have_posts()) : while($posts->have_posts()) : $posts->the_post(); ?>
-            <?php $fields = get_fields(); $newsContent = sl_remove_all_tags($fields['news-content']); ?>
-            <a href="<?= the_permalink(); ?>">
-                <h3 class="news__title"><?= $fields['news-title']; ?></h3>
-                <time datetime=""><?= the_date('j F Y'); ?></time>
-                <?php $image = $fields['news-img'];?>
-                <img src="<?= $image['url']; ?>" width="<?= $image['sizes']['smallest-width']; ?>" height="<?= $image['sizes']['smallest-height']; ?>" alt="<?php if(sl_get_image_alt('news-img')) echo sl_get_image_alt('news-img'); else echo 'Image de la news ' . $fields['news-title']; ?>">
-                <p class="news__content"><?= sl_get_the_excerpt($newsContent, 280); ?></p>
-                <a href="<?= the_permalink(); ?>" class="news__link">En lire plus <span class="hidden">sur <?= $fields['news-title']; ?></span></a>
-            </a>
-            <?php $postnb++; ?>
-            <?php if($postnb == 2 || ($posttotal < 2 && ($wp_query->current_post +1) == ($wp_query->post_count))): ?>
-            <div class="cta--white cta--news">
-                Vous cherchiez plutôt le planning de l'évènement&nbsp;?
-                <a href="<?= sl_get_page_url('template-agenda.php'); ?>" class="button--white" title="Aller sur l'agenda">Voir l'agenda</a>
-            </div>
-            <?php endif; ?>
-        <?php endwhile; endif; ?>
+        <?php get_template_part('parts/news'); ?>
         <?php if(function_exists('wp_pagenavi')): ?>
             <div class="pagination__wrapper">
                 <?php wp_pagenavi(array('query' => $posts)); ?>

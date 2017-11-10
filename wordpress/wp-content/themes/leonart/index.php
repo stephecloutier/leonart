@@ -56,22 +56,12 @@ get_header();
         [insérer le form ici]
     </section>
 
-    <section class="home-news">
-        <h2 class="home-news__title home-title">
+    <section class="news">
+        <h2 class="news__title home-title">
             Les dernières news
         </h2>
         <?php $posts = new WP_Query(['showposts' => 2, 'post_type' => 'news']); ?>
-        <?php if($posts->have_posts()) : while($posts->have_posts()) : $posts->the_post(); ?>
-        <?php $fields = get_fields(); $newsContent = sl_remove_all_tags($fields['news-content']); ?>
-        <a href="<?= the_permalink(); ?>">
-            <h3 class="home-news__title"><?= $fields['news-title']; ?></h3>
-            <time datetime=""><?= the_date('j F Y'); ?></time>
-            <?php $image = $fields['news-img'];?>
-            <img src="<?= $image['sizes']['smallest']; ?>" alt="<?php if(sl_get_image_alt('news-img')) echo sl_get_image_alt('news-img'); else echo 'Image de la news ' . $fields['news-title']; ?>">
-            <p class="home-news__content"><?= sl_get_the_excerpt($newsContent, 280); ?></p>
-            <a href="<?= the_permalink(); ?>" class="home-news__link">En lire plus <span class="hidden">sur <?= $fields['news-title']; ?></span></a>
-        </a>
-        <?php endwhile; endif; ?>
+        <?php get_template_part('parts/news'); ?>
         <a href="<?= get_post_type_archive_link('news'); ?>" title="Aller sur la page des news">Voir toutes les news</a>
     </section>
 
