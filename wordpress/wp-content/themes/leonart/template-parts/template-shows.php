@@ -27,16 +27,12 @@ get_header();
         <div class="show">
             <h3 class="subtitle subtitle--show"><?= $shows['event-show-title']; ?></h3>
             <ul class="show__datimes">
-                <?php foreach($shows['event-datetimes'] as $datetimes): ?>
-                    <?php foreach($datetimes as $datetime): ?>
-                    <?php
-                        $date = new DateTime($datetime);
-                    ?>
-                <li>
-                    <time datetime="<?= strftime($htmlTimestampFormat, $date->getTimestamp()); ?>"><?= strftime("%A %e %B - %kh%M", $date->getTimestamp()); ?></time>
-                </li>
-                    <?php endforeach; ?>
-                <?php endforeach; ?>
+                <?php while(have_rows('event-datetimes')) : the_row(); ?>
+                    <?php $date = new DateTime(get_sub_field('event-datetime')); ?>
+                    <li>
+                        <time datetime="<?= strftime($htmlTimestampFormat, $date->getTimestamp()); ?>"><?= strftime("%A %e %B - %kh%M", $date->getTimestamp()); ?></time>
+                    </li>
+                <?php endwhile; ?>
             </ul>
             <?php if($shows['event-has-place']): ?>
                 <?php
