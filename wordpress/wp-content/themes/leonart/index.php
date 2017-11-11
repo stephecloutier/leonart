@@ -59,7 +59,6 @@ get_header();
                 )
             ),
             ]);
-            var_dump($posts->posts);
         ?>
         <?php foreach($agendaFields['agenda-dates'] as $dates): ?>
             <div class="agenda__day">
