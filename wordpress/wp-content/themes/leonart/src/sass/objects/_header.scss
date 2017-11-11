@@ -26,6 +26,32 @@
         display: flex;
         justify-content: flex-end;
     }
+    &__link {
+        fill: white;
+        //box-sizing: content-box;
+        svg {
+            width: 3em;
+            //border: 2px solid transparent;
+            //border-radius: 100%;
+            //padding: 0;
+            //transition: 0.1s ease-out;
+        }
+        .circle {
+            stroke: transparent;
+            stroke-width: 5px;
+            fill: transparent;
+            transform-origin: 50% 50%;
+            transition: 0.2s ease-out;
+        }
+        svg:hover, svg:focus {
+            // border-color: white;
+            // padding: 0.3em;
+            .circle {
+                stroke: white;
+                transform: scale(1.4);
+            }
+        }
+    }
 }
 
 // Navigation principale
