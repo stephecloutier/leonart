@@ -58,7 +58,7 @@ get_header();
                             $activityDay = strftime('%d', $activityDate->getTimestamp());
                         ?>
                         <?php if($activityDay == $day): ?>
-                        <time class="activity__time"><?= strftime('%Hh%M', $activityDate->getTimestamp()); ?></time>
+                        <time class="activity__time" datetime="<?= strftime($htmlTimestampFormat, $activityDate->getTimestamp()); ?>"><?= strftime('%Hh%M', $activityDate->getTimestamp()); ?></time>
                         <div class="activity__infos"><?= $activity['event-title']; ?></div>
                             <?php if($activity['event-has-place']): ?>
                                 <?php
