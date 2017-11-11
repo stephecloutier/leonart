@@ -13,7 +13,6 @@ get_header();
 
     <div class="intro">
         <span class="intro__title">Un vaste parcours artistique</span>
-        <?php var_dump($fields); ?>
         <?= $fields['intro-text']; ?>
         <a href="" class="intro__link arrow-link">En savoir plus <span class="hidden">sur l'évènement Saint-Léon'Art</span></a>
     </div>
