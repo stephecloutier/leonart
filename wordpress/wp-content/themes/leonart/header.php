@@ -13,7 +13,7 @@
 
     <body>
 
-    <header>
+    <header class="header">
         <h1>
             <a href="<?= get_home_url(); ?>" title="Aller à l'accueil">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 108 86" style="width:175px">
