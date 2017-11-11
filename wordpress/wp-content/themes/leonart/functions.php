@@ -129,9 +129,9 @@ function sl_register_types() {
 */
 
 $htmlTimestampFormat = '%Y-%m-%dT%H:%M';
-
-
-
+function socialIcons() {
+    return include dirname(__FILE__) . '/components/social-icons.php';
+}
 /*
     Retrieves the absolute URI for given asset in this theme
 */
