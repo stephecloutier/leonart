@@ -1,17 +1,29 @@
 .header {
-    min-height: 380px;
     background-color: $raspberry;
     color: white;
     display: flex;
     flex-direction: column;
     align-items: center;
+    &__main-title {
+        margin-bottom: 2.5em;
+    }
 }
+
+// Logo
+
 
 // Réseaux sociaux
 
 .l-social-nav {
     order: -1;
-    align-self: flex-end;
+    margin: 1em auto;
+    max-width: $max-width;
+    width: $max-width;
+    &__list {
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+    }
 }
 
 // Navigation principale
@@ -19,6 +31,7 @@
 .l-main-nav {
     max-width: $max-width;
     width: $max-width;
+    margin-bottom: 5em;
     &__list {
         display: flex;
         justify-content: space-between;
