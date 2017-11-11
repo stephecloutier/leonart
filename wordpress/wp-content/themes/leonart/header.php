@@ -40,7 +40,7 @@
                         $socialIcons = socialIcons();
                     ?>
                     <li class="l-social-nav__item">
-                        <a class="l-social-nav__link l-social-nav__link--<?= $socialFields['social-name']; ?>" href="<?= $socialFields['social-link']; ?>">
+                        <a class="l-social-nav__link l-social-nav__link--<?= $socialFields['social-name']; ?>" href="<?= $socialFields['social-link']; ?>" title="Aller sur le <?= $socialFields['social-name']; ?> de Saint-Léon'Art">
                             <?= $socialIcons[$socialFields['social-name']]; ?>
                             <span class="hidden"><?= $socialFields['social-name']; ?></span>
                         </a>
