@@ -2,8 +2,9 @@
 /*
     Template Name: Contact
 */
-get_header();
 $fields = get_fields();
+get_header();
+
 ?>
 
 <main>

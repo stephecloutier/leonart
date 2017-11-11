@@ -2,8 +2,9 @@
 /*
     Template Name: Artiste
 */
-get_header();
 $fields = get_fields();
+get_header();
+
 ?>
 <main>
     <a href="<?= get_post_type_archive_link('artists') ?>" class="link-back" title="Aller sur la page de tous les artistes">Retourner à tous les artistes</a>

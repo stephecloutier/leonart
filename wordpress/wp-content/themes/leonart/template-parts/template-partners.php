@@ -2,8 +2,9 @@
 /*
     Template Name: Page des Partenaires
 */
-get_header();
 $fields = get_fields();
+get_header();
+
 ?>
 
 <main>

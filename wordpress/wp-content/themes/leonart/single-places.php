@@ -2,8 +2,9 @@
 /*
     Template Name: Lieu
 */
-get_header();
 $fields = get_fields();
+get_header();
+
 ?>
 <main>
     <a href="<?= sl_get_page_url('template-useful.php'); ?>" class="link-back" title="Aller sur la page en pratique">Retourner sur la page En Pratique</a>

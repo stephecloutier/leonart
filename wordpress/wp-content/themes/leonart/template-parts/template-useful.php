@@ -2,10 +2,11 @@
 /*
     Template Name: Page "En Pratique"
 */
-get_header();
 //$agendaFields = get_fields(sl_get_page_id_from_template('template-agenda.php'));
 //$date = new DateTime($agendaFields['agenda-dates'][0]['agenda-date']);
 $fields = get_fields();
+get_header();
+
 ?>
 
 <main>

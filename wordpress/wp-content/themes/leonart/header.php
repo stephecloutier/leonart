@@ -35,10 +35,10 @@
             <ul class="l-social-nav__list">
                 <?php $posts = new WP_Query(['showposts' => -1, 'post_type' => 'social-medias']); ?>
                 <?php if($posts->have_posts()) : while($posts->have_posts()) : $posts->the_post(); ?>
-                <?php $fields = get_fields(); ?>
-                <li class="l-social-nav__item">
-                    <a class="l-social-nav__link l-social-nav__link--<?= $fields['social-name']; ?>" href="<?= $fields['social-link']; ?>"><?= $fields['social-name']; ?></a>
-                </li>
+                    <?php $socialFields = get_fields(); ?>
+                    <li class="l-social-nav__item">
+                        <a class="l-social-nav__link l-social-nav__link--<?= $socialFields['social-name']; ?>" href="<?= $socialFields['social-link']; ?>"><?= $socialFields['social-name']; ?></a>
+                    </li>
                 <?php endwhile; endif; ?>
             </ul>
         </nav>

@@ -2,8 +2,9 @@
 /*
     Template Name: Page des expositions
 */
-get_header();
 $fields = get_fields();
+get_header();
+
 ?>
 
 <main>

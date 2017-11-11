@@ -2,8 +2,8 @@
 /*
     Template Name: À propos
 */
-get_header();
 $fields = get_fields();
+get_header();
 ?>
 
 <main>

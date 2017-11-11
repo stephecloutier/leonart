@@ -3,9 +3,9 @@
 /*
     Template Name: Agenda
 */
-get_header();
 $fields = get_fields();
 $activityFields = get_fields(sl_get_page_id_from_template('template-expositions.php'));
+get_header();
 
 ?>
 

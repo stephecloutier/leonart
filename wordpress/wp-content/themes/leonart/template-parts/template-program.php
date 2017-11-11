@@ -3,9 +3,10 @@
 /*
     Template Name: Programme
 */
-get_header();
 $fields = get_fields();
 $expoFields = get_fields(sl_get_page_id_from_template('template-expositions.php'));
+get_header();
+
 ?>
 
 <main>

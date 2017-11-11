@@ -2,10 +2,11 @@
 /*
     Template Name: News individuelle
 */
-get_header();
 $fields = get_fields();
 $image = $fields['news-img'];
 $currentID = $post->ID;
+get_header();
+
  ?>
 
 <main>
