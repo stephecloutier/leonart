@@ -33,11 +33,13 @@
         <nav class="l-social-nav">
             <h2 class="hidden">Navigation des réseaux sociaux</h2>
             <ul class="l-social-nav__list">
-                <?php foreach (sl_get_nav_items('social_media') as $item): ?>
-                    <li class="l-social-nav__item">
-                        <a class="l-social-nav__link" href="<?= $item->url; ?>"><?= $item->label; ?></a>
-                    </li>
-                <?php endforeach; ?>
+                <?php $posts = new WP_Query(['showposts' => -1, 'post_type' => 'social-medias']); ?>
+                <?php if($posts->have_posts()) : while($posts->have_posts()) : $posts->the_post(); ?>
+                <?php $fields = get_fields(); ?>
+                <li class="l-social-nav__item">
+                    <a class="l-social-nav__link l-social-nav__link--<?= $fields['social-name']; ?>" href="<?= $fields['social-link']; ?>"><?= $fields['social-name']; ?></a>
+                </li>
+                <?php endwhile; endif; ?>
             </ul>
         </nav>
 

@@ -15,7 +15,6 @@ if (function_exists('add_theme_support')) {
 // navigation \\
 register_nav_menus( array(
     'main' => 'La navigation principale du site',
-    'social_media' => 'La navigation des réseaux sociaux',
 ) );
 
 /*
@@ -96,6 +95,19 @@ function sl_register_types() {
         'public' => true,
         'menu_position' => 20,
         'menu_icon' => 'dashicons-category',
+        'has_archive' => false,
+    ]);
+
+    register_post_type('social-medias', [
+        'label' => 'Réseaux sociaux',
+        'labels' => [
+            'singular_name' => 'Réseau social',
+            'add_new_item' => 'Ajouter un nouveau réseau social'
+        ],
+        'description' => 'Permet d’administrer les réseaux sociaux affichés sur le site',
+        'public' => true,
+        'menu_position' => 20,
+        'menu_icon' => 'dashicons-facebook-alt',
         'has_archive' => false,
     ]);
 
