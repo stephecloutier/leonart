@@ -45,7 +45,6 @@ $activityFields = get_fields(sl_get_page_id_from_template('template-expositions.
                     'meta_query' => array(
                         array(
                             'key' => 'event-datetimes',
-                            // 'value' => true,
                             'compare' => 'EXISTS',
                         )
                     ),

@@ -44,8 +44,61 @@ get_header();
         <h2 class="home-agenda__title home-title">
             Les évènements à venir
         </h2>
-        [insérer l'agenda ici]
-        <a href="" title="Aller sur la page de l'agenda">Voir l'agenda complet</a>
+        <?php
+            //$posts = new WP_Query(['showposts' => 3, 'post_type' => 'activities']);
+            $agendaFields = get_fields(sl_get_page_id_from_template('template-agenda.php'));
+        ?>
+        <?php
+            $posts = new WP_Query([
+            'showposts' => 3,
+            'post_type' => 'activities',
+            'meta_query' => array(
+                array(
+                    'key' => 'event-datetimes',
+                    'compare' => 'EXISTS',
+                )
+            ),
+            ]);
+            var_dump($posts->posts);
+        ?>
+        <?php foreach($agendaFields['agenda-dates'] as $dates): ?>
+            <div class="agenda__day">
+                <div class="agenda__date">
+                    <?php
+                        $date = new DateTime($dates['agenda-date']);
+                        $day = strftime('%d', $date->getTimestamp());
+                    ?>
+                    <time datetime="<?= strftime($htmlTimestampFormat, $date->getTimestamp()); ?>">
+                        <span class="agenda__date--day"><?= strftime('%A', $date->getTimestamp()); ?></span>
+                        <span class="agenda__date--numbers"><?= strftime('%d/%m', $date->getTimestamp()); ?></span>
+                    </time>
+                </div>
+                <div class="agenda__activities">
+                <?php if($posts->have_posts()) : while($posts->have_posts()) : $posts->the_post(); ?>
+                    <?php $activity = get_fields($post->ID); ?>
+                    <?php foreach($activity['event-datetimes'] as $datetimes): ?>
+                        <?php
+                            $activityDate = new DateTime($datetimes['event-datetime']);
+                            $activityDay = strftime('%d', $activityDate->getTimestamp());
+                        ?>
+                        <?php if($activityDay == $day): ?>
+                        <time class="activity__time"><?= strftime('%Hh%M', $activityDate->getTimestamp()); ?></time>
+                        <div class="activity__infos"><?= $activity['event-title']; ?></div>
+                            <?php if($activity['event-has-place']): ?>
+                                <?php
+                                    $relationPlace = $activity['event-place'];
+                                    $place = get_fields($relationPlace[0]->ID);
+                                ?>
+                            <?php elseif($activity['event-address']): ?>
+
+                            <?php endif; ?>
+                        <?php endif; ?>
+                    <?php endforeach; ?>
+                <?php endwhile; endif; ?>
+                </div>
+            </div>
+        <?php endforeach; ?>
+        <a href="<?= sl_get_page_url('template-agenda.php'); ?>" title="Aller sur la page de l'agenda">Voir l'agenda complet</a>
     </section>
 
     <section class="home-newsletter">
