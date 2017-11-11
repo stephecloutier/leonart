@@ -14,9 +14,9 @@
     <body>
 
     <header class="header">
-        <h1>
-            <a href="<?= get_home_url(); ?>" title="Aller à l'accueil">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 108 86" style="width:175px">
+        <h1 class="header__main-title">
+            <a href="<?= get_home_url(); ?>" title="Aller à l'accueil" class="c-logo">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 108 86" style="width:175px" class="c-logo__svg">
                     <path d="M22 16.1c1.8 1.5 2.7 3.2 2.7 5.2 0 2.5-1.3 4.5-3.8 6.1-2.2 1.3-4.6 2-7.3 2-1.9 0-3.7-.3-5.4-1-1.9-.8-3.4-1.8-4.4-3.2-.2-.3-.2-.5-.1-.8.1-.1.3-.3.5-.4l6-2.8c.3-.2.8-.1 1.5.2.8.3 1.4.5 1.8.5.5 0 1.1-.1 1.6-.3.7-.3 1-.6 1-1.1 0-.9-.8-1.4-2.5-1.3-1.1 0-2.1-.1-3.1-.3-2-.4-3.8-1.3-5.4-2.7-1.8-1.6-2.7-3.4-2.7-5.4 0-2.6 1.3-4.7 3.8-6.2 2.2-1.4 4.6-2.1 7.3-2.1 2.1 0 4.1.4 6 1.3 2.1 1 3.6 2.4 4.4 4.1.1.2.1.4.1.5 0 .4-.3.6-.8.8L17 11.4c-.5.2-.8.2-.9.1-.1-.1-.3-.2-.5-.4-.5-.3-1.1-.5-2-.5-.5 0-1.1.1-1.6.3-.7.3-1 .6-1 1.1 0 .5.3.8 1 1.1.5.2 1 .3 1.6.3 1.3 0 2.8.3 4.4.8 1.7.5 3 1.2 4 1.9z"/>
                     <path d="M38.6 3.6l12.5 24.8c.1.2.1.3.1.4 0 .4-.4.6-1.2.6h-5.4c-.6 0-1 0-1.2-.1-.2-.1-.4-.4-.7-.9-.4-.7-1-1.1-1.9-1.1H32c-.8 0-1.4.3-1.7 1-.2.5-.5.8-.6.9-.2.1-.6.1-1.2.1h-5.6c-.8 0-1.3-.2-1.3-.6 0-.1 0-.3.1-.5L34.4 3.6c.5-.9 1.2-1.3 2.1-1.3.9-.1 1.6.4 2.1 1.3zm-.8 15.2c-.2-.4-.5-1-.9-1.9-.1-.1-.2-.2-.4-.2-.1 0-.2.1-.4.2-.2.4-.6 1.1-1 1.9-.1.3 0 .5.3.6h2.1c.2 0 .3-.1.3-.3v-.3z"/>
                     <path d="M57.6 2.4c.6 0 .9.3.9.9v25.3c0 .6-.3.9-.9.9h-6.9c-.6 0-.9-.3-.9-.9V3.3c0-.6.3-.9.9-.9h6.9zM80.1 2.4c.6 0 .9.3.9.9v25.6c0 .5-.2.8-.5.8h-.2c-.5-.1-.8-.3-1-.4L70 23.2c-.3-.2-.5-.1-.5.2v5c0 .7-.3 1-1 1h-6.8c-.6 0-.9-.3-.9-.9V3.1c0-.5.2-.8.7-.7.5.1.8.2.9.3l9 6.1c.3.1.4.2.6.2.2 0 .3-.2.3-.6V3.3c0-.6.3-.9 1-.9h6.8zM83.3 2.5H104c.7 0 1 .3 1 .8v6.4c0 .5-.3.8-1 .8h-5.3c-.5 0-.7.3-.7.8v17.2c0 .6-.3.9-.9.9h-6.9c-.6 0-.9-.3-.9-.9V11.3c0-.6-.2-.8-.7-.8h-5.3c-.7 0-1-.3-1-.8V3.3c0-.6.3-.8 1-.8zM12.1 29.2c.6 0 .9.3.9.9v16.7c0 .6.3.9.8.9h7.1c.6 0 .9.3.9.9v6.9c0 .6-.3.9-.9.9H5.2c-.6 0-.9-.3-.9-.9V30.1c0-.6.3-.9.9-.9h6.9z"/>
@@ -30,43 +30,43 @@
             </a>
         </h1>
 
-        <nav>
+        <nav class="l-social-nav">
             <h2 class="hidden">Navigation des réseaux sociaux</h2>
-            <ul>
+            <ul class="l-social-nav__list">
                 <?php foreach (sl_get_nav_items('social_media') as $item): ?>
-                    <li>
-                        <a href="<?= $item->url; ?>"><?= $item->label; ?></a>
+                    <li class="l-social-nav__item">
+                        <a class="l-social-nav__link" href="<?= $item->url; ?>"><?= $item->label; ?></a>
                     </li>
                 <?php endforeach; ?>
             </ul>
         </nav>
 
-        <nav>
+        <nav class="l-main-nav">
             <h2 class="hidden">Navigation principale</h2>
-            <ul>
+            <ul class="l-main-nav__list">
                 <?php foreach(sl_get_nav_items('main') as $item): ?>
-                    <li>
-                        <a href="<?= $item->url; ?>"><?= $item->label; ?></a>
+                    <li class="l-main-nav__item">
+                        <a class="l-main-nav__link" href="<?= $item->url; ?>"><?= $item->label; ?></a>
                     </li>
                 <?php endforeach; ?>
             </ul>
         </nav>
 
         <?php if(is_page(sl_get_page_id_from_template('template-program.php'))): ?>
-        <nav>
+        <nav class="l-program-nav">
             <h2 class="hidden">Navigation secondaire du programme</h2>
-            <ul>
-                <li>
-                    <a href="#expositions">Expositions</a>
+            <ul class="l-program-nav__list">
+                <li class="l-program-nav__item">
+                    <a class="l-program-nav__link" href="#expositions">Expositions</a>
                 </li>
                 <li>
-                    <a href="#concerts">Concerts &amp; spectacles</a>
+                    <a class="l-program-nav__link" href="#concerts">Concerts &amp; spectacles</a>
                 </li>
                 <li>
-                    <a href="#oeuvres">&OElig;uvres dans l'espace urbain</a>
+                    <a class="l-program-nav__link" href="#oeuvres">&OElig;uvres dans l'espace urbain</a>
                 </li>
                 <li>
-                    <a href="#divers">Évènements divers</a>
+                    <a class="l-program-nav__link" href="#divers">Évènements divers</a>
                 </li>
             </ul>
         </nav>
