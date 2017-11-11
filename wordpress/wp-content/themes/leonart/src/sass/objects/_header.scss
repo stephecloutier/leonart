@@ -2,4 +2,26 @@
     min-height: 380px;
     background-color: $raspberry;
     color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+// Réseaux sociaux
+
+.l-social-nav {
+    order: -1;
+    align-self: flex-end;
+}
+
+// Navigation principale
+
+.l-main-nav {
+    max-width: $max-width;
+    width: $max-width;
+    &__list {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+    }
 }
