@@ -7,6 +7,8 @@
         <meta name="description" content="Site web du parcours artistique Saint-Léon'Art, à Liège, en Belgique">
         <?php setlocale(LC_ALL, 'fr_BE.utf8'); ?>
         <title><?php wp_title(''); ?></title>
+
+        <link rel="stylesheet" href="<?= get_template_directory_uri(); ?>/assets/css/main.css">
     </head>
 
     <body>
