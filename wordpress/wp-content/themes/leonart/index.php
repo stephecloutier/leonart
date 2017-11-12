@@ -29,9 +29,9 @@ get_header();
         <?php if($posts->have_posts()) : while($posts->have_posts()) : $posts->the_post(); ?>
         <?php $fields = get_fields(); ?>
         <a href="<?= the_permalink(); ?>" title="Aller sur la page de l’artiste <?= $fields['artist-name']; ?>">
-            <figure>
+            <figure class="artists__figure">
                 <?php $image = $fields['artist-img'];?>
-                <img src="<?= $image['url']; ?>"  alt="Photo de l’artiste <?= $fields['artist-name']; ?>">
+                <img src="<?= $image['url']; ?>"  alt="Photo de l’artiste <?= $fields['artist-name']; ?>" class="artists__img">
                 <span class="artists__name"><?= $fields['artist-name']; ?></span>
                 <?php $artistID = $post->ID; ?>
                 <?php if(sl_get_taxonomies($artistID, 'artistic-disciplines')): ?>
