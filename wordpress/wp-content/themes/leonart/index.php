@@ -7,8 +7,10 @@ get_header();
 ?>
 <main>
     <div class="banner">
-        <span class="banner__title">Saint-Léon'Art</span>
-        <span class="banner__content"><?= $fields['banner-text']; ?></span>
+        <div class="banner__inner">
+            <span class="banner__title">Saint-Léon'Art</span>
+            <span class="banner__content"><?= $fields['banner-text']; ?></span>
+        </div>
     </div>
 
     <div class="intro">

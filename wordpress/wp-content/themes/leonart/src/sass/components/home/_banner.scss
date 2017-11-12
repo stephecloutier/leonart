@@ -1,0 +1,26 @@
+.banner {
+    background-image: url('../images/banner-image.jpg');
+    background-position: center;
+    height: 300px;
+    max-width: $max-width;
+    margin: 0 auto;
+    margin-top: -3.5em;
+    color: white;
+    display: flex;
+    justify-content: flex-end;
+    &__inner {
+        max-width: 60%;
+        padding: 4rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    &__title {
+        font-family: $playfair;
+        display: block;
+        font-size: 4rem;
+    }
+    &__content {
+        font-size: 2rem;
+    }
+}
