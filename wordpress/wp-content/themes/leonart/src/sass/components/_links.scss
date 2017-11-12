@@ -1,14 +1,11 @@
 .arrow-link {
     text-transform: uppercase;
     font-weight: 600;
-    // display: inline-block;
-    // margin: 0 auto;
     &::after {
         content: "a";
         font-family: "l-icons";
         text-transform: none;
         font-size: 0.8rem;
-        //vertical-align: baseline;
         margin-left: 0.5rem;
         display: inline-block;
         transition: 0.2s ease-out;
@@ -18,5 +15,39 @@
     }
     &--raspberry {
         color: $raspberry;
+    }
+}
+
+.cta-archive {
+    font-size: 1.25rem;
+    text-transform: uppercase;
+    font-weight: 600;
+    background-color: white;
+    border: 4px solid $black;
+    padding: 0.8em;
+    display: inline-block;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    &__text {
+        position: relative;
+        z-index: 2000;
+    }
+    &::after {
+        content: "";
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        background-color: $pink;
+        height: 0;
+        width: 0;
+        opacity: 0;
+        transform: translateX(-50%) translateY(-50%) rotate(45deg) translateZ(0);
+        transition: all 0.2s ease-out;
+    }
+    &:hover::after, &:focus::after {
+        width: 100%;
+        height: 4000%;
+        opacity: 1;
     }
 }

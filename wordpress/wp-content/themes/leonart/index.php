@@ -53,7 +53,7 @@ get_header();
                 <?php endwhile; endif; ?>
             </li>
         </ul>
-        <a href="<?= get_post_type_archive_link('artists'); ?>" title="Aller sur la page de tous les artistes">Voir tous les artistes</a>
+        <a href="<?= get_post_type_archive_link('artists'); ?>" title="Aller sur la page de tous les artistes" class="cta-archive cta-archive--artists"><span class="cta-archive__text">Voir tous les artistes</span></a>
     </section>
 
     <section class="agenda home-section">

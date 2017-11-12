@@ -4,8 +4,12 @@
         width: 100%;
         margin: 0 auto;
         transform: translate(-2.5%);
-        font-size: 0;
         list-style: none;
+        text-align: center;
+    }
+
+    &__list {
+        font-size: 0;
     }
 
     &__item {
@@ -54,9 +58,7 @@
         transition: 0.2s ease-out;
         background-color: $shadow40;
         text-align: center;
-        // display: flex;
-        // justify-content: center;
-        padding-top: 5rem; 
+        padding-top: 5rem;
     }
     &__link-text {
         font-size: 1rem;
@@ -86,6 +88,7 @@
     &__info {
         position: relative;
         left: 1rem;
+        text-align: left;
     }
 
     &__name {
