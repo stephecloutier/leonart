@@ -22,6 +22,8 @@
 @import "base/hidden";
 
 @import "objects/header";
+@import "objects/home/intro";
 
-@import "components/logo";
-@import "components/main-nav";
+@import "components/header/logo";
+@import "components/header/main-nav";
+@import "components/header/social-nav";

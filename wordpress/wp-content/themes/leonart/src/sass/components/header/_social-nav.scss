@@ -1,0 +1,21 @@
+.l-social-nav {
+    &__link {
+        fill: white;
+        svg {
+            width: 3em;
+        }
+        .circle {
+            stroke: transparent;
+            stroke-width: 5px;
+            fill: transparent;
+            transform-origin: 50% 50%;
+            transition: 0.2s ease-out;
+        }
+        &:hover, &:focus {
+            .circle {
+                stroke: white;
+                transform: scale(1.4);
+            }
+        }
+    }
+}
