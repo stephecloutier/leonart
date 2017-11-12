@@ -1,0 +1,13 @@
+.intro {
+    background-color: white;
+    &__title {
+        color: $raspberry;
+        font-weight: 600;
+        text-transform: uppercase;
+        font-size: 2rem;
+        letter-spacing: 1px;
+        width: 100%;
+        display: block;
+        text-align: center;
+    }
+}

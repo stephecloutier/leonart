@@ -4,7 +4,9 @@
     height: 300px;
     max-width: $max-width;
     margin: 0 auto;
-    margin-top: -3.5em;
+    //margin-top: -3.5em;
+    position: relative;
+    top: -3.5em;
     color: white;
     display: flex;
     justify-content: flex-end;
