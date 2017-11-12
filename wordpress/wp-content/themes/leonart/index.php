@@ -31,7 +31,7 @@ get_header();
         <a href="<?= the_permalink(); ?>" title="Aller sur la page de l’artiste <?= $fields['artist-name']; ?>">
             <figure>
                 <?php $image = $fields['artist-img'];?>
-                <img src="<?= $image['sizes']['smallest']; ?>"  alt="Photo de l’artiste <?= $fields['artist-name']; ?>">
+                <img src="<?= $image['url']; ?>"  alt="Photo de l’artiste <?= $fields['artist-name']; ?>">
                 <span class="artists__name"><?= $fields['artist-name']; ?></span>
                 <?php $artistID = $post->ID; ?>
                 <?php if(sl_get_taxonomies($artistID, 'artistic-disciplines')): ?>
