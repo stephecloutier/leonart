@@ -1,0 +1,22 @@
+.arrow-link {
+    text-transform: uppercase;
+    font-weight: 600;
+    // display: inline-block;
+    // margin: 0 auto;
+    &::after {
+        content: "a";
+        font-family: "l-icons";
+        text-transform: none;
+        font-size: 0.8rem;
+        //vertical-align: baseline;
+        margin-left: 0.5rem;
+        display: inline-block;
+        transition: 0.2s ease-out;
+    }
+    &:hover::after, &:focus::after {
+        transform: translate(1rem);
+    }
+    &--raspberry {
+        color: $raspberry;
+    }
+}

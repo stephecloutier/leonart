@@ -50,3 +50,16 @@
     font-style: italic;
     src: url("../fonts/source-sans-pro/SourceSansPro-BoldIt.otf");
 }
+
+// Icons
+
+@font-face {
+  font-family: "l-icons";
+  src:url("../fonts/l-icons/l-icons.eot");
+  src:url("../fonts/l-icons/l-icons.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/l-icons/l-icons.woff") format("woff"),
+    url("../fonts/l-icons/l-icons.ttf") format("truetype"),
+    url("../fonts/l-icons/l-icons.svg#l-icons") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
