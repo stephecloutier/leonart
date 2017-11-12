@@ -22,6 +22,7 @@ get_header();
     </div>
 
     <section class="artists home-section">
+        <div class="artists__inner">
         <h2 class="artists__title home-title">
             Quelques artistes
         </h2>

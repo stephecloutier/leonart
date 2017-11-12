@@ -1,3 +1,29 @@
 .artists {
-    
+    &__inner {
+        max-width: $max-width;
+        width: 100%;
+        margin: 0 auto;
+        transform: translate(-2.5%);
+        font-size: 0;
+    }
+
+    &__figure {
+        //font-size: 1rem;
+        display: inline-block;
+        margin: 0 0 4rem 2.5%;
+        width: 22.5%;
+        position: relative;
+    }
+
+    &__img {
+        border: 4px solid $black;
+        max-width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: 0.2s ease-out;
+    }
+
+    &.home-section {
+        background-color: $light-gray;
+    }
 }

@@ -7,8 +7,11 @@
     width: 100%;
     display: block;
     text-align: center;
-    margin-bottom: 1rem;
+    margin-bottom: 3.75rem;
     &--white {
         color: white;
+    }
+    &.intro__title {
+        margin-bottom: 1rem;
     }
 }
