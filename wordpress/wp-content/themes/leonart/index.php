@@ -21,7 +21,7 @@ get_header();
         </div>
     </div>
 
-    <section class="artists">
+    <section class="artists home-section">
         <h2 class="artists__title home-title">
             Quelques artistes
         </h2>
@@ -45,8 +45,8 @@ get_header();
         <a href="<?= get_post_type_archive_link('artists'); ?>" title="Aller sur la page de tous les artistes">Voir tous les artistes</a>
     </section>
 
-    <section class="home-agenda">
-        <h2 class="home-agenda__title home-title">
+    <section class="agenda home-section">
+        <h2 class="agenda__title home-title">
             Les évènements à venir
         </h2>
         <?php
@@ -105,15 +105,15 @@ get_header();
         <a href="<?= sl_get_page_url('template-agenda.php'); ?>" title="Aller sur la page de l'agenda">Voir l'agenda complet</a>
     </section>
 
-    <section class="home-newsletter">
-        <h2 class="home-newsletter__title home-title home-title--white">
+    <section class="newsletter home-section">
+        <h2 class="newsletter__title home-title home-title--white">
             Vous voulez rester informé&nbsp;?
         </h2>
-        <h3 class="home-newsletter__subtitle">Inscrivez-vous à la <em>newsletter&nbsp;!</em></h3>
+        <h3 class="newsletter__subtitle">Inscrivez-vous à la <em>newsletter&nbsp;!</em></h3>
         [insérer le form ici]
     </section>
 
-    <section class="news">
+    <section class="news home-section">
         <h2 class="news__title home-title">
             Les dernières news
         </h2>
@@ -123,8 +123,8 @@ get_header();
     </section>
 
     <?php if(get_field('enable-instagram')): ?>
-    <section class="home-instagram">
-        <h2 class="home-instagram__title home-title home-title--white">
+    <section class="instagram home-section">
+        <h2 class="instagram__title home-title home-title--white">
             Notre fil instagram
         </h2>
         [insérer le fil instagram ici]
