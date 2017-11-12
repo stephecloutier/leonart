@@ -15,14 +15,14 @@ get_header();
         </div>
 
         <div class="intro">
-            <span class="intro__title">Un vaste parcours artistique</span>
+            <span class="intro__title home-title">Un vaste parcours artistique</span>
             <div class="intro__content"><?= $fields['intro-text']; ?></div>
             <a href="" class="arrow-link arrow-link--raspberry">En savoir plus<span class="hidden"> sur l'évènement Saint-Léon'Art</span></a>
         </div>
     </div>
 
-    <section class="home-artists">
-        <h2 class="home-artists__title home-title">
+    <section class="artists">
+        <h2 class="artists__title home-title">
             Quelques artistes
         </h2>
         <?php $posts = new WP_Query(['showposts' => 8, 'post_type' => 'artists', 'orderby' => 'rand',]); ?>
@@ -106,7 +106,7 @@ get_header();
     </section>
 
     <section class="home-newsletter">
-        <h2 class="home-newsletter__title home-title">
+        <h2 class="home-newsletter__title home-title home-title--white">
             Vous voulez rester informé&nbsp;?
         </h2>
         <h3 class="home-newsletter__subtitle">Inscrivez-vous à la <em>newsletter&nbsp;!</em></h3>
@@ -124,7 +124,7 @@ get_header();
 
     <?php if(get_field('enable-instagram')): ?>
     <section class="home-instagram">
-        <h2 class="home-instagram__title home-title">
+        <h2 class="home-instagram__title home-title home-title--white">
             Notre fil instagram
         </h2>
         [insérer le fil instagram ici]
