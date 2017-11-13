@@ -9,7 +9,7 @@ get_header();
 
 ?>
 
-<main>
+<main class="program">
     <h1 class="main-title">Programme</h1>
 
     <section id="expositions">
@@ -164,25 +164,36 @@ get_header();
         <a href="<?= sl_get_page_url('template-various-events.php'); ?>" title="Aller sur la page des évènements divers">Voir tous les évènements divers</a>
     </section>
 
-    <section id="artistes">
-        <h2>Les artistes</h2>
-        <?php $posts = new WP_Query(['showposts' => 8, 'post_type' => 'artists', 'orderby' => 'rand',]); ?>
-        <?php if($posts->have_posts()) : while($posts->have_posts()) : $posts->the_post(); ?>
-        <?php $artists = get_fields(); ?>
-        <a href="<?= the_permalink(); ?>" title="Aller sur la page de l’artiste <?= $artists['artist-name']; ?>">
-            <figure>
-                <?php $image = $artists['artist-img'];?>
-                <img src="<?= $image['sizes']['smallest']; ?>"  alt="Photo de l’artiste <?= $artists['artist-name']; ?>">
-                <span class="artists__name"><?= $artists['artist-name']; ?></span>
-                <?php $artistID = $post->ID; ?>
-                <?php if(sl_get_taxonomies($artistID, 'artistic-disciplines')): ?>
-                <p class="artists__disciplines"><?= sl_get_taxonomies($artistID, 'artistic-disciplines'); ?></p>
-                <?php endif; ?>
-                <div class="artists__overlay"></div>
-            </figure>
-        </a>
-        <?php endwhile; endif; ?>
-        <a href="<?= get_post_type_archive_link('artists'); ?>" title="Aller sur la page de tous les artistes">Voir tous les artistes</a>
+    <section id="artistes" class="program__artists">
+        <h2 class="program__title program__title--artists">Les artistes</h2>
+        <ul class="artists__list">
+            <?php $posts = new WP_Query(['showposts' => 8, 'post_type' => 'artists', 'orderby' => 'rand',]); ?>
+            <?php if($posts->have_posts()) : while($posts->have_posts()) : $posts->the_post(); ?>
+            <?php $fields = get_fields(); ?>
+            <li class="artists__item">
+                <a href="<?= the_permalink(); ?>" title="Aller sur la page de l’artiste <?= $fields['artist-name']; ?>" class="artists__link">
+                    <figure class="artists__figure">
+                        <?php $image = $fields['artist-img'];?>
+                        <img src="<?= $image['url']; ?>"  alt="Photo de l’artiste <?= $fields['artist-name']; ?>" class="artists__img">
+                        <div class="artists__overlay">
+                            <span class="artists__link-text">Visiter sa page</span>
+                        </div>
+                        <div class="artists__text-bg">
+                            <div class="artists__info">
+                                <span class="artists__name"><?= $fields['artist-name']; ?></span>
+                                <?php $artistID = $post->ID; ?>
+                                <?php if(sl_get_taxonomies($artistID, 'artistic-disciplines')): ?>
+                                <p class="artists__disciplines"><?= sl_get_taxonomies($artistID, 'artistic-disciplines'); ?></p>
+                                <?php endif; ?>
+                            </div>
+                        </div>
+
+                    </figure>
+                </a>
+                <?php endwhile; endif; ?>
+            </li>
+        </ul>
+        <a href="<?= get_post_type_archive_link('artists'); ?>" title="Aller sur la page de tous les artistes" class="cta-archive cta-archive--artists"><span class="cta-archive__text">Voir tous les artistes</span></a>
     </section>
 
     <div class="cta cta--white">
