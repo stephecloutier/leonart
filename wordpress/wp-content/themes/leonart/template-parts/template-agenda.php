@@ -25,14 +25,15 @@ get_header();
     </div>
     <div class="agenda">
         <span class="sorting-name">[toutes les activités]</span>
-        <?php foreach($fields['agenda-dates'] as $dates): ?>
+        <div class="agenda__inner">
+            <?php foreach($fields['agenda-dates'] as $dates): ?>
             <div class="agenda__day">
-                <div class="agenda__date">
                     <?php
                         $date = new DateTime($dates['agenda-date']);
                         $day = strftime('%d', $date->getTimestamp());
                     ?>
-                    <time datetime="<?= strftime($htmlTimestampFormat, $date->getTimestamp()); ?>">
+                <div class="agenda__date agenda__date--<?= strftime('%A', $date->getTimestamp()); ?>">
+                    <time class="agenda__time" datetime="<?= strftime($htmlTimestampFormat, $date->getTimestamp()); ?>">
                         <span class="agenda__date--day"><?= strftime('%A', $date->getTimestamp()); ?></span>
                         <span class="agenda__date--numbers"><?= strftime('%d/%m', $date->getTimestamp()); ?></span>
                     </time>
@@ -58,22 +59,25 @@ get_header();
                             $activityDay = strftime('%d', $activityDate->getTimestamp());
                         ?>
                         <?php if($activityDay == $day): ?>
-                        <time class="activity__time" datetime="<?= strftime($htmlTimestampFormat, $activityDate->getTimestamp()); ?>"><?= strftime('%Hh%M', $activityDate->getTimestamp()); ?></time>
-                        <div class="activity__infos"><?= $activity['event-title']; ?></div>
-                            <?php if($activity['event-has-place']): ?>
-                                <?php
-                                    $relationPlace = $activity['event-place'];
-                                    $place = get_fields($relationPlace[0]->ID);
-                                ?>
-                            <?php elseif($activity['event-address']): ?>
+                        <div class="activity">
+                            <time class="activity__time" datetime="<?= strftime($htmlTimestampFormat, $activityDate->getTimestamp()); ?>"><?= strftime('%Hh%M', $activityDate->getTimestamp()); ?></time>
+                            <div class="activity__infos"><?= $activity['event-title']; ?></div>
+                                <?php if($activity['event-has-place']): ?>
+                                    <?php
+                                        $relationPlace = $activity['event-place'];
+                                        $place = get_fields($relationPlace[0]->ID);
+                                    ?>
+                                <?php elseif($activity['event-address']): ?>
 
-                            <?php endif; ?>
+                                <?php endif; ?>
+                        </div>
                         <?php endif; ?>
                     <?php endforeach; ?>
                 <?php endwhile; endif; ?>
                 </div>
             </div>
         <?php endforeach; ?>
+        </div>
     </div>
 </main>
 
