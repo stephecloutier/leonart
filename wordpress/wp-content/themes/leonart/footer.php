@@ -1,68 +1,83 @@
         <footer class="footer">
-            <h1 class="hidden">Footer</h1>
-            <div class="footer__l1">
-                <div class="footer__infos footer__column">
-                    <img src="" alt="Logo géométrique Saint-Léon'Art">
-                    <span>Saint-Léon'Art</span>
+            <div class="footer__inner">
+                <h1 class="hidden">Footer</h1>
+                <div class="footer__line footer__line--1">
+                    <div class="footer__infos footer__column">
+                        <div class="footer__logo">
+                            <svg class="footer__svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 276 296"><path class="svg__circle" d="M256.1 147.8c0 65.4-53 118.4-118.4 118.4s-118.4-53-118.4-118.4 53-118.4 118.4-118.4 118.4 53 118.4 118.4"/><path class="svg__rectangle" d="M76 11.8h123.6v272H76z"/><path class="svg__para" d="M271 157.8L4.5-.4v138.1L271 295.9V158.4z"/></svg>
+                            <span class="footer__sl">Saint <span class="footer__sl--line">Léon'Art</span></span>
+                        </div>
+                        <nav class="l-social-nav footer__social-nav">
+                            <h2 class="hidden">Navigation des réseaux sociaux</h2>
+                            <ul class="l-social-nav__list">
+                                <?php $posts = new WP_Query(['showposts' => -1, 'post_type' => 'social-medias']); ?>
+                                <?php if($posts->have_posts()) : while($posts->have_posts()) : $posts->the_post(); ?>
+                                    <?php
+                                        $socialFields = get_fields();
+                                        $socialIcons = socialIcons();
+                                    ?>
+                                    <li class="l-social-nav__item">
+                                        <a class="l-social-nav__link l-social-nav__link--raspberry l-social-nav__link--<?= $socialFields['social-name']; ?>" href="<?= $socialFields['social-link']; ?>" title="Aller sur le <?= $socialFields['social-name']; ?> de Saint-Léon'Art">
+                                            <?= $socialIcons[$socialFields['social-name']]; ?>
+                                            <span class="hidden"><?= $socialFields['social-name']; ?></span>
+                                        </a>
+                                    </li>
+                                <?php endwhile; endif; ?>
+                            </ul>
+                        </nav>
+                    </div>
+                    <div class="footer__contact footer__column">
+                        <span class="footer__title">Des questions&nbsp;? Contactez-nous&nbsp;!</span>
+                        <?php $contact = get_fields(sl_get_page_id_from_template('template-contact.php')); ?>
+                        <h2><?= $contact['contact-organizer-name']; ?></h2>
+                        <div class="contact__infos">
+                            <span class="contact__infos--phone"><?= $contact['contact-organizer-phone']; ?></span>
+                            <div class="contact__infos--address">
+                                <?= $contact['contact-organizer-address']; ?>
+                            </div>
+                            <a href="mailto:<?= $contact['contact-organizer-mail']; ?>" class="contact__infos--mail" title="Envoyer un mail à <?= $contact['contact-organizer-name']; ?>"><?= $contact['contact-organizer-mail']; ?></a>
+                        </div>
+                    </div>
+                    <div class="footer__newsletter footer__column">
+                        <span class="footer__title">Inscrivez-vous à notre <em class="english-word">newsletter</em>&nbsp;!</span>
+                        [insérer le form ici]
+                    </div>
+                </div>
+                <div class="footer__line footer__line--2">
+                    <div class="footer__partenaires footer__column partenaires">
+                        <span class="footer__title">Avec la collaboration et le soutiens de</span>
+                        <ul class="partenaires__list">
+                            <?php $posts = new WP_Query(['showposts' => -1, 'post_type' => 'partners']); ?>
+                            <?php if($posts->have_posts()) : while($posts->have_posts()) : $posts->the_post(); ?>
+                                <?php $fields = get_fields(); ?>
+                                <li class="partenaires__item">
+                                    <img src="<?= $fields['partner-img']['sizes']['partner-footer']; ?>" alt="<?= $fields['partner-name']; ?>">
+                                </li>
+                            <?php endwhile; endif; ?>
+                        </ul>
+                    </div>
+
+                    <div class="footer__twitter footer__column">
+                        <?= do_shortcode('[custom-twitter-feeds]'); ?>
+                    </div>
+                </div>
+                <div class="footer__line footer__line--3">
+                    Icônes par Dave Gandy, Bogdan Rosu, SimpleIcon, Zurb,  Freepik et Smashicons sur <a href="www.flaticon.com" title="Aller sur le site flaticon">flaticon.com</a>
+                </div>
+                <nav class="footer__nav">
+                    <h2 class="hidden">Navigation principale</h2>
                     <ul>
-                        <?php foreach (sl_get_nav_items('social_media') as $item): ?>
-                            <li>
-                                <a href="<?= $item->url; ?>"><?= $item->label; ?></a>
+                        <?php foreach(sl_get_nav_items('main') as $item): ?>
+                            <li class="footer__list-item">
+                                <a class="footer__list-link" href="<?= $item->url; ?>"><?= $item->label; ?></a>
                             </li>
                         <?php endforeach; ?>
                     </ul>
+                </nav>
+                <div class="footer__credits">
+                    &copy; 2017 Stéphanie Cloutier
                 </div>
-                <div class="footer__contact footer__column">
-                    <span class="footer__title">Des questions&nbsp;? Contactez-nous&nbsp;!</span>
-                    <?php $contact = get_fields(sl_get_page_id_from_template('template-contact')); ?>
-                    <h2><?= $contact['contact-organizer-name']; ?></h2>
-                    <div class="contact__infos">
-                        <span class="contact__infos--phone"><?= $contact['contact-organizer-phone']; ?></span>
-                        <div class="contact__infos--address">
-                            <?= $contact['contact-organizer-address']; ?>
-                        </div>
-                        <a href="mailto:<?= $contact['contact-organizer-mail']; ?>" class="contact__infos--mail" title="Envoyer un mail à <?= $contact['contact-organizer-name']; ?>"><?= $contact['contact-organizer-mail']; ?></a>
-                    </div>
-                </div>
-                <div class="footer__newsletter footer__column">
-                    <span class="footer__title">Inscrivez-vous à notre <em class="english-word">newsletter</em>&nbsp;!</span>
-                </div>
+            </footer>
             </div>
-            <div class="footer__l2">
-                <div class="footer__partenaires">
-                    <span class="footer__title">Avec la collaboration et le soutiens de</span>
-                    <ul>
-                        <?php $posts = new WP_Query(['showposts' => -1, 'post_type' => 'partners']); ?>
-                        <?php if($posts->have_posts()) : while($posts->have_posts()) : $posts->the_post(); ?>
-                            <?php $fields = get_fields(); ?>
-                            <li>
-                                <img src="<?= $fields['partner-img']['sizes']['partner-footer']; ?>" alt="<?= $fields['partner-name']; ?>">
-                            </li>
-                        <?php endwhile; endif; ?>
-                    </ul>
-
-                </div>
-
-                <div class="footer__twitter">
-                    <?= do_shortcode('[custom-twitter-feeds]'); ?>
-                </div>
-            </div>
-            <div class="footer__l3">
-                Icônes par Dave Gandy, Bogdan Rosu, SimpleIcon, Zurb,  Freepik et Smashicons sur <a href="www.flaticon.com" title="Aller sur le site flaticon">flaticon.com</a>
-            </div>
-            <nav class="footer__nav">
-                <h2 class="hidden">Navigation principale</h2>
-                <ul>
-                    <?php foreach(sl_get_nav_items('main') as $item): ?>
-                        <li class="footer__list-item">
-                            <a class="footer__list-link" href="<?= $item->url; ?>"><?= $item->label; ?></a>
-                        </li>
-                    <?php endforeach; ?>
-                </ul>
-            </nav>
-            <div class="footer__credits">
-                &copy; 2017 Stéphanie Cloutier
-            </div>
-        </footer>
     </body>
 </html>

@@ -9,24 +9,26 @@
     &__main-title {
         margin-bottom: 2.5em;
     }
+
+    // Réseaux sociaux
+
+    .l-social-nav {
+        order: -1;
+        margin: 1em auto 0 auto;
+        max-width: $max-width;
+        width: $max-width;
+        &__list {
+            width: 100%;
+            display: flex;
+            justify-content: flex-end;
+        }
+    }
 }
 
 // Logo
 
 
-// Réseaux sociaux
 
-.l-social-nav {
-    order: -1;
-    margin: 1em auto 0 auto;
-    max-width: $max-width;
-    width: $max-width;
-    &__list {
-        width: 100%;
-        display: flex;
-        justify-content: flex-end;
-    }
-}
 
 // Navigation principale
 

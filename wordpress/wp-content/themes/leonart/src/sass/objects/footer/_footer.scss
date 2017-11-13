@@ -1,1 +1,66 @@
 // object
+
+.footer {
+    padding: 3.75rem 0 1rem;
+    &__inner {
+        max-width: $max-width;
+        width: 100%;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+    }
+    &__line {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        margin-bottom: 3rem;
+        &--1 {
+            .footer__column {
+                width: 30%;
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+    }
+    &__title {
+        display: inline-block;
+        margin-bottom: 1rem;
+    }
+    &__twitter {
+        width: 30%;
+
+    }
+    &__partenaires {
+        width: 65%;
+    }
+
+    .partenaires {
+        &__list {
+            display: flex;
+            align-items: flex-start;
+        }
+        &__item {
+            margin-right: 5%;
+        }
+    }
+
+    &__logo {
+        display: flex;
+        align-items: flex-start;
+    }
+    &__svg {
+        width: 50px;
+    }
+    &__sl {
+        margin-left: 0.5em;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    &__social-nav {
+        width: 100%;
+        margin-top: 0.5rem;
+    }
+}

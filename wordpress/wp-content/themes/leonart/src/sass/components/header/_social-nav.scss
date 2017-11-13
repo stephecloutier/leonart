@@ -18,4 +18,12 @@
             }
         }
     }
+    &__link--raspberry {
+        fill: $raspberry;
+        &:hover, &:focus {
+            .circle {
+                stroke: $raspberry;
+            }
+        }
+    }
 }

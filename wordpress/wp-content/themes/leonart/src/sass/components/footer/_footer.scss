@@ -1,0 +1,25 @@
+.footer {
+    background-color: white;
+
+    &__title {
+        color: $raspberry;
+        font-weight: 500;
+        font-size: 1.25rem;
+    }
+    &__sl {
+        font-family: $playfair;
+        color: $raspberry;
+        font-size: 1.25rem;
+    }
+    .svg {
+        &__circle {
+            fill: $orange;
+        }
+        &__rectangle {
+            fill: $yellow;
+        }
+        &__para {
+            fill: $raspberry;
+        }
+    }
+}
