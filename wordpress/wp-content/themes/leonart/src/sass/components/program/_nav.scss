@@ -1,0 +1,16 @@
+.l-program-nav {
+    background-color: white;
+    color: $raspberry;
+    width: 100%;
+    padding-top: 2rem;
+    &__list {
+        max-width: 800px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+    }
+    &__item {
+        text-transform: uppercase;
+        font-weight: 500;
+    }
+}

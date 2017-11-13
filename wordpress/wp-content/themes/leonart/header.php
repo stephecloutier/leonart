@@ -67,13 +67,13 @@
                 <li class="l-program-nav__item">
                     <a class="l-program-nav__link" href="#expositions">Expositions</a>
                 </li>
-                <li>
+                <li class="l-program-nav__item">
                     <a class="l-program-nav__link" href="#concerts">Concerts &amp; spectacles</a>
                 </li>
-                <li>
+                <li class="l-program-nav__item">
                     <a class="l-program-nav__link" href="#oeuvres">&OElig;uvres dans l'espace urbain</a>
                 </li>
-                <li>
+                <li class="l-program-nav__item">
                     <a class="l-program-nav__link" href="#divers">Évènements divers</a>
                 </li>
             </ul>
