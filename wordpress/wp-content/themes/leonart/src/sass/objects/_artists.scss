@@ -91,6 +91,7 @@
         position: relative;
         left: 1rem;
         text-align: left;
+        max-width: calc(100% - 1rem);
     }
 
     &__name {
