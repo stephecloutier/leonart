@@ -56,7 +56,7 @@ get_header();
         <a href="<?= get_post_type_archive_link('artists'); ?>" title="Aller sur la page de tous les artistes" class="cta-archive cta-archive--artists"><span class="cta-archive__text">Voir tous les artistes</span></a>
     </section>
 
-    <section class="agenda home-section">
+    <section class="agenda agenda--home home-section">
         <h2 class="agenda__title home-title">
             Les évènements à venir
         </h2>
@@ -116,7 +116,7 @@ get_header();
         <a href="<?= sl_get_page_url('template-agenda.php'); ?>" title="Aller sur la page de l'agenda" class="cta-archive cta-archive--agenda"><span class="cta-archive__text">Voir l'agenda complet</span></a>
     </section>
 
-    <section class="newsletter home-section">
+    <section class="newsletter newsletter--home home-section">
         <h2 class="newsletter__title home-title home-title--white">
             Vous voulez rester informé&nbsp;?
         </h2>
@@ -124,7 +124,7 @@ get_header();
         [insérer le form ici]
     </section>
 
-    <section class="news home-section">
+    <section class="news news--home home-section">
         <h2 class="news__title home-title">
             Les dernières news
         </h2>
