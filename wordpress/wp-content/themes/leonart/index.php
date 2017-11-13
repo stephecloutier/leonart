@@ -113,7 +113,7 @@ get_header();
                 </div>
             </div>
         <?php endforeach; ?>
-        <a href="<?= sl_get_page_url('template-agenda.php'); ?>" title="Aller sur la page de l'agenda">Voir l'agenda complet</a>
+        <a href="<?= sl_get_page_url('template-agenda.php'); ?>" title="Aller sur la page de l'agenda" class="cta-archive cta-archive--agenda"><span class="cta-archive__text">Voir l'agenda complet</span></a>
     </section>
 
     <section class="newsletter home-section">
@@ -130,7 +130,7 @@ get_header();
         </h2>
         <?php $posts = new WP_Query(['showposts' => 2, 'post_type' => 'news']); ?>
         <?php get_template_part('parts/news'); ?>
-        <a href="<?= get_post_type_archive_link('news'); ?>" title="Aller sur la page des news">Voir toutes les news</a>
+        <a href="<?= get_post_type_archive_link('news'); ?>" title="Aller sur la page des news" class="cta-archive cta-archive--news"><span class="cta-archive__text">Voir toutes les news</span></a>
     </section>
 
     <?php if(get_field('enable-instagram')): ?>
@@ -139,7 +139,7 @@ get_header();
             Notre fil instagram
         </h2>
         [insérer le fil instagram ici]
-        <a href="" title="Aller sur notre fil instagram">Aller sur notre fil instagram</a>
+        <a href="" title="Aller sur notre fil instagram" class="cta-archive cta-archive--instagram"><span class="cta-archive__text">Aller sur notre fil instagram</span></a>
     </section>
     <?php endif; ?>
 </main>
