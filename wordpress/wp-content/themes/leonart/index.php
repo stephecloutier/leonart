@@ -76,43 +76,47 @@ get_header();
             ),
             ]);
         ?>
-        <?php foreach($agendaFields['agenda-dates'] as $dates): ?>
-            <div class="agenda__day">
-                <div class="agenda__date">
+        <div class="agenda__inner">
+            <?php foreach($agendaFields['agenda-dates'] as $dates): ?>
+                <div class="agenda__day">
                     <?php
                         $date = new DateTime($dates['agenda-date']);
                         $day = strftime('%d', $date->getTimestamp());
                     ?>
-                    <time datetime="<?= strftime($htmlTimestampFormat, $date->getTimestamp()); ?>">
-                        <span class="agenda__date--day"><?= strftime('%A', $date->getTimestamp()); ?></span>
-                        <span class="agenda__date--numbers"><?= strftime('%d/%m', $date->getTimestamp()); ?></span>
-                    </time>
-                </div>
-                <div class="agenda__activities">
-                <?php if($posts->have_posts()) : while($posts->have_posts()) : $posts->the_post(); ?>
-                    <?php $activity = get_fields($post->ID); ?>
-                    <?php foreach($activity['event-datetimes'] as $datetimes): ?>
-                        <?php
-                            $activityDate = new DateTime($datetimes['event-datetime']);
-                            $activityDay = strftime('%d', $activityDate->getTimestamp());
-                        ?>
-                        <?php if($activityDay == $day): ?>
-                        <time class="activity__time"><?= strftime('%Hh%M', $activityDate->getTimestamp()); ?></time>
-                        <div class="activity__infos"><?= $activity['event-title']; ?></div>
-                            <?php if($activity['event-has-place']): ?>
-                                <?php
-                                    $relationPlace = $activity['event-place'];
-                                    $place = get_fields($relationPlace[0]->ID);
-                                ?>
-                            <?php elseif($activity['event-address']): ?>
+                    <div class="agenda__date agenda__date--<?= strftime('%A', $date->getTimestamp()); ?>"">
+                        <time class="agenda__time datetime="<?= strftime($htmlTimestampFormat, $date->getTimestamp()); ?>">
+                            <span class="agenda__date--day"><?= strftime('%A', $date->getTimestamp()); ?></span>
+                            <span class="agenda__date--numbers"><?= strftime('%d/%m', $date->getTimestamp()); ?></span>
+                        </time>
+                    </div>
+                    <div class="agenda__activities">
+                    <?php if($posts->have_posts()) : while($posts->have_posts()) : $posts->the_post(); ?>
+                        <?php $activity = get_fields($post->ID); ?>
+                        <?php foreach($activity['event-datetimes'] as $datetimes): ?>
+                            <?php
+                                $activityDate = new DateTime($datetimes['event-datetime']);
+                                $activityDay = strftime('%d', $activityDate->getTimestamp());
+                            ?>
+                            <?php if($activityDay == $day): ?>
+                            <div class="activity">
+                                <time class="activity__time"><?= strftime('%Hh%M', $activityDate->getTimestamp()); ?></time>
+                                <div class="activity__title"><?= $activity['event-title']; ?></div>
+                                    <?php if($activity['event-has-place']): ?>
+                                        <?php
+                                            $relationPlace = $activity['event-place'];
+                                            $place = get_fields($relationPlace[0]->ID);
+                                        ?>
+                                    <?php elseif($activity['event-address']): ?>
 
+                                    <?php endif; ?>
+                            </div>
                             <?php endif; ?>
-                        <?php endif; ?>
-                    <?php endforeach; ?>
-                <?php endwhile; endif; ?>
+                        <?php endforeach; ?>
+                    <?php endwhile; endif; ?>
+                    </div>
                 </div>
-            </div>
-        <?php endforeach; ?>
+            <?php endforeach; ?>
+        </div>
         <a href="<?= sl_get_page_url('template-agenda.php'); ?>" title="Aller sur la page de l'agenda" class="cta-archive cta-archive--agenda"><span class="cta-archive__text">Voir l'agenda complet</span></a>
     </section>
 

@@ -1,0 +1,52 @@
+.agenda {
+    &__inner {
+        border: 4px solid $black;
+    }
+    &__day {
+        &+.agenda__day {
+            border-top: 4px solid $black;
+        }
+    }
+    &__date {
+        color: white;
+        letter-spacing: 0.5px;
+        &--day {
+            text-transform: uppercase;
+            font-weight: 600;
+            font-size: 1.5rem;
+        }
+        &--vendredi {
+            background-color: $raspberry;
+            ~.agenda__activities {
+                color: $raspberry;
+            }
+        }
+        &--samedi {
+            background-color: $orange;
+            ~.agenda__activities {
+                color: $orange;
+            }
+        }
+        &--dimanche {
+            background-color: desaturate(darken($yellow, 25), 20);
+            ~.agenda__activities {
+                color: desaturate(darken($yellow, 25), 20);
+            }
+        }
+    }
+
+    .activity {
+        font-size: 1.25rem;
+        &__title {
+            font-weight: 600;
+        }
+        &__time {
+            font-weight: 500;
+            color: $black;
+        }
+    }
+
+    &--home {
+        background-color: white;
+    }
+}

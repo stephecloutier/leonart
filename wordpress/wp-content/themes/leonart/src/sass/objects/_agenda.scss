@@ -1,8 +1,43 @@
 .agenda {
-    &--home {
-        background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    &__inner {
+        max-width: $max-width;
+        margin: 0 auto 3rem;
+        width: 100%;
+    }
+    &__day {
+        width: 100%;
+        display: flex;
+        align-items: stretch;
+    }
+    &__date {
+        width: 20%;
+        &--day {
+            width: 100%;
+        }
+    }
+    &__time {
+        padding: 2rem;
+        height: 100%;
         display: flex;
         flex-direction: column;
-        align-items: center;
+        justify-content: flex-start;
+    }
+    &__activities {
+        padding: 2rem;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .activity {
+        display: flex;
+        &+.activity {
+            margin-top: 2rem;
+        }
+        &__time {
+            margin-right: 3rem;
+        }
     }
 }
