@@ -8,5 +8,6 @@
     &--home {
         background-color: white;
         border: 4px solid $raspberry;
+        @include subtleShadow($raspberryShadow);
     }
 }
