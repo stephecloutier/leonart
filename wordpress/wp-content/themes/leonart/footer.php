@@ -58,6 +58,7 @@
                     </div>
 
                     <div class="footer__twitter footer__column">
+                        <span class="footer__title">Notre fil Twitter</span>
                         <?= do_shortcode('[custom-twitter-feeds]'); ?>
                     </div>
                 </div>

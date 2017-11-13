@@ -1,0 +1,59 @@
+.footer {
+    ::-webkit-scrollbar {
+          -webkit-appearance: none;
+          width: 7px;
+      }
+    ::-webkit-scrollbar-thumb {
+      border-radius: 4px;
+      background-color: rgba(0,0,0,.5);
+      -webkit-box-shadow: 0 0 1px rgba(255,255,255,.5);
+    }
+    .ctf {
+        max-height: 200px;
+        overflow: scroll;
+        &-tweets {
+        }
+        &-item {
+            margin-bottom: 1em;
+            &+.ctf-item {
+                border-top: 2px solid black;
+                padding-top: 1em;
+            }
+        }
+        &-author-box-link {
+            cursor: pointer;
+            transition: 0.2s ease-out;
+            &:hover, &:focus {
+                background-color: $light-gray;
+            }
+        }
+        &-tweet-meta {
+            font-size: 0.889rem;
+            display: block;
+            margin-bottom: 0.5em;
+        }
+        &-retweet-text {
+            font-style: italic;
+            display: inline-block;
+            margin-bottom: 0.2em;
+        }
+        &-screenreader {
+            @include hidden;
+        }
+        &-author-avatar {
+            display: block;
+        }
+        &-author-name {
+            //text-align: right;
+            font-weight: 500;
+        }
+        &-author-screenname {
+            //text-align: right;
+            color: $raspberry;
+            font-weight: 500;
+        }
+        &-screename-sep {
+            @include hidden;
+        }
+    }
+}
