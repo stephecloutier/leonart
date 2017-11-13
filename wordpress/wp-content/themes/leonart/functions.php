@@ -9,7 +9,7 @@ if (function_exists('add_theme_support')) {
     add_theme_support('post-thumbnails');
 
     add_image_size('smallest', 250, 9999);
-    add_image_size('partner-footer', 9999, 40);
+    add_image_size('partner-footer', 9999, 100);
     add_image_size('artist', 400, 400);
 }
 

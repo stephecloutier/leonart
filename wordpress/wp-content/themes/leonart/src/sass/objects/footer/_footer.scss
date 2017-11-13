@@ -22,6 +22,12 @@
                 align-items: flex-start;
             }
         }
+        &--3 {
+            justify-content: flex-start;
+            .footer__link {
+                margin-left: 0.3em;
+            }
+        }
     }
     &__title {
         display: inline-block;
@@ -62,5 +68,20 @@
     &__social-nav {
         width: 100%;
         margin-top: 1rem;
+    }
+
+    &__nav {
+        .footer__list {
+            max-width: 75%;
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            padding-top: 1em;
+        }
+    }
+    &__credits {
+        margin-top: 1rem;
+        width: 100%;
+        text-align: right;
     }
 }

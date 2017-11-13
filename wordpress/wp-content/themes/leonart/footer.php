@@ -62,20 +62,20 @@
                     </div>
                 </div>
                 <div class="footer__line footer__line--3">
-                    Icônes par Dave Gandy, Bogdan Rosu, SimpleIcon, Zurb,  Freepik et Smashicons sur <a href="www.flaticon.com" title="Aller sur le site flaticon">flaticon.com</a>
+                    Icônes par Dave Gandy, Bogdan Rosu, SimpleIcon, Zurb, Freepik et Smashicons sur <a class="footer__link" href="www.flaticon.com" title="Aller sur le site flaticon">flaticon.com</a>
                 </div>
                 <nav class="footer__nav">
                     <h2 class="hidden">Navigation principale</h2>
-                    <ul>
+                    <ul class="footer__list">
                         <?php foreach(sl_get_nav_items('main') as $item): ?>
-                            <li class="footer__list-item">
-                                <a class="footer__list-link" href="<?= $item->url; ?>"><?= $item->label; ?></a>
+                            <li class="footer__item">
+                                <a class="footer__link" href="<?= $item->url; ?>"><?= $item->label; ?></a>
                             </li>
                         <?php endforeach; ?>
                     </ul>
                 </nav>
                 <div class="footer__credits">
-                    &copy; 2017 Stéphanie Cloutier
+                    <small>&copy; 2017 Stéphanie Cloutier</small>
                 </div>
             </footer>
             </div>
