@@ -32,7 +32,7 @@ var gulp = require("gulp"),
             .pipe(sourcemaps.init())
                 .pipe(sass().on("error", sass.logError))
                 .pipe(autoprefixer())
-                //.pipe(csso())
+                .pipe(csso())
             .pipe(sourcemaps.write())
             .pipe(gulp.dest("assets/css"))
    });
