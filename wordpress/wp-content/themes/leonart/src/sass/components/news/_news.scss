@@ -1,0 +1,27 @@
+.news {
+    &--home {
+        background-color: $yellow;
+    }
+}
+
+.single-news {
+    background-color: white;
+    border: 4px solid $black;
+    @include subtleShadow($shadow25);
+    margin-bottom: 3.75rem;
+    &__title {
+        color: $raspberry;
+        text-transform: uppercase;
+        font-weight: 600;
+        font-size: 1.5rem;
+        letter-spacing: 1px;
+    }
+    &__date {
+        color: $raspberry;
+        font-size: 1.25rem;
+        letter-spacing: 1px;
+    }
+    &__content {
+        letter-spacing: 0.5px;
+    }
+}

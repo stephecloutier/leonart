@@ -26,7 +26,7 @@
 @import "objects/home/sections";
 @import "objects/artists";
 @import "objects/agenda";
-@import "objects/news";
+@import "objects/news/news";
 
 @import "components/header/logo";
 @import "components/header/main-nav";
@@ -36,3 +36,4 @@
 @import "components/home/titles";
 @import "components/newsletter";
 @import "components/links";
+@import "components/news/news";
