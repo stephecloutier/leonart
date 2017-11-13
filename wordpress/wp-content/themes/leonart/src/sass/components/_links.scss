@@ -32,7 +32,7 @@
     overflow: hidden;
     color: white;
     transition: all 0.5s ease-out;
-    box-shadow: 2px 2px 9px $shadow25;
+    @include subtleShadow($shadow25);
     &__text {
         position: relative;
         z-index: 2000;
