@@ -7,3 +7,7 @@
     border: 0;
     letter-spacing: 0;
 }
+
+@mixin subtleShadow($color) {
+    box-shadow: 2px 2px 20px $color;
+}
