@@ -1,5 +1,17 @@
 .newsletter {
+    &__subtitle {
+        //text-align: center;
+    }
+    &__title {
+        margin-bottom: 1rem;
+    }
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     &--home {
         background-color: $raspberry;
+        .newsletter__subtitle {
+            color: white;
+        }
     }
 }
