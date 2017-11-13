@@ -13,7 +13,7 @@
         display: flex;
         justify-content: space-between;
         align-items: flex-start;
-        margin-bottom: 3rem;
+        margin-bottom: 2rem;
         &--1 {
             .footer__column {
                 width: 30%;
@@ -25,7 +25,7 @@
     }
     &__title {
         display: inline-block;
-        margin-bottom: 1rem;
+        margin-bottom: 0.8rem;
     }
     &__twitter {
         width: 30%;
@@ -47,10 +47,10 @@
 
     &__logo {
         display: flex;
-        align-items: flex-start;
+        align-items: flex-end;
     }
     &__svg {
-        width: 50px;
+        width: 75px;
     }
     &__sl {
         margin-left: 0.5em;
@@ -61,6 +61,6 @@
 
     &__social-nav {
         width: 100%;
-        margin-top: 0.5rem;
+        margin-top: 1rem;
     }
 }

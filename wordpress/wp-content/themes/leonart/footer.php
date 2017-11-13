@@ -27,15 +27,15 @@
                         </nav>
                     </div>
                     <div class="footer__contact footer__column">
-                        <span class="footer__title">Des questions&nbsp;? Contactez-nous&nbsp;!</span>
+                        <a href="<?= sl_get_page_url('template-contact.php'); ?>" title="Aller sur la page contact" class="footer__title">Des questions&nbsp;? Contactez-nous&nbsp;!</a>
                         <?php $contact = get_fields(sl_get_page_id_from_template('template-contact.php')); ?>
-                        <h2><?= $contact['contact-organizer-name']; ?></h2>
+                        <h2 class="contact__name"><?= $contact['contact-organizer-name']; ?></h2>
                         <div class="contact__infos">
-                            <span class="contact__infos--phone"><?= $contact['contact-organizer-phone']; ?></span>
-                            <div class="contact__infos--address">
+                            <span class="contact__phone"><?= $contact['contact-organizer-phone']; ?></span>
+                            <div class="contact__address">
                                 <?= $contact['contact-organizer-address']; ?>
                             </div>
-                            <a href="mailto:<?= $contact['contact-organizer-mail']; ?>" class="contact__infos--mail" title="Envoyer un mail à <?= $contact['contact-organizer-name']; ?>"><?= $contact['contact-organizer-mail']; ?></a>
+                            <a href="mailto:<?= $contact['contact-organizer-mail']; ?>" class="contact__mail" title="Envoyer un mail à <?= $contact['contact-organizer-name']; ?>"><?= $contact['contact-organizer-mail']; ?></a>
                         </div>
                     </div>
                     <div class="footer__newsletter footer__column">
