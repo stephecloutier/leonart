@@ -37,7 +37,7 @@ get_header();
             </li>
         </ul>
     </div>
-    <a href="<?= sl_get_page_url('template-program.php'); ?>" class="link-back" title="Retourner sur la page du programme">Retourner au programme</a>
+    <a href="<?= sl_get_page_url('template-program.php'); ?>" class="link-back link-back--bottom" title="Retourner sur la page du programme">Retourner au programme</a>
 </main>
 
 
