@@ -1,8 +1,32 @@
 .program {
+    &__activities {
+        max-width: $max-width;
+        margin: 0 auto;
+        display: flex;
+        flex-wrap: wrap;
+        position: relative;
+        align-items: flex-start;
+    }
     &__artists {
         width: 100%;
         display: flex;
         flex-direction: column;
         align-items: center;
+    }
+    &__expos {
+        width: 50%;
+        z-index: 10;
+    }
+    &__shows {
+        width: calc(50% + 5rem);
+        margin-top: 5rem;
+        margin-left: -5rem;
+        padding: 2rem 2rem 2rem 7rem;
+    }
+    &__work {
+        width: 50%;
+    }
+    &__various {
+        width: 50%;
     }
 }
