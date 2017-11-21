@@ -1,15 +1,16 @@
 .artists {
     &__inner {
+
+    }
+
+    &__list {
+        font-size: 0;
         max-width: $max-width;
         width: 100%;
         margin: 0 auto;
         transform: translate(-2.5%);
         list-style: none;
         text-align: center;
-    }
-
-    &__list {
-        font-size: 0;
     }
 
     &__item {

@@ -65,8 +65,9 @@
 .link-back {
     font-weight: 1.125rem;
     letter-spacing: 1px;
-    margin-top: 1rem;
-    display: inline-block;
+    display: block;
+    max-width: $max-width;
+    margin: 1rem auto 0;
     &::before {
         content: "a";
         font-family: "l-icons";
