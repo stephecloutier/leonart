@@ -5,7 +5,7 @@
 */
 get_header();
  ?>
-<main class="archive-artists">
+<main class="artists archive-artists">
     <a href="<?= sl_get_page_url('template-program.php'); ?>" class="link-back" title="Retourner sur la page du programme">Retourner au programme</a>
 
     <h1 class="main-title">Les Artistes</h1>
