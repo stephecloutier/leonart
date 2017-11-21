@@ -61,3 +61,25 @@
         opacity: 1;
     }
 }
+
+.link-back {
+    font-weight: 1.125rem;
+    letter-spacing: 1px;
+    margin-top: 1rem;
+    display: inline-block;
+    &::before {
+        content: "a";
+        font-family: "l-icons";
+        text-transform: none;
+        font-size: 0.8em;
+        margin-right: 0.5em;
+        display: inline-block;
+        transform: rotate(180deg);
+        transition: 0.2s ease-out;
+        position: relative;
+        top: 0.1em;
+    }
+    &:hover::before, &:focus::before {
+        transform: translate(-0.8em) rotate(180deg);
+    }
+}
