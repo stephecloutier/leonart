@@ -85,11 +85,16 @@
         font-size: 0.889rem;
     }
 
+    &__list {
+        transform: translate(-2.5%);
+    }
+
     &.home-section {
         background-color: $light-gray;
     }
 
-    &.archive-artists {
+    &.archive-artists, &.artists-program {
+        width: 100%;
         transform: skewY(4deg);
         background: linear-gradient(to right, $pink, $peach);
         .artists__list {

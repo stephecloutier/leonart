@@ -21,3 +21,13 @@
         background-color: $black;
     }
 }
+
+.archive-artists, .artists-program {
+    width: 100%;
+    .artists__list {
+        position: relative;
+        top: 5rem;
+        margin-bottom: -2rem;
+    }
+    margin-bottom: 5rem;
+}
