@@ -1,6 +1,6 @@
 .artists {
     &__inner {
-
+        text-align: center;
     }
 
     &__list {
@@ -10,6 +10,7 @@
         margin: 0 auto;
         // translate : see components artists (skew)
         list-style: none;
+        text-align: left;
     }
 
     &__item {
