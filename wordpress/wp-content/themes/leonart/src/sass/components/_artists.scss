@@ -90,6 +90,10 @@
     }
 
     &.archive-artists {
-        background: linear-gradient(to right, $pink, $peach);;
+        transform: skewY(4deg);
+        background: linear-gradient(to right, $pink, $peach);
+        .artists__list {
+            transform: skewY(-4deg);
+        }
     }
 }

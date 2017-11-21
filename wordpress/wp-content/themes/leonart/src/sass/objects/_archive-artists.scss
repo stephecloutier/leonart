@@ -1,8 +1,10 @@
 .archive-artists {
     width: 100%;
     .artists__list {
+        //padding-top: 3rem;
         position: relative;
-        top: 8rem
+        top: 5rem;
+        margin-bottom: -2.5%;
     }
-    margin-bottom: 8rem;
+    margin-bottom: 5rem;
 }
