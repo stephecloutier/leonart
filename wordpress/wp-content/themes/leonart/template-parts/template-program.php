@@ -133,7 +133,7 @@ get_header();
 
                 <?php if($posts->have_posts()) : while($posts->have_posts()) : $posts->the_post(); ?>
                 <?php $various = get_fields(); ?>
-                <div>
+                <div class="program__event">
                     <h3 class="program__subtitle"><?= $various['event-title']; ?></h3>
                     <?php if($various['event-has-place']): ?>
                     <?php $place = get_fields($various['event-place'][0]->ID); ?>
