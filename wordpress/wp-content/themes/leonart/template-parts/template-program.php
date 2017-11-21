@@ -12,10 +12,10 @@ get_header();
 <main class="program">
     <h1 class="main-title">Programme</h1>
     <div class="program__activities">
-        <section id="expositions" class="program__expos">
-            <h2>Les expositions</h2>
+        <section id="expositions" class="program__expos program__activity">
+            <h2 class="program__title">Les expositions</h2>
             <div><?= $expoFields['expo-time']; ?></div>
-            <div class="program__expos--inner">
+            <div class="program__expos--inner program__activity--inner">
                 <?php $posts = sl_get_featured_random_activities('expo'); ?>
                 <?php if($posts->have_posts()) : while($posts->have_posts()) : $posts->the_post(); ?>
                 <?php
@@ -65,12 +65,12 @@ get_header();
                 </div>
                 <?php endwhile; endif; ?>
             </div>
-            <a href="<?= sl_get_page_url('template-expositions.php'); ?>" title="Aller sur la page des expositions">Voir toutes les expositions</a>
+            <a href="<?= sl_get_page_url('template-expositions.php'); ?>" title="Aller sur la page des expositions" class="arrow-link arrow-link--raspberry">Voir toutes les expositions</a>
         </section>
 
-        <section id="concerts" class="program__shows">
-            <h2>Concerts &amp; spectacles</h2>
-            <div class="program__shows--inner">
+        <section id="concerts" class="program__shows program__activity">
+            <h2 class="program__title program__title--show">Concerts &amp; spectacles</h2>
+            <div class="program__shows--inner program__activity--inner">
                 <?php $posts = sl_get_featured_random_activities('show'); ?>
 
                 <?php if($posts->have_posts()) : while($posts->have_posts()) : $posts->the_post(); ?>
@@ -98,12 +98,12 @@ get_header();
                 </div>
                 <?php endwhile; endif; ?>
             </div>
-            <a href="<?= sl_get_page_url('template-shows.php'); ?>" title="Aller sur la page des concerts et spectacles">Voir tous les concerts et spectacles</a>
+            <a href="<?= sl_get_page_url('template-shows.php'); ?>" title="Aller sur la page des concerts et spectacles" class="arrow-link arrow-link--orange">Voir tous les concerts et spectacles</a>
         </section>
 
-        <section id="oeuvres" class="program__work">
-            <h2>&OElig;uvres dans l'espace urbain</h2>
-            <div class="program__work--inner">
+        <section id="oeuvres" class="program__work program__activity">
+            <h2 class="program__title">&OElig;uvres dans l'espace urbain</h2>
+            <div class="program__work--inner program__activity--inner">
                 <?php $posts = new WP_Query([
                     'showposts' => 4,
                     'post_type' => 'activities',
@@ -123,12 +123,12 @@ get_header();
                 </a>
                 <?php endwhile; endif; ?>
             </div>
-            <a href="<?= sl_get_page_url('template-work.php'); ?>" title="Aller sur la page des œuvres dans l'espace urbain">Voir toutes les &oelig;uvres</a>
+            <a href="<?= sl_get_page_url('template-work.php'); ?>" title="Aller sur la page des œuvres dans l'espace urbain" class="arrow-link">Voir toutes les &oelig;uvres</a>
         </section>
 
-        <section id="divers" class="program__various">
-            <h2>Évènements divers</h2>
-            <div class="program__various--inner">
+        <section id="divers" class="program__various program__activity">
+            <h2 class="program__title">Évènements divers</h2>
+            <div class="program__various--inner program__activity--inner">
                 <?php $posts = sl_get_featured_random_activities('various'); ?>
 
                 <?php if($posts->have_posts()) : while($posts->have_posts()) : $posts->the_post(); ?>
@@ -161,7 +161,7 @@ get_header();
                 </div>
                 <?php endwhile; endif; ?>
             </div>
-            <a href="<?= sl_get_page_url('template-various-events.php'); ?>" title="Aller sur la page des évènements divers">Voir tous les évènements divers</a>
+            <a href="<?= sl_get_page_url('template-various-events.php'); ?>" title="Aller sur la page des évènements divers" class="arrow-link arrow-link--raspberry">Voir tous les évènements divers</a>
         </section>
     </div>
 

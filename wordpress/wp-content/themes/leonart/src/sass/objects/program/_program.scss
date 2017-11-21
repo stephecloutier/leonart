@@ -7,14 +7,21 @@
         position: relative;
         align-items: flex-start;
     }
+    &__activity {
+        width: 50%;
+        text-align: center;
+        &--inner {
+            text-align: left;
+        }
+    }
     &__artists {
         width: 100%;
         display: flex;
         flex-direction: column;
         align-items: center;
+        margin-top: 5rem;
     }
     &__expos {
-        width: 50%;
         z-index: 10;
         padding: 2rem;
     }
@@ -25,9 +32,9 @@
         padding: 2rem 2rem 2rem 7rem;
     }
     &__work {
-        width: 50%;
+
     }
     &__various {
-        width: 50%;
+
     }
 }
