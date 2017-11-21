@@ -25,20 +25,19 @@
     }
 }
 
-// Logo
-
-
-
 
 // Navigation principale
 
 .l-main-nav {
     max-width: $max-width;
     width: $max-width;
-    margin-bottom: 5em;
+    margin-bottom: 2.5em;
     &__list {
         display: flex;
         justify-content: space-between;
         width: 100%;
+    }
+    &--home {
+        margin-bottom: 5em;
     }
 }
