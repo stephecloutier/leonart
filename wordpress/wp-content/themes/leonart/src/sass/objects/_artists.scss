@@ -8,9 +8,8 @@
         max-width: $max-width;
         width: 100%;
         margin: 0 auto;
-        transform: translate(-2.5%);
+        // translate : see components artists (skew)
         list-style: none;
-        text-align: center;
     }
 
     &__item {
