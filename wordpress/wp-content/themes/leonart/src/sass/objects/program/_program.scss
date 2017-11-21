@@ -24,6 +24,9 @@
     &__expos {
         z-index: 10;
         padding: 2rem;
+        .program__title {
+            margin-bottom: 0.25rem;
+        }
     }
     &__shows {
         width: calc(50% + 5rem);
