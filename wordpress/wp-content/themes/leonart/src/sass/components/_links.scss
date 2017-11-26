@@ -46,9 +46,8 @@
     @include subtleShadow($shadow25);
     &__text {
         position: relative;
-        z-index: 2000;
     }
-    &::after {
+    &::before {
         content: "";
         position: absolute;
         left: 50%;
@@ -63,7 +62,7 @@
     &:hover, &:focus {
         color: $raspberry;
     }
-    &:hover::after, &:focus::after {
+    &:hover::before, &:focus::before {
         width: 100%;
         height: 4000%;
         opacity: 1;
@@ -71,7 +70,7 @@
     &--white {
         color: black;
         background-color: white;
-        &::after {
+        &::before {
             background-color: black;
         }
         &:hover, &:focus {
