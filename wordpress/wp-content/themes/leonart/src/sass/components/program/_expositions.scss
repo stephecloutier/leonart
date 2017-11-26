@@ -13,5 +13,48 @@
     }
     &__expo {
         width: 50%;
+        .icon-svg {
+            fill: $raspberry;
+            &--website {
+                width: 1.2rem;
+                .arrow {
+                    transition: 0.2s ease-out;
+                }
+                &:hover, &:focus {
+                    .arrow {
+                        transform: translate(2px, -2px);
+                    }
+                }
+            }
+            &--facebook {
+                width: 1.5rem;
+                .circle {
+                    stroke: transparent;
+                    stroke-width: 5px;
+                    fill: transparent;
+                    transform-origin: 50% 50%;
+                    transition: 0.2s ease-out;
+                }
+                &:hover, &:focus {
+                    .circle {
+                        stroke: $raspberry;
+                        transform: scale(1.4);
+                    }
+                }
+            }
+        }
+    }
+    .expo {
+        &__type {
+            display: block;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-weight: 500;
+            font-size: 1rem;
+        }
+        &__social {
+            display: inline-block;
+            vertical-align: middle;
+        }
     }
 }

@@ -24,6 +24,7 @@ get_header();
                     $place = get_fields($relationPlace[0]->ID);
                     $relationArtist = get_field('event-expo-artists');
                     $artistsID = sl_get_ids($relationArtist);
+                    $socialIcons = socialIcons();
                 ?>
 
                 <div class="program__expo">
@@ -34,10 +35,16 @@ get_header();
                         <?= $place['place-address']; ?>
                     </div>
                     <?php if($place['place-website']): ?>
-                    <a href="<?= $place['place-website']; ?>" title="Aller sur le site web de <?= $place['place-name']; ?>">Website</a>
+                    <a class="expo__social" href="<?= $place['place-website']; ?>" title="Aller sur le site web de <?= $place['place-name']; ?>">
+                        <?= $socialIcons['website']; ?>
+                        <span class="hidden">Site web de <?= $place['place-name']; ?></span>
+                    </a>
                     <?php endif; ?>
                     <?php if($place['place-facebook']): ?>
-                    <a href="<?= $place['place-facebook']; ?>" title="Aller sur la page Facebook de <?= $place['place-name']; ?>">Facebook</a>
+                    <a class="expo__social" href="<?= $place['place-facebook']; ?>" title="Aller sur la page Facebook de <?= $place['place-name']; ?>">
+                        <?= $socialIcons['facebook']; ?>
+                        <span class="hidden">Facebook de <?= $place['place-name']; ?></span>
+                    </a>
                     <?php endif; ?>
                     <?php if($fields['event-expo-type']): ?>
                     <span class="expo__type"><?= $fields['event-expo-type']; ?></span>

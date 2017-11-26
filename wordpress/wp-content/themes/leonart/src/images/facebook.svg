@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<svg version="1.1" id="Calque_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 167.8 167.8" xml:space="preserve">
-<path d="M83.9,27.8c-31,0-56.1,25.1-56.1,56.1S52.9,140,83.9,140S140,114.9,140,83.9S114.9,27.8,83.9,27.8z M99.4,62.1h-8.2
+<svg version="1.1" id="Calque_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 167.8 167.8" xml:space="preserve" class="icon-svg icon-svg--facebook">
+<path class="f" d="M83.9,27.8c-31,0-56.1,25.1-56.1,56.1S52.9,140,83.9,140S140,114.9,140,83.9S114.9,27.8,83.9,27.8z M99.4,62.1h-8.2
 	c-1.3,0-3.2,0.7-3.2,3.5v7.6h11.3L98,86.1H88v36.7H72.8V86.1h-7.2V73.2h7.2v-8.3c0-6,2.8-15.3,15.3-15.3h11.2
 	C99.3,49.6,99.4,62.1,99.4,62.1z"/>
 <circle class="circle" cx="83.9" cy="83.9" r="52.3"/>
