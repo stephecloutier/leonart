@@ -205,8 +205,10 @@ get_header();
     </section>
 
     <div class="cta cta--white">
-        Envie de voir un planning chronologique de l'évènement&nbsp;?
-        <a href="<?= sl_get_page_url('template-agenda.php'); ?>" class="button--white" title="Aller sur l'agenda">Voir l'agenda complet</a>
+        <div class="cta--inner">
+            <span class="cta__catch-phrase">Envie de voir un planning chronologique de l'évènement&nbsp;?</span>
+            <a href="<?= sl_get_page_url('template-agenda.php'); ?>" class="cta-archive cta-archive--white" title="Aller sur l'agenda"><span class="cta-archive__text">Voir l'agenda complet</span></a>
+        </div>
     </div>
 </main>
 

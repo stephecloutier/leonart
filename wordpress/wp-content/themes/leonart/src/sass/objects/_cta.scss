@@ -1,0 +1,23 @@
+.cta {
+    margin-top: 5rem;
+    padding: 8rem 0 10rem;
+    position: relative;
+    &--inner {
+        max-width: $max-width;
+        margin: 0 auto;
+    }
+    &__catch-phrase {
+        display: block;
+        margin-bottom: 1em;
+    }
+    &::after {
+        content: "";
+        background-color: white;
+        height: 8rem;
+        width: 100%;
+        display: block;
+        transform: skewY(-4deg);
+        position: absolute;
+        bottom: -4rem;
+    }
+}

@@ -68,6 +68,16 @@
         height: 4000%;
         opacity: 1;
     }
+    &--white {
+        color: black;
+        background-color: white;
+        &::after {
+            background-color: black;
+        }
+        &:hover, &:focus {
+            color: white;
+        }
+    }
 }
 
 .link-back {

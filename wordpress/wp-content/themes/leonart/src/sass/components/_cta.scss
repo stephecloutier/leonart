@@ -1,0 +1,18 @@
+.cta {
+    color: white;
+    background: linear-gradient(to right, $pink, $peach);
+    transform: skewY(4deg);
+    &--inner {
+        text-align: center;
+        transform: skewY(-4deg);
+    }
+    &__catch-phrase {
+        font-size: 2.5rem;
+        font-weight: 500;
+    }
+
+    // modifiers
+    &--white {
+
+    }
+}
