@@ -1,0 +1,10 @@
+.program {
+    &__shows {
+        border: 4px solid $orange;
+        background-color: white;
+        @include subtleShadow($orangeShadow)
+        .program__subtitle {
+            color: $orange;
+        }
+    }
+}
