@@ -6,5 +6,12 @@
         .program__subtitle {
             color: $raspberry;
         }
+        &--inner {
+            display: flex;
+            flex-wrap: wrap;
+        }
+    }
+    &__expo {
+        width: 50%;
     }
 }
