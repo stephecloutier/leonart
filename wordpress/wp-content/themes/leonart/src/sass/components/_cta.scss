@@ -1,6 +1,6 @@
 .cta {
     color: white;
-    background: linear-gradient(to right, $pink, $peach);
+    background-color: linear-gradient(to right, $pink, $peach);
     transform: skewY(4deg);
     &--inner {
         text-align: center;
@@ -12,7 +12,7 @@
     }
 
     // modifiers
-    &--white {
-
+    &--raspberry {
+        background-color: $raspberry;
     }
 }

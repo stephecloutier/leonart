@@ -204,7 +204,7 @@ get_header();
         <a href="<?= get_post_type_archive_link('artists'); ?>" title="Aller sur la page de tous les artistes" class="arrow-link arrow-link--pink arrow-link--skew"><span class="cta-archive__text">Voir tous les artistes</span></a>
     </section>
 
-    <div class="cta cta--white">
+    <div class="cta cta--raspberry">
         <div class="cta--inner">
             <span class="cta__catch-phrase">Envie de voir un planning chronologique de l'évènement&nbsp;?</span>
             <a href="<?= sl_get_page_url('template-agenda.php'); ?>" class="cta-archive cta-archive--white" title="Aller sur l'agenda"><span class="cta-archive__text">Voir l'agenda complet</span></a>
