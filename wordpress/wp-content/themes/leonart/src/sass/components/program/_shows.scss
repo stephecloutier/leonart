@@ -6,5 +6,15 @@
         .program__subtitle {
             color: $orange;
         }
+
+    }
+    &__show {
+        .show__datetimes {
+            color: $orange;
+            font-size: 1rem;
+            &:last-of-type {
+                margin-bottom: 0.25rem;
+            }
+        }
     }
 }

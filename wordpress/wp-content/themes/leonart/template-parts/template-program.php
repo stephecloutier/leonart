@@ -79,11 +79,11 @@ get_header();
                 <?php $shows = get_fields(); ?>
                 <div class="program__show">
                     <h3 class="program__subtitle program__subtitle--show"><?= $shows['event-title']; ?></h3>
-                    <ul class="show__datimes">
+                    <ul class="show__datetimes">
                         <?php while(have_rows('event-datetimes')) : the_row(); ?>
                             <?php $date = new DateTime(get_sub_field('event-datetime')); ?>
                             <li>
-                                <time datetime="<?= strftime($htmlTimestampFormat, $date->getTimestamp()); ?>"><?= strftime("%A %e %B - %kh%M", $date->getTimestamp()); ?></time>
+                                <time datetime="<?= strftime($htmlTimestampFormat, $date->getTimestamp()); ?>"><?= ucfirst(strftime("%A %e %B - %kh%M", $date->getTimestamp())); ?></time>
                             </li>
                         <?php endwhile; ?>
                     </ul>
