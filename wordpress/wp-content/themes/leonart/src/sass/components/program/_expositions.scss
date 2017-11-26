@@ -12,12 +12,18 @@
             }
         }
         &--inner {
-            display: flex;
-            flex-wrap: wrap;
+            // display: flex;
+            // align-items: stretch;
+            // flex-wrap: wrap;
+            // height: 100%;
+            column-count: 2;
+            column-width: 50%;
+            column-fill: balance;
         }
     }
     &__expo {
-        width: 50%;
+        page-break-inside: avoid;
+
         .icon-svg {
             fill: $raspberry;
             &--website {
