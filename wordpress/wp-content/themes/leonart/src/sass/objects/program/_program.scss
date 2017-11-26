@@ -28,6 +28,9 @@
         .program__title {
             margin-bottom: 0.25rem;
         }
+        &--inner {
+            margin-bottom: 2rem;
+        }
     }
     &__shows {
         width: calc(50% + 5rem);
@@ -41,6 +44,6 @@
     &__various {
     }
     &__expo, &__show, &__event {
-        margin-bottom: 1.5rem;
+        margin-bottom: 1rem;
     }
 }
