@@ -41,9 +41,11 @@ get_header();
         </ul>
     </section>
     <?php endif; ?>
-    <div class="cta cta--white">
-        Des questions sur Saint-Léon'Art&nbsp;?
-        <a href="<?= sl_get_page_url('template-contact.php'); ?>" class="button--white" title="Aller sur la page contact">Contactez-nous&nbsp;!</a>
+    <div class="cta cta--raspberry">
+        <div class="cta--inner">
+            <span class="cta__catch-phrase">Des questions sur Saint-Léon'Art&nbsp;?</span>
+            <a href="<?= sl_get_page_url('template-contact.php'); ?>" class="cta-archive cta-archive--white" title="Aller sur la page contact"><span class="cta-archive__text">Contactez-nous&nbsp;!</span></a>
+        </div>
     </div>
 
     <?php if($fields['about-numbers']): ?>
@@ -69,9 +71,11 @@ get_header();
     </section>
     <?php endif; ?>
 
-    <div class="cta cta--white">
-        Découvrez nos partenaires pour l'évènement&nbsp;!
-        <a href="<?= sl_get_page_url('template-partners.php'); ?>" class="button--white" title="Aller sur la page des partenaires">Voir les partenaires</a>
+    <div class="cta">
+        <div class="cta--inner">
+            <span class="cta__catch-phrase">Découvrez nos partenaires pour l'évènement&nbsp;!</span>
+            <a href="<?= sl_get_page_url('template-partners.php'); ?>" class="cta-archive cta-archive--white" title="Aller sur la page des partenaires"><span class="cta-archive__text">Voir les partenaires</span></a>
+        </div>
     </div>
 
     <?php if($fields['about-show-press']): ?>
