@@ -346,3 +346,56 @@ function sl_get_featured_random_activities($eventType) {
 
     return $posts;
 }
+
+
+/*  Plugin bits to have a Select Input to filter activities post type with the chosen activity type */
+add_action( 'restrict_manage_posts', 'wpse45436_admin_posts_filter_restrict_manage_posts' );
+
+function wpse45436_admin_posts_filter_restrict_manage_posts(){
+    $type = 'post';
+    if (isset($_GET['post_type'])) {
+        $type = $_GET['post_type'];
+    }
+
+    if ('activities' == $type){
+
+        $values = array(
+            'Expositions' => 'expo',
+            'Concerts & spectacles' => 'show',
+            'Œuvres dans l\'espace urbain' => 'work',
+            'Évènements divers' => 'various',
+        );
+        ?>
+        <select name="ADMIN_FILTER_FIELD_VALUE">
+        <option value=""><?php _e('Filtrer par... (tout)', 'wose45436'); ?></option>
+        <?php
+            $current_v = isset($_GET['ADMIN_FILTER_FIELD_VALUE'])? $_GET['ADMIN_FILTER_FIELD_VALUE']:'';
+            foreach ($values as $label => $value) {
+                printf
+                    (
+                        '<option value="%s"%s>%s</option>',
+                        $value,
+                        $value == $current_v? ' selected="selected"':'',
+                        $label
+                    );
+                }
+        ?>
+        </select>
+        <?php
+    }
+}
+
+
+add_filter( 'parse_query', 'wpse45436_posts_filter' );
+
+function wpse45436_posts_filter( $query ){
+    global $pagenow;
+    $type = 'post';
+    if (isset($_GET['post_type'])) {
+        $type = $_GET['post_type'];
+    }
+    if ( 'activities' == $type && is_admin() && $pagenow=='edit.php' && isset($_GET['ADMIN_FILTER_FIELD_VALUE']) && $_GET['ADMIN_FILTER_FIELD_VALUE'] != '') {
+        $query->query_vars['meta_key'] = 'event-type';
+        $query->query_vars['meta_value'] = $_GET['ADMIN_FILTER_FIELD_VALUE'];
+    }
+}
