@@ -30,7 +30,9 @@ get_header();
                     <a href="<?= get_permalink($relationPlace[0]->ID); ?>" title="Aller sur la page du lieu <?= $place['place-name']; ?>">
                         <h3 class="program__subtitle"><?= $place['place-name']; ?></h3>
                     </a>
-                    <p class="place__address"><?= $place['place-address']; ?></p>
+                    <div class="program__place">
+                        <?= $place['place-address']; ?>
+                    </div>
                     <?php if($place['place-website']): ?>
                     <a href="<?= $place['place-website']; ?>" title="Aller sur le site web de <?= $place['place-name']; ?>">Website</a>
                     <?php endif; ?>
@@ -91,9 +93,9 @@ get_header();
                             $place = get_fields($relationPlace[0]->ID);
                         ?>
                     <a href="<?= get_permalink($relationPlace[0]->ID); ?>" class="key-place" title="Aller sur la page du lieu <?= $place['place-name']; ?>"><?= $place['place-name']; ?></a>
-                    <span class="place"><?= $place['place-address']; ?></span>
+                    <span class="program__place"><?= $place['place-address']; ?></span>
                     <?php else: ?>
-                    <span class="place"><?= $shows['event-address']; ?></span>
+                    <span class="program__place"><?= $shows['event-address']; ?></span>
                     <?php endif; ?>
                 </div>
                 <?php endwhile; endif; ?>
@@ -138,7 +140,7 @@ get_header();
                     <?php if($various['event-has-place']): ?>
                     <?php $place = get_fields($various['event-place'][0]->ID); ?>
                     <a href="<?= get_permalink($various['event-place'][0]->ID); ?>">
-                        <span class="place"><?= $place['place-name']; ?></span> - <?= $place['place-address']; ?>
+                        <span class="program__place"><?= $place['place-name']; ?></span> - <?= $place['place-address']; ?>
                     </a>
                     <?php elseif($various['event-address']): ?>
                     <span class="place"><?= $various['event-address']; ?></span>

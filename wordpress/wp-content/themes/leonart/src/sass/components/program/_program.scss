@@ -16,14 +16,11 @@
         letter-spacing: 0.5px;
         font-weight: 600;
     }
-    &__expos {
-        border: 4px solid $raspberry;
-        background-color: white;
-        @include subtleShadow($raspberryShadow)
-        .program__subtitle {
-            color: $raspberry;
-        }
+
+    &__place {
+        letter-spacing: 1px;
     }
+
     &__shows {
         border: 4px solid $orange;
         background-color: white;
