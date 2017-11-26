@@ -18,6 +18,19 @@ get_header();
             <a href="<?= $fields['place-facebook']; ?>" class="social-facebook" title="Aller sur le facebook du lieu <?= $fields['place-name']; ?>">Facebook <span class="hidden">du lieu</span></a>
         <?php endif; ?>
     </div>
+
+    <?php if($place['place-website']): ?>
+    <a class="expo__social" href="<?= $place['place-website']; ?>" title="Aller sur le site web de <?= $place['place-name']; ?>">
+        <?= $socialIcons['website']; ?>
+        <span class="hidden">Site web de <?= $place['place-name']; ?></span>
+    </a>
+    <?php endif; ?>
+    <?php if($place['place-facebook']): ?>
+    <a class="expo__social" href="<?= $place['place-facebook']; ?>" title="Aller sur la page Facebook de <?= $place['place-name']; ?>">
+        <?= $socialIcons['facebook']; ?>
+        <span class="hidden">Facebook de <?= $place['place-name']; ?></span>
+    </a>
+    <?php endif; ?>
     <?php if($fields['place-gallery']): ?>
     <div class="place__images">
         <?php foreach ($fields['place-gallery'] as $image): ?>

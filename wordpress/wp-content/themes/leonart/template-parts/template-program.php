@@ -34,18 +34,7 @@ get_header();
                     <div class="program__place">
                         <?= $place['place-address']; ?>
                     </div>
-                    <?php if($place['place-website']): ?>
-                    <a class="expo__social" href="<?= $place['place-website']; ?>" title="Aller sur le site web de <?= $place['place-name']; ?>">
-                        <?= $socialIcons['website']; ?>
-                        <span class="hidden">Site web de <?= $place['place-name']; ?></span>
-                    </a>
-                    <?php endif; ?>
-                    <?php if($place['place-facebook']): ?>
-                    <a class="expo__social" href="<?= $place['place-facebook']; ?>" title="Aller sur la page Facebook de <?= $place['place-name']; ?>">
-                        <?= $socialIcons['facebook']; ?>
-                        <span class="hidden">Facebook de <?= $place['place-name']; ?></span>
-                    </a>
-                    <?php endif; ?>
+                    
                     <?php if($fields['event-expo-type']): ?>
                     <span class="expo__type"><?= $fields['event-expo-type']; ?></span>
                     <?php endif; ?>

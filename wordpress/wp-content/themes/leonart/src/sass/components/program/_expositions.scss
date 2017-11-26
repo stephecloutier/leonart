@@ -6,7 +6,7 @@
         .program__subtitle {
             color: $raspberry;
             transition: 0.2s ease-out;
-            line-height: 1;
+            line-height: 1.1;
             &:hover, &:focus {
                 color: $pink;
             }
@@ -19,7 +19,7 @@
     }
     &__expo {
         page-break-inside: avoid;
-
+        margin-bottom: 1.5rem;
         .icon-svg {
             fill: $raspberry;
             &--website {
@@ -66,7 +66,7 @@
         }
         &__artists-title {
             font-weight: 500;
-            margin-top: 0.5rem;
+            margin-top: 0.25rem;
         }
         &__item {
             margin-bottom: 0.25rem;
