@@ -34,7 +34,7 @@ get_header();
                     <div class="program__place">
                         <?= $place['place-address']; ?>
                     </div>
-                    
+
                     <?php if($fields['event-expo-type']): ?>
                     <span class="expo__type"><?= $fields['event-expo-type']; ?></span>
                     <?php endif; ?>
@@ -104,7 +104,7 @@ get_header();
         </section>
 
         <section id="oeuvres" class="program__work program__activity">
-            <h2 class="program__title">&OElig;uvres dans l'espace urbain</h2>
+            <h2 class="program__title">&OElig;uvres dans <br/>l'espace urbain</h2>
             <div class="program__work--inner program__activity--inner">
                 <?php $posts = new WP_Query([
                     'showposts' => 4,
