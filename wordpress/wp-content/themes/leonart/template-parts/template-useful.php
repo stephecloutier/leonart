@@ -58,9 +58,11 @@ get_header();
         </div>
     </section>
 
-    <div class="cta cta--white">
-        Vous voulez planifier votre week-end&nbsp;?
-        <a href="<?= sl_get_page_url('template-agenda.php'); ?>" class="button--white" title="Aller sur l'agenda">Aller voir l'agenda</a>
+    <div class="cta">
+        <div class="cta--inner">
+            <span class="cta__catch-phrase">Vous voulez planifier votre week-end&nbsp;?</span>
+            <a href="<?= sl_get_page_url('template-agenda.php'); ?>" class="cta-archive cta-archive--white" title="Aller sur l'agenda"><span class="cta-archive__text">Aller voir l'agenda</span></a>
+        </div>
     </div>
 </main>
 

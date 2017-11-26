@@ -51,10 +51,11 @@ get_header();
         <?php endwhile; endif; ?>
     </ul>
 
-
-    <div class="cta cta--white">
-        Qu'est-ce que Saint-Léon'Art&nbsp;?
-        <a href="<?= sl_get_page_url('template-about.php'); ?>" class="button--white" title="Aller sur la page À propos">Découvrez l'évènement</a>
+    <div class="cta">
+        <div class="cta--inner">
+            <span class="cta__catch-phrase">Qu'est-ce que Saint-Léon'Art&nbsp;?</span>
+            <a href="<?= sl_get_page_url('template-about.php'); ?>" class="cta-archive cta-archive--white" title="Aller sur la page À propos"><span class="cta-archive__text">Découvrez l'évènement</span></a>
+        </div>
     </div>
 </main>
 

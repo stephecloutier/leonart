@@ -59,9 +59,11 @@ get_header();
 
     <a href="<?= sl_get_page_url('template-useful.php'); ?>" class="link-back" title="Aller sur la page en pratique">Retourner sur la page En Pratique</a>
 
-    <div class="cta--white cta--places">
-        Envie de découvrir des artistes&nbsp;?
-        <a href="<?= get_post_type_archive_link('artists'); ?>" class="button--white" title="Aller sur la page des artistes">Voir tous les artistes</a>
+    <div class="cta">
+        <div class="cta--inner">
+            <span class="cta__catch-phrase">Envie de découvrir des artistes&nbsp;?</span>
+            <a href="<?= get_post_type_archive_link('artists'); ?>" class="cta-archive cta-archive--white" title="Aller sur la page des artistes"><span class="cta-archive__text">Voir tous les artistes</span></a>
+        </div>
     </div>
 </main>
 

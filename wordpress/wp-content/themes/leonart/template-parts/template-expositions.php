@@ -72,9 +72,11 @@ get_header();
         <?php endwhile; endif; ?>
     </div>
 
-    <div class="cta cta--white">
-        Besoin d'informations sur les différents lieux d'expositions&nbsp;?
-        <a href="<?= sl_get_page_url('template-useful.php'); ?>" class="button--white" title="Aller sur la page En Pratique">Aller sur les infos pratiques</a>
+    <div class="cta">
+        <div class="cta--inner">
+            <span class="cta__catch-phrase">Besoin d'informations sur les différents lieux d'expositions&nbsp;?</span>
+            <a href="<?= sl_get_page_url('template-useful.php'); ?>" class="cta-archive cta-archive--white" title="Aller sur la page En Pratique"><span class="cta-archive__text">Aller sur les infos pratiques</span></a>
+        </div>
     </div>
 </main>
 <?php get_footer(); ?>
