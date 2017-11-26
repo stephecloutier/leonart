@@ -36,10 +36,10 @@ get_header();
                     </div>
 
                     <?php if($fields['event-expo-type']): ?>
-                    <span class="expo__type"><?= $fields['event-expo-type']; ?></span>
+                    <span class="expo__type">(<?= $fields['event-expo-type']; ?>)</span>
                     <?php endif; ?>
                     <?php if(have_rows('event-expo-list')): ?>
-                    <ul class="expo__list">
+                    <ul class="expo__list expo__list--expo">
                         <?php while(have_rows('event-expo-list')) : the_row(); ?>
                         <li class="expo__item">
                             <span class="expo__item--content">
@@ -92,10 +92,11 @@ get_header();
                             $relationPlace = $shows['event-place'];
                             $place = get_fields($relationPlace[0]->ID);
                         ?>
-                    <a href="<?= get_permalink($relationPlace[0]->ID); ?>" class="key-place" title="Aller sur la page du lieu <?= $place['place-name']; ?>"><?= $place['place-name']; ?></a>
-                    <span class="program__place"><?= $place['place-address']; ?></span>
+                    <a title="Aller sur la page du lieu <?= $place['place-name']; ?>" class="program__place" href="<?= get_permalink($various['event-place'][0]->ID); ?>">
+                        <span class="program__place--name"><?= $place['place-name']; ?></span> - <div class="program__place--address"><?= sl_remove_all_tags($place['place-address']); ?></div>
+                    </a>
                     <?php else: ?>
-                    <span class="program__place"><?= $shows['event-address']; ?></span>
+                    <span class="program__place--alone"><?= $shows['event-address']; ?></span>
                     <?php endif; ?>
                 </div>
                 <?php endwhile; endif; ?>
@@ -137,23 +138,23 @@ get_header();
                 <?php $various = get_fields(); ?>
                 <div class="program__event">
                     <h3 class="program__subtitle"><?= $various['event-title']; ?></h3>
-                    <?php if($various['event-has-place']): ?>
-                    <?php $place = get_fields($various['event-place'][0]->ID); ?>
-                    <a href="<?= get_permalink($various['event-place'][0]->ID); ?>">
-                        <span class="program__place"><?= $place['place-name']; ?></span> - <?= $place['place-address']; ?>
-                    </a>
-                    <?php elseif($various['event-address']): ?>
-                    <span class="place"><?= $various['event-address']; ?></span>
-                    <?php endif; ?>
                     <?php if($various['event-datetimes']): ?>
-                    <ul class="various__datimes">
+                    <ul class="various__datetimes">
                         <?php while(have_rows('event-datetimes')) : the_row(); ?>
                             <?php $date = new DateTime(get_sub_field('event-datetime')); ?>
                         <li>
-                            <time datetime="<?= strftime($htmlTimestampFormat, $date->getTimestamp()); ?>"><?= strftime("%A %e %B - %kh%M", $date->getTimestamp()); ?></time>
+                            <time datetime="<?= strftime($htmlTimestampFormat, $date->getTimestamp()); ?>"><?= ucfirst(strftime("%A %e %B - %kh%M", $date->getTimestamp())); ?></time>
                         </li>
                         <?php endwhile; ?>
                     </ul>
+                    <?php endif; ?>
+                    <?php if($various['event-has-place']): ?>
+                    <?php $place = get_fields($various['event-place'][0]->ID); ?>
+                    <a title="Aller sur la page du lieu <?= $place['place-name']; ?>" class="program__place" href="<?= get_permalink($various['event-place'][0]->ID); ?>">
+                        <span class="program__place--name"><?= $place['place-name']; ?></span> - <div class="program__place--address"><?= sl_remove_all_tags($place['place-address']); ?></div>
+                    </a>
+                    <?php elseif($various['event-address']): ?>
+                    <span class="program__place"><?= $various['event-address']; ?></span>
                     <?php endif; ?>
                     <?php if($various['event-various-desc']): ?>
                     <div class="various__description">

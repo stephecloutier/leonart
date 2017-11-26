@@ -1,0 +1,28 @@
+.program {
+    &__various {
+        .program__subtitle {
+            color: $raspberry;
+            margin-top: 2rem;
+        }
+        .program__event {
+            border-bottom: 2px solid $raspberry;
+            padding-bottom: 1.5rem;
+        }
+        .program__place {
+            font-weight: 500;
+            transition: 0.2s ease-out;
+            display: inline-block;
+            margin-top: 0.25rem;
+            &:hover, &:focus {
+                color: $pink;
+            }
+        }
+        .various__datetimes {
+            color: $raspberry;
+
+        }
+        .various__description {
+            margin-top: 0.25rem;
+        }
+    }
+}

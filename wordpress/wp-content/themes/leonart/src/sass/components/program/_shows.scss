@@ -16,5 +16,17 @@
                 margin-bottom: 0.25rem;
             }
         }
+        .program__place {
+            font-weight: 500;
+            transition: 0.2s ease-out;
+            &:hover, &:focus {
+                color: $pink;
+            }
+            &--alone {
+                font-weight: 400;
+            }
+        }
+
     }
+
 }

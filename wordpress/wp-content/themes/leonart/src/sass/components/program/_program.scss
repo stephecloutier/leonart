@@ -20,10 +20,8 @@
 
     &__place {
         letter-spacing: 0.5px;
-    }
-    &__various {
-        .program__subtitle {
-            color: $raspberry;
+        &--name, &--address {
+            display: inline;
         }
     }
 }
