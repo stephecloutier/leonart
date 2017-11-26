@@ -51,6 +51,6 @@ Plusieurs événements et animations artistiques vont être organisés dans diff
 3. [S'inspirer](https://github.com/stephecloutier/leonart/blob/master/moodboard.pdf)
 4. [Wireframes](https://github.com/stephecloutier/leonart/tree/master/wireframes)
 5. [Design](https://invis.io/RADRSNW8X)
-6. [Développement front-end](https://stephanie.cloutier.pro/leonart)
-7. [Développement back-end](https://stephanie.cloutier.pro/leonart/wp-admin)
+6. [Développement front-end v.1](http://stephanie.cloutier.pro/leonart/)
+7. [Développement back-en v.1](http://stephanie.cloutier.pro/leonart/wp-admin)
 8. Check-up et conclusions (à venir) (janvier 2018)
