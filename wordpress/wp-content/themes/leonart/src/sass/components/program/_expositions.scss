@@ -56,10 +56,35 @@
             letter-spacing: 0.5px;
             font-weight: 500;
             font-size: 1rem;
+            margin-top: 0.25rem;
         }
         &__social {
             display: inline-block;
             vertical-align: middle;
+        }
+        &__artists-title {
+            font-weight: 500;
+            margin-top: 0.5rem;
+        }
+        &__item {
+            margin-bottom: 0.25rem;
+            display: flex;
+            align-items: flex-start;
+            justify-content: flex-start;
+            &--content {
+                margin-left: 1rem;
+            }
+            &::before {
+                content: url('../images/bullet-par.svg');
+                display: inline-block;
+                width: 0;
+            }
+        }
+        &__artist {
+            transition: 0.2s ease-out;
+            &:hover, &:focus {
+                color: $pink;
+            }
         }
     }
 }

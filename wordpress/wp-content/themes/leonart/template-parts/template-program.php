@@ -50,22 +50,26 @@ get_header();
                     <span class="expo__type"><?= $fields['event-expo-type']; ?></span>
                     <?php endif; ?>
                     <?php if(have_rows('event-expo-list')): ?>
-                    <ul>
+                    <ul class="expo__list">
                         <?php while(have_rows('event-expo-list')) : the_row(); ?>
-                        <li>
-                            <?= get_sub_field('event-expo-item'); ?>
+                        <li class="expo__item">
+                            <span class="expo__item--content">
+                                <?= get_sub_field('event-expo-item'); ?>
+                            </span>
                         </li>
                         <?php endwhile; ?>
                     </ul>
                     <?php endif; ?>
                     <?php if($artistsID): ?>
-                    <h4>Artistes présents</h4>
-                    <ul>
+                    <h4 class="expo__artists-title">Artistes présents</h4>
+                    <ul class="expo__list">
                     <?php foreach($artistsID as $id): ?>
                         <?php $artist = get_fields($id); ?>
-                        <li>
-                            <a href="<?= get_permalink($id); ?>" title="Aller sur la page de l'artiste <?= $artist['artist-name']; ?>">
-                                <?= $artist['artist-name']; ?>
+                        <li class="expo__item">
+                            <a class="expo__artist" href="<?= get_permalink($id); ?>" title="Aller sur la page de l'artiste <?= $artist['artist-name']; ?>">
+                                <span class="expo__item--content">
+                                    <?= $artist['artist-name']; ?>
+                                </span>
                             </a>
                         </li>
                     <?php endforeach; ?>
