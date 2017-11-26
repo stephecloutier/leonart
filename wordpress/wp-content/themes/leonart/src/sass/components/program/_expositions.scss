@@ -5,6 +5,11 @@
         @include subtleShadow($raspberryShadow)
         .program__subtitle {
             color: $raspberry;
+            transition: 0.2s ease-out;
+            line-height: 1;
+            &:hover, &:focus {
+                color: $pink;
+            }
         }
         &--inner {
             display: flex;
