@@ -9,7 +9,7 @@ get_header();
     <a href="<?= sl_get_page_url('template-program.php'); ?>" class="link-back" title="Aller sur la page du programme">Retourner sur le programme</a>
     <h1 class="main-title">Les évènements divers</h1>
 
-    <div class="various-events">
+    <div class="various">
         <?php $posts = new WP_Query([
             'showposts' => -1,
             'post_type' => 'activities',
@@ -23,25 +23,25 @@ get_header();
         ]); ?>
         <?php if($posts->have_posts()) : while($posts->have_posts()) : $posts->the_post(); ?>
         <?php $various = get_fields(); ?>
-        <div class="various-event">
-            <h2 class="subtitle subtitle--various"><?= $various['event-title']; ?></h2>
-            <?php if($various['event-has-place']): ?>
-            <?php $place = get_fields($various['event-place'][0]->ID); ?>
-            <a href="<?= get_permalink($various['event-place'][0]->ID); ?>">
-                <span class="place"><?= $place['place-name']; ?></span> - <?= $place['place-address']; ?>
-            </a>
-            <?php elseif($various['event-address']): ?>
-            <span class="place"><?= $various['event-address']; ?></span>
-            <?php endif; ?>
+        <div class="event">
+            <h3 class="subtitle"><?= $various['event-title']; ?></h3>
             <?php if($various['event-datetimes']): ?>
-            <ul class="various__datimes">
+            <ul class="various__datetimes">
                 <?php while(have_rows('event-datetimes')) : the_row(); ?>
                     <?php $date = new DateTime(get_sub_field('event-datetime')); ?>
                 <li>
-                    <time datetime="<?= strftime($htmlTimestampFormat, $date->getTimestamp()); ?>"><?= strftime("%A %e %B - %kh%M", $date->getTimestamp()); ?></time>
+                    <time datetime="<?= strftime($htmlTimestampFormat, $date->getTimestamp()); ?>"><?= ucfirst(strftime("%A %e %B - %kh%M", $date->getTimestamp())); ?></time>
                 </li>
                 <?php endwhile; ?>
             </ul>
+            <?php endif; ?>
+            <?php if($various['event-has-place']): ?>
+            <?php $place = get_fields($various['event-place'][0]->ID); ?>
+            <a title="Aller sur la page du lieu <?= $place['place-name']; ?>" class="program__place" href="<?= get_permalink($various['event-place'][0]->ID); ?>">
+                <span class="program__place--name"><?= $place['place-name']; ?></span> - <div class="program__place--address"><?= sl_remove_all_tags($place['place-address']); ?></div>
+            </a>
+            <?php elseif($various['event-address']): ?>
+            <span class="program__place"><?= $various['event-address']; ?></span>
             <?php endif; ?>
             <?php if($various['event-various-desc']): ?>
             <div class="various__description">

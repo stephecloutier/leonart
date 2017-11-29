@@ -25,12 +25,12 @@ get_header();
         <?php if($posts->have_posts()) : while($posts->have_posts()) : $posts->the_post(); ?>
         <?php $shows = get_fields(); ?>
         <div class="show">
-            <h3 class="subtitle subtitle--show"><?= $shows['event-title']; ?></h3>
-            <ul class="show__datimes">
+            <h3 class="program__subtitle program__subtitle--show"><?= $shows['event-title']; ?></h3>
+            <ul class="show__datetimes">
                 <?php while(have_rows('event-datetimes')) : the_row(); ?>
                     <?php $date = new DateTime(get_sub_field('event-datetime')); ?>
                     <li>
-                        <time datetime="<?= strftime($htmlTimestampFormat, $date->getTimestamp()); ?>"><?= strftime("%A %e %B - %kh%M", $date->getTimestamp()); ?></time>
+                        <time datetime="<?= strftime($htmlTimestampFormat, $date->getTimestamp()); ?>"><?= ucfirst(strftime("%A %e %B - %kh%M", $date->getTimestamp())); ?></time>
                     </li>
                 <?php endwhile; ?>
             </ul>
@@ -39,10 +39,11 @@ get_header();
                     $relationPlace = $shows['event-place'];
                     $place = get_fields($relationPlace[0]->ID);
                 ?>
-            <a href="<?= get_permalink($relationPlace[0]->ID); ?>" class="key-place" title="Aller sur la page du lieu <?= $place['place-name']; ?>"><?= $place['place-name']; ?></a>
-            <span class="place"><?= $place['place-address']; ?></span>
+            <a title="Aller sur la page du lieu <?= $place['place-name']; ?>" class="program__place" href="<?= get_permalink($various['event-place'][0]->ID); ?>">
+                <span class="program__place--name"><?= $place['place-name']; ?></span> - <div class="program__place--address"><?= sl_remove_all_tags($place['place-address']); ?></div>
+            </a>
             <?php else: ?>
-            <span class="place"><?= $shows['event-address']; ?></span>
+            <span class="program__place--alone"><?= $shows['event-address']; ?></span>
             <?php endif; ?>
         </div>
         <?php endwhile; endif; ?>

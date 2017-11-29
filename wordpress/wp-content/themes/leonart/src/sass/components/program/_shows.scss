@@ -1,32 +1,29 @@
-.program {
-    &__shows {
-        border: 4px solid $orange;
-        background-color: white;
-        @include subtleShadow($orangeShadow)
-        .program__subtitle {
-            color: $orange;
-        }
-
+.program__shows, .shows {
+    border: 4px solid $orange;
+    background-color: white;
+    @include subtleShadow($orangeShadow)
+    .program__subtitle {
+        color: $orange;
     }
-    &__show {
-        .show__datetimes {
-            color: $orange;
-            font-size: 1rem;
-            &:last-of-type {
-                margin-bottom: 0.25rem;
-            }
-        }
-        .program__place {
-            font-weight: 500;
-            transition: 0.2s ease-out;
-            &:hover, &:focus {
-                color: $pink;
-            }
-            &--alone {
-                font-weight: 400;
-            }
-        }
 
+}
+.program__show, .show {
+    .show__datetimes {
+        color: $orange;
+        font-size: 1rem;
+        &:last-of-type {
+            margin-bottom: 0.25rem;
+        }
+    }
+    .program__place {
+        font-weight: 500;
+        transition: 0.2s ease-out;
+        &:hover, &:focus {
+            color: $pink;
+        }
+        &--alone {
+            font-weight: 400;
+        }
     }
 
 }

@@ -1,28 +1,37 @@
-.program {
-    &__various {
-        .program__subtitle {
-            color: $raspberry;
-            margin-top: 2rem;
-        }
-        .program__event {
-            border-bottom: 2px solid $raspberry;
-            padding-bottom: 1.5rem;
-        }
-        .program__place {
-            font-weight: 500;
-            transition: 0.2s ease-out;
-            display: inline-block;
-            margin-top: 0.25rem;
-            &:hover, &:focus {
-                color: $pink;
-            }
-        }
-        .various__datetimes {
-            color: $raspberry;
-
-        }
-        .various__description {
-            margin-top: 0.25rem;
+.program__various, .various {
+    .subtitle {
+        color: $raspberry;
+        font-size: 1.25rem;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        font-weight: 600;
+        margin-bottom: 0.2rem;
+    }
+    .program__subtitle {
+        margin-top: 2rem;
+    }
+    .program__event, .event {
+        border-bottom: 2px solid $raspberry;
+        padding-bottom: 1.5rem;
+    }
+    .program__place {
+        font-weight: 500;
+        transition: 0.2s ease-out;
+        display: inline-block;
+        margin-top: 0.25rem;
+        &:hover, &:focus {
+            color: $pink;
         }
     }
+    .various__datetimes {
+        color: $raspberry;
+
+    }
+    .various__description {
+        margin-top: 0.25rem;
+    }
+}
+
+.various {
+    border: 4px solid $raspberry;
 }
