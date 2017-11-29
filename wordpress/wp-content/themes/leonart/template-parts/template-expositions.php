@@ -10,7 +10,7 @@ get_header();
 <main>
     <a href="<?= sl_get_page_url('template-program.php'); ?>" class="link-back" title="Retourner à la page du programme">Retourner au programme</a>
     <h1 class="main-title">Expositions</h1>
-    <div class="expos__hours"><?= $fields['expo-time']; ?></div>
+    <div class="expos__hours expos__hours--archives"><?= $fields['expo-time']; ?></div>
 
     <div class="expos expos--inner">
         <?php $posts = new WP_Query([
@@ -73,7 +73,7 @@ get_header();
         <?php endwhile; endif; ?>
     </div>
 
-    <div class="cta">
+    <div class="cta cta--up">
         <div class="cta--inner">
             <span class="cta__catch-phrase">Besoin d'informations sur les différents lieux d'expositions&nbsp;?</span>
             <a href="<?= sl_get_page_url('template-useful.php'); ?>" class="cta-archive cta-archive--white" title="Aller sur la page En Pratique"><span class="cta-archive__text">Aller sur les infos pratiques</span></a>

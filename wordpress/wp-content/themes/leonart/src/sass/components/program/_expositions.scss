@@ -15,7 +15,12 @@
         column-width: 50%;
         column-fill: balance;
     }
-    .expos__hours {
+}
+.expos__hours {
+    letter-spacing: 0.5px;
+    &--archives {
+        font-size: 1.25rem;
+        letter-spacing: 1px;
     }
 }
 .program__expo, .expo {
@@ -76,6 +81,7 @@
                     content: "\25CF";
                     display: inline-block;
                     width: 0;
+                    color: $raspberry
                 }
             }
         }
