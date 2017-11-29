@@ -10,9 +10,9 @@ get_header();
 <main>
     <a href="<?= sl_get_page_url('template-program.php'); ?>" class="link-back" title="Retourner à la page du programme">Retourner au programme</a>
     <h1 class="main-title">Expositions</h1>
-    <span class="expo__hours"><?= $fields['expo-time']; ?></span>
+    <div class="expos__hours"><?= $fields['expo-time']; ?></div>
 
-    <div class="expos">
+    <div class="expos expos--inner">
         <?php $posts = new WP_Query([
             'showposts' => -1,
             'post_type' => 'activities',
@@ -32,37 +32,38 @@ get_header();
             $relationArtist = get_field('event-expo-artists');
             $artistsID = sl_get_ids($relationArtist);
         ?>
-        <div class="expo">
+        <div class="program__expo">
             <a href="<?= get_permalink($relationPlace[0]->ID); ?>" title="Aller sur la page du lieu <?= $place['place-name']; ?>">
-                <span class="program__subtitle"><?= $place['place-name']; ?></span>
+                <h3 class="program__subtitle"><?= $place['place-name']; ?></h3>
             </a>
-            <p class="place__address"><?= $place['place-address']; ?></p>
-            <?php if($place['place-website']): ?>
-            <a href="<?= $place['place-website']; ?>" title="Aller sur le site web de <?= $place['place-name']; ?>">Website</a>
-            <?php endif; ?>
-            <?php if($place['place-facebook']): ?>
-            <a href="<?= $place['place-facebook']; ?>" title="Aller sur la page Facebook de <?= $place['place-name']; ?>">Facebook</a>
-            <?php endif; ?>
+            <div class="program__place">
+                <?= $place['place-address']; ?>
+            </div>
+
             <?php if($fields['event-expo-type']): ?>
-            <span class="expo__type"><?= $fields['event-expo-type']; ?></span>
+            <span class="expo__type">(<?= $fields['event-expo-type']; ?>)</span>
             <?php endif; ?>
             <?php if(have_rows('event-expo-list')): ?>
-            <ul>
+            <ul class="expo__list expo__list--expo">
                 <?php while(have_rows('event-expo-list')) : the_row(); ?>
-                <li>
-                    <?= get_sub_field('event-expo-item'); ?>
+                <li class="expo__item">
+                    <span class="expo__item--content">
+                        <?= get_sub_field('event-expo-item'); ?>
+                    </span>
                 </li>
                 <?php endwhile; ?>
             </ul>
             <?php endif; ?>
             <?php if($artistsID): ?>
-            <h3>Artistes présents</h3>
-            <ul>
+            <h4 class="expo__artists-title">Artistes présents</h4>
+            <ul class="expo__list expo__list--artist">
             <?php foreach($artistsID as $id): ?>
                 <?php $artist = get_fields($id); ?>
-                <li>
-                    <a href="<?= get_permalink($id); ?>" title="Aller sur la page de l'artiste <?= $artist['artist-name']; ?>">
-                        <?= $artist['artist-name']; ?>
+                <li class="expo__item">
+                    <a class="expo__artist" href="<?= get_permalink($id); ?>" title="Aller sur la page de l'artiste <?= $artist['artist-name']; ?>">
+                        <span class="expo__item--content">
+                            <?= $artist['artist-name']; ?>
+                        </span>
                     </a>
                 </li>
             <?php endforeach; ?>

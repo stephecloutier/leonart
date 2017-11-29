@@ -14,7 +14,7 @@ get_header();
     <div class="program__activities">
         <section id="expositions" class="program__expos program__activity">
             <h2 class="program__title">Les expositions</h2>
-            <div><?= $expoFields['expo-time']; ?></div>
+            <div class="expos__hours"><?= $expoFields['expo-time']; ?></div>
             <div class="program__expos--inner program__activity--inner">
                 <?php $posts = sl_get_featured_random_activities('expo'); ?>
                 <?php if($posts->have_posts()) : while($posts->have_posts()) : $posts->the_post(); ?>
@@ -51,7 +51,7 @@ get_header();
                     <?php endif; ?>
                     <?php if($artistsID): ?>
                     <h4 class="expo__artists-title">Artistes présents</h4>
-                    <ul class="expo__list">
+                    <ul class="expo__list expo__list--artist">
                     <?php foreach($artistsID as $id): ?>
                         <?php $artist = get_fields($id); ?>
                         <li class="expo__item">
