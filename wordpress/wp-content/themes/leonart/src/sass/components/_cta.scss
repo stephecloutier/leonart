@@ -15,4 +15,10 @@
     &--raspberry {
         background: $raspberry;
     }
+    &--straight {
+        transform: none;
+        .cta--inner {
+            transform: none;
+        }
+    }
 }

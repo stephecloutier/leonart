@@ -21,7 +21,10 @@
         bottom: -4rem;
     }
 
-    &--up {
-        
+    &--straight {
+        margin-top: 7rem;
+    }
+    &--straight::after {
+        transform: none;
     }
 }
