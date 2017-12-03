@@ -2,12 +2,12 @@
     &__taxonomies {
         text-align: center;
         max-width: $max-width;
-        margin: 0 auto;
+        margin: 0 auto 1rem;
     }
     &__social {
         text-align: center;
         max-width: $max-width;
-        margin: 0 auto;
+        margin: 0 auto 2rem;
     }
     &__content {
         display: flex;
@@ -35,6 +35,7 @@
     //** order **//
     &__picture {
         order: 1;
+        margin-right: 5rem;
     }
     &__description {
         order: 2;
@@ -44,6 +45,12 @@
     }
     &__places {
         order: 1;
+        margin-right: 5rem;
+    }
+
+    //**photo**//
+    &__photo {
+        width: 100%;
     }
 
     //** gallery **/
