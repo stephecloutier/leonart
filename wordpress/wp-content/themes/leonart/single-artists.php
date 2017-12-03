@@ -16,20 +16,36 @@ get_header();
     </div>
     <?php endif; ?>
     <div class="artist__social">
+        <?php $socialIcons = socialIcons(); ?>
         <?php if($fields['artist-facebook']): ?>
-            <a href="<?= $fields['artist-facebook']; ?>" class="artist__social social-facebook" title="Aller sur le facebook de l'artiste <?= $fields['artist-name']; ?>">Facebook</a>
+            <a href="<?= $fields['artist-facebook']; ?>" class="artist__social-link social-facebook" title="Aller sur le facebook de l'artiste <?= $fields['artist-name']; ?>">
+                <?= $socialIcons['facebook']; ?>
+                <span class="hidden">Facebook</span>
+            </a>
         <?php endif; ?>
         <?php if($fields['artist-linkedin']): ?>
-            <a href="<?= $fields['artist-linkedin']; ?>" class="artist__social social-linkedin" title="Aller sur le linkedin de l'artiste <?= $fields['artist-name']; ?>">LinkedIn</a>
+            <a href="<?= $fields['artist-linkedin']; ?>" class="artist__social-link social-linkedin" title="Aller sur le linkedin de l'artiste <?= $fields['artist-name']; ?>">
+                <?= $socialIcons['linkedin']; ?>
+                <span class="hidden">LinkedIn</span>
+            </a>
         <?php endif; ?>
         <?php if($fields['artist-twitter']): ?>
-            <a href="<?= $fields['artist-twitter']; ?>" class="artist__social social-twitter" title="Aller sur le twitter de l'artiste <?= $fields['artist-name']; ?>">Twitter</a>
+            <a href="<?= $fields['artist-twitter']; ?>" class="artist__social-link social-twitter" title="Aller sur le twitter de l'artiste <?= $fields['artist-name']; ?>">
+                <?= $socialIcons['twitter']; ?>
+                <span class="hidden">Twitter</span>
+            </a>
         <?php endif; ?>
         <?php if($fields['artist-instagram']): ?>
-            <a href="<?= $fields['artist-instagram']; ?>" class="artist__social social-instagram" title="Aller sur le instagram de l'artiste <?= $fields['artist-name']; ?>">Instagram</a>
+            <a href="<?= $fields['artist-instagram']; ?>" class="artist__social-link social-instagram" title="Aller sur le instagram de l'artiste <?= $fields['artist-name']; ?>">
+                <?= $socialIcons['instagram']; ?>
+                <span class="hidden">Instagram</span>
+            </a>
         <?php endif; ?>
         <?php if($fields['artist-pinterest']): ?>
-            <a href="<?= $fields['artist-pinterest']; ?>" class="artist__social social-pinterest" title="Aller sur le pinterest de l'artiste <?= $fields['artist-name']; ?>">Pinterest</a>
+            <a href="<?= $fields['artist-pinterest']; ?>" class="artist__social-link social-pinterest" title="Aller sur le pinterest de l'artiste <?= $fields['artist-name']; ?>">
+                <?= $socialIcons['pinterest']; ?>
+                <span class="hidden">Pinterest</span>
+            </a>
         <?php endif; ?>
     </div>
     <section class="artist__content">

@@ -3,6 +3,26 @@
         font-size: 1.5rem;
         letter-spacing: 1px;
     }
+    &__social-link {
+        fill: $raspberry;
+        .icon-svg {
+            width: 3em;
+        }
+        .circle {
+            stroke: transparent;
+            stroke-width: 5px;
+            fill: transparent;
+            transform-origin: 50% 50%;
+            transition: 0.2s ease-out;
+        }
+        &:hover, &:focus {
+            .circle:hover, .circle:focus {
+                stroke: $raspberry;
+                transform: scale(1.4);
+            }
+        }
+    }
+
     &__subtitle {
         font-size: 1.25rem;
         text-transform: uppercase;
