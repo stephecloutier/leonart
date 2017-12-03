@@ -47,11 +47,22 @@
             content: url('../images/bullet-par.svg');
             display: inline-block;
             width: 0;
+            transition: 0.2s ease-out;
+            transform-origin: center;
+        }
+        &:hover {
+            &::before {
+                transform: scale(1.2);
+            }
         }
     }
 
     &__places-link {
         margin-left: 1rem;
+        transition: 0.2s ease-out;
+        &:hover, &:focus {
+            color: $pink;
+        }
     }
 
     &__line--full {
