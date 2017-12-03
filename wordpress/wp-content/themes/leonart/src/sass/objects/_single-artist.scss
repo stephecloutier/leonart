@@ -1,0 +1,48 @@
+.artist {
+    &__taxonomies {
+        text-align: center;
+        max-width: $max-width;
+        margin: 0 auto;
+    }
+    &__social {
+        text-align: center;
+        max-width: $max-width;
+        margin: 0 auto;
+    }
+    &__content {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    &__line {
+        display: flex;
+        max-width: $max-width;
+        margin: 0 auto;
+        &--full {
+            max-width: 100%;
+            width: 100%;
+        }
+    }
+    &__inner-line {
+        max-width: $max-width;
+        width: $max-width;
+        margin: 0 auto;
+        display: flex;
+    }
+    &__block {
+        width: 50%;
+    }
+
+    //** order **//
+    &__picture {
+        order: 1;
+    }
+    &__description {
+        order: 2;
+    }
+    &__gallery {
+        order: 2;
+    }
+    &__places {
+        order: 1;
+    }
+}

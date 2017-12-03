@@ -29,8 +29,9 @@
 @import "objects/news/news";
 @import "objects/footer/footer";
 @import "objects/program/program";
-@import "objects/archive-artists";
 @import "objects/program/archives";
+@import "objects/archive-artists";
+@import "objects/single-artist";
 @import "objects/cta";
 
 @import "components/header/logo";
@@ -53,4 +54,5 @@
 @import "components/program/work";
 @import "components/program/various";
 @import "components/artists";
+@import "components/single-artist";
 @import "components/cta";
