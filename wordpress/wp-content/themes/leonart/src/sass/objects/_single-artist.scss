@@ -9,6 +9,11 @@
         max-width: $max-width;
         margin: 0 auto 2rem;
     }
+    &__subtitle {
+        display: inline-block;
+        margin-bottom: 1rem;
+    }
+
     &__content {
         display: flex;
         flex-wrap: wrap;

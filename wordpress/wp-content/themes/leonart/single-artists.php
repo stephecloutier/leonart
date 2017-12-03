@@ -87,7 +87,7 @@ get_header();
                 ?>
                 <?php if($expositionsID): ?>
                 <aside class="artist__block artist__places">
-                    <h3>Où retrouver <?= $fields['artist-name']; ?> lors de l'évènements&nbsp;?</h3>
+                    <h3 class="artist__subtitle artist__subtitle--white">Où retrouver <?= $fields['artist-name']; ?> lors de l'évènement&nbsp;?</h3>
                     <ul>
                     <?php foreach($expositionsID as $id): ?>
                         <?php $exposition = get_fields($id); ?>

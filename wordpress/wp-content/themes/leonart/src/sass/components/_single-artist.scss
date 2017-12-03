@@ -3,6 +3,17 @@
         font-size: 1.5rem;
         letter-spacing: 1px;
     }
+    &__subtitle {
+        font-size: 1.25rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        font-weight: 600;
+        line-height: 1.2;
+        color: $raspberry;
+        &--white {
+            color: white;
+        }
+    }
 
     &__photo {
         border: 4px solid $black;
@@ -20,6 +31,6 @@
         transform: skewY(-4deg);
     }
     &__img-item {
-        border: 4px solid $black;
+        border: 2px solid $black;
     }
 }
