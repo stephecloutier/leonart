@@ -67,11 +67,11 @@ get_header();
                 ?>
                 <div class="artist__block artist__gallery">
                     <span class="artist__subtitle">Aperçu des &oelig;uvres de <?= $fields['artist-name']; ?></span>
-                    <ul>
+                    <ul class="artist__img-list">
                         <?php foreach($images as $image): ?>
                             <?php $alt = sl_get_image_alt($image); ?>
-                        <li>
-                            <img src="<?= $image['sizes']['smallest']; ?>" alt="<?= ($alt ? $alt : '&OElig;uvre de l’artiste ' . $fields['artist-name']); ?>">
+                        <li class="artist__img-item">
+                            <img class="artist__img" src="<?= $image['sizes']['smallest']; ?>" alt="<?= ($alt ? $alt : '&OElig;uvre de l’artiste ' . $fields['artist-name']); ?>">
                         </li>
                         <?php endforeach; ?>
                     </ul>

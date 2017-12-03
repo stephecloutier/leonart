@@ -45,4 +45,16 @@
     &__places {
         order: 1;
     }
+
+    &__img-list {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    &__img-item {
+        width: calc(50% - 0.4rem);
+        margin-bottom: 0.8rem;
+    }
+    &__img-item:nth-of-type(even) {
+        margin-left: 0.8rem;
+    }
 }
