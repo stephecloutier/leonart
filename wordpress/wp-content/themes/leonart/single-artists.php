@@ -2,6 +2,7 @@
 /*
     Template Name: Artiste
 */
+$artistID = get_the_id();
 $fields = get_fields();
 get_header();
 
@@ -9,9 +10,11 @@ get_header();
 <main>
     <a href="<?= get_post_type_archive_link('artists') ?>" class="link-back" title="Aller sur la page de tous les artistes">Retourner à tous les artistes</a>
     <h1 class="main-title"><?= $fields['artist-name']; ?></h1>
+    <?php if(sl_get_taxonomies($artistID, 'artistic-disciplines')): ?>
     <div class="taxonomies">
-        <?= sl_get_taxonomies($post->ID, 'artistic-disciplines'); ?>
+        <?= sl_get_taxonomies($artistID, 'artistic-disciplines'); ?>
     </div>
+    <?php endif; ?>
     <div class="artist__social">
         <?php if($fields['artist-facebook']): ?>
             <a href="<?= $fields['artist-facebook']; ?>" class="artist__social social-facebook" title="Aller sur le facebook de l'artiste <?= $fields['artist-name']; ?>">Facebook</a>
@@ -71,7 +74,7 @@ get_header();
         </section>
         <?php endif; ?>
         <?php
-            $activities = sl_get_relationship_posts(get_the_ID(), 'activities', 'event-expo-artists');
+            $activities = sl_get_relationship_posts($artistID, 'activities', 'event-expo-artists');
             $expositionsID = [];
             foreach($activities as $activity) {
                 $id = $activity->ID;
