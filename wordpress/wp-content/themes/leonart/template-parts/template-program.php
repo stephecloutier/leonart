@@ -92,7 +92,7 @@ get_header();
                             $relationPlace = $shows['event-place'];
                             $place = get_fields($relationPlace[0]->ID);
                         ?>
-                    <a title="Aller sur la page du lieu <?= $place['place-name']; ?>" class="program__place" href="<?= get_permalink($various['event-place'][0]->ID); ?>">
+                    <a title="Aller sur la page du lieu <?= $place['place-name']; ?>" class="program__place" href="<?= get_permalink($shows['event-place'][0]->ID); ?>">
                         <span class="program__place--name"><?= $place['place-name']; ?></span> - <div class="program__place--address"><?= sl_remove_all_tags($place['place-address']); ?></div>
                     </a>
                     <?php else: ?>
