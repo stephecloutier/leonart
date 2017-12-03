@@ -35,8 +35,9 @@
         margin: 0 auto;
         display: flex;
     }
-    &__block {
-
+    &__block--filler {
+        width: 37.5%;
+        margin-right: 4rem;
     }
 
     //** order, widths & margins **//
@@ -68,6 +69,7 @@
         order: 1;
         margin-right: 4rem;
         width: 37.5%;
+        padding: 3rem 0;
     }
 
     //**photo**//

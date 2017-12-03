@@ -97,6 +97,8 @@ get_header();
                     <?php endforeach; ?>
                     </ul>
                 </aside>
+                <?php else: ?>
+                <div class="artist__block--filler"></div>
                 <?php endif; ?>
             </div>
         </div>
