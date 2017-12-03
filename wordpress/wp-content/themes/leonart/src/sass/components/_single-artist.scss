@@ -24,14 +24,9 @@
     }
 
     &__subtitle {
-        font-size: 1.25rem;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-        font-weight: 600;
-        line-height: 1.2;
-        color: $raspberry;
+        @include subtitle($raspberry);
         &--white {
-            color: white;
+            @include subtitle(white);
         }
     }
 

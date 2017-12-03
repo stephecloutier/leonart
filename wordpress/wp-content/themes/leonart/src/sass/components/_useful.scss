@@ -1,0 +1,10 @@
+.useful {
+    &__subtitle {
+        @include subtitle($raspberry);
+    }
+
+    &__subtitle-underlined {
+        @include subtitle-underlined($raspberry);
+
+    }
+}
