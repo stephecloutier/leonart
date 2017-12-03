@@ -3,4 +3,23 @@
         font-size: 1.5rem;
         letter-spacing: 1px;
     }
+
+    &__photo {
+        border: 4px solid $black;
+    }
+    &__description {
+        font-size: 1.125rem;
+        line-height: 1.5;
+    }
+
+    &__line--full {
+        background: linear-gradient(to right, $pink, $peach);
+        transform: skewY(4deg);
+    }
+    &__inner-line {
+        transform: skewY(-4deg);
+    }
+    &__img-item {
+        border: 4px solid $black;
+    }
 }
