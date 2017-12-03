@@ -40,18 +40,18 @@ get_header();
                 <img class="artist__photo" src="<?= $artistImage['url']; ?>" alt="Photo de l'artiste <?= $fields['artist-name']; ?>">
                 <div class="artist__contact">
                     <?php if($fields['artist-phone']): ?>
-                    <span class="artist__phone"><?= $fields['artist-phone']; ?></span>
-                    <?php endif; ?>
-                    <?php if($fields['artist-mail']): ?>
-                    <a href="<?= $fields['artist-mail'] ?>" title="Envoyer un mail à l'artiste <?= $fields['artist-name']; ?>"><?= $fields['artist-mail'] ?></a>
+                    <span class="artist__phone artist__contact-line"><?= $fields['artist-phone']; ?></span>
                     <?php endif; ?>
                     <?php if($fields['artist-address']): ?>
-                    <div class="artist__address">
+                    <div class="artist__address artist__contact-line">
                         <?= $fields['artist-address']; ?>
                     </div>
                     <?php endif; ?>
+                    <?php if($fields['artist-mail']): ?>
+                    <a class="artist__mail artist__contact-line" href="<?= $fields['artist-mail'] ?>" title="Envoyer un mail à l'artiste <?= $fields['artist-name']; ?>"><?= $fields['artist-mail']; ?></a>
+                    <?php endif; ?>
                     <?php if($fields['artist-website']): ?>
-                    <span class="artist__website" title="Visiter le site web de l'artiste <?= $fields['artist-name']; ?>"><?= $fields['artist-website']; ?></span>
+                    <a href="<?= $fields['artist-website']; ?>" class="artist__website artist__contact-line" title="Visiter le site web de l'artiste <?= $fields['artist-name']; ?>"><?= $fields['artist-website']; ?></a>
                     <?php endif; ?>
                 </div>
             </div>

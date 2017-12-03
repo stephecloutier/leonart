@@ -42,9 +42,18 @@
     //** order, widths & margins **//
     &__picture {
         order: 1;
-        margin-right: 5rem;
+        margin-right: 4rem;
         width: 37.5%;
     }
+    &__contact {
+        margin-top: 0.5rem;
+        display: flex;
+        flex-direction: column;
+    }
+    &__contact-line {
+        margin-bottom: 0.125em;
+    }
+
     &__description {
         order: 2;
         width: 62.5%;
@@ -57,7 +66,7 @@
     }
     &__places {
         order: 1;
-        margin-right: 5rem;
+        margin-right: 4rem;
         width: 37.5%;
     }
 
