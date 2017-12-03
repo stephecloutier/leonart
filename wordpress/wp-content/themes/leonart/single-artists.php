@@ -75,10 +75,19 @@ get_header();
                 <?= $fields['artist-description']; ?>
             </div>
         </div>
+        <?php
+            $images = $fields['artist-work'];
+            $activities = sl_get_relationship_posts($artistID, 'activities', 'event-expo-artists');
+            $expositionsID = [];
+            foreach($activities as $activity) {
+                $id = $activity->ID;
+                $expositionsID[] = $id;
+            }
+            if($images || $expositionsID):
+        ?>
         <div class="artist__line artist__line--full">
             <div class="artist__inner-line">
                 <?php
-                    $images = $fields['artist-work'];
                     if($images):
                 ?>
                 <div class="artist__block artist__gallery">
@@ -93,14 +102,6 @@ get_header();
                     </ul>
                 </div>
                 <?php endif; ?>
-                <?php
-                    $activities = sl_get_relationship_posts($artistID, 'activities', 'event-expo-artists');
-                    $expositionsID = [];
-                    foreach($activities as $activity) {
-                        $id = $activity->ID;
-                        $expositionsID[] = $id;
-                    }
-                ?>
                 <?php if($expositionsID): ?>
                 <aside class="artist__block artist__places">
                     <h3 class="artist__subtitle artist__subtitle--white">Où retrouver <?= $fields['artist-name']; ?> lors de l'évènement&nbsp;?</h3>
@@ -118,6 +119,7 @@ get_header();
                 <?php endif; ?>
             </div>
         </div>
+        <?php endif; ?>
     </section>
     <a href="<?= get_post_type_archive_link('artists'); ?>" class="link-back" title="Aller sur la page de tous les artistes">Retourner à tous les artistes</a>
 </main>
