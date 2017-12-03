@@ -88,11 +88,11 @@ get_header();
                 <?php if($expositionsID): ?>
                 <aside class="artist__block artist__places">
                     <h3 class="artist__subtitle artist__subtitle--white">Où retrouver <?= $fields['artist-name']; ?> lors de l'évènement&nbsp;?</h3>
-                    <ul>
+                    <ul class="artist__places-list">
                     <?php foreach($expositionsID as $id): ?>
                         <?php $exposition = get_fields($id); ?>
-                        <li>
-                            <a href="<?= get_permalink($exposition['event-expo-place'][0]->ID); ?>"><?= $exposition['event-expo-place'][0]->post_title; ?></a>
+                        <li class="artist__places-item">
+                            <a class="artist__places-link" href="<?= get_permalink($exposition['event-expo-place'][0]->ID); ?>" title="Aller sur la page du lieu <?= $exposition['event-expo-place'][0]->post_title; ?>"><?= $exposition['event-expo-place'][0]->post_title; ?></a>
                         </li>
                     <?php endforeach; ?>
                     </ul>

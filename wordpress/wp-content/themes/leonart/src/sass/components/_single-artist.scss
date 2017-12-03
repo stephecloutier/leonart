@@ -35,6 +35,25 @@
         line-height: 1.5;
     }
 
+    &__places-list {
+        background-color: white;
+        color: $raspberry;
+        font-weight: 500;
+        @include subtleShadow($shadow25);
+    }
+
+    &__places-item {
+        &::before {
+            content: url('../images/bullet-par.svg');
+            display: inline-block;
+            width: 0;
+        }
+    }
+
+    &__places-link {
+        margin-left: 1rem;
+    }
+
     &__line--full {
         background: linear-gradient(to right, $pink, $peach);
         transform: skewY(4deg);
