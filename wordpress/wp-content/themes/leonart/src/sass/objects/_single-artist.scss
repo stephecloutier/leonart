@@ -46,15 +46,23 @@
         order: 1;
     }
 
+    //** gallery **/
     &__img-list {
         display: flex;
         flex-wrap: wrap;
     }
     &__img-item {
         width: calc(50% - 0.4rem);
+        height: 250px;
         margin-bottom: 0.8rem;
+        overflow: hidden;
     }
     &__img-item:nth-of-type(even) {
         margin-left: 0.8rem;
+    }
+    &__work {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
     }
 }

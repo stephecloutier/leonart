@@ -71,7 +71,7 @@ get_header();
                         <?php foreach($images as $image): ?>
                             <?php $alt = sl_get_image_alt($image); ?>
                         <li class="artist__img-item">
-                            <img class="artist__img" src="<?= $image['sizes']['smallest']; ?>" alt="<?= ($alt ? $alt : '&OElig;uvre de l’artiste ' . $fields['artist-name']); ?>">
+                            <img class="artist__work" src="<?= $image['sizes']['smallest']; ?>" alt="<?= ($alt ? $alt : '&OElig;uvre de l’artiste ' . $fields['artist-name']); ?>">
                         </li>
                         <?php endforeach; ?>
                     </ul>
