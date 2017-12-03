@@ -5,6 +5,22 @@
 
     &__subtitle-underlined {
         @include subtitle-underlined($raspberry);
+    }
 
+    &__places {
+        @include bg-gradient(right, $darkberry, $purple);
+    }
+
+    &__places-list {
+        color: white;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        column-count: 3;
+        font-size: 1.125rem;
+        line-height: 1.2;
+        list-style-type: decimal;
+    }
+    &__places-item {
+        margin-bottom: 0.5em;
     }
 }

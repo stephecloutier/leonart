@@ -18,31 +18,33 @@ get_header();
     <?php endif; ?>
 
     <section class="useful__places">
-        <h2 class="useful__subtitle">Les lieux clés</h2>
-        <img src="<?= $fields['useful-map']['url']; ?>" alt="Carte du quartier Saint-Léonard" width="1200">
-        <ol class="useful__places-list">
-            <?php
-                $posts = new WP_Query([
-                    'showposts' => -1,
-                    'post_type' => 'places',
-                    'orderby' => 'meta_value_num',
-                    'meta_key' => 'place-number',
-                    'order' => 'ASC',
-                ]);
-            ?>
-            <?php if($posts->have_posts()) : while($posts->have_posts()) : $posts->the_post(); ?>
-            <?php $placesFields = get_fields(); ?>
-            <li class="useful__places-item">
-                <a class="useful__places-link" href="<?= the_permalink(); ?>">
-                    <?= $placesFields['place-name']; ?>
-                </a>
-            </li>
-            <?php endwhile; endif; ?>
-        </ol>
+        <div class="useful__places--inner">
+            <h2 class="useful__subtitle">Les lieux clés</h2>
+            <img class="useful__map" src="<?= $fields['useful-map']['url']; ?>" alt="Carte du quartier Saint-Léonard" width="1200">
+            <ol class="useful__places-list">
+                <?php
+                    $posts = new WP_Query([
+                        'showposts' => -1,
+                        'post_type' => 'places',
+                        'orderby' => 'meta_value_num',
+                        'meta_key' => 'place-number',
+                        'order' => 'ASC',
+                    ]);
+                ?>
+                <?php if($posts->have_posts()) : while($posts->have_posts()) : $posts->the_post(); ?>
+                <?php $placesFields = get_fields(); ?>
+                <li class="useful__places-item">
+                    <a class="useful__places-link" href="<?= the_permalink(); ?>">
+                        <?= $placesFields['place-name']; ?>
+                    </a>
+                </li>
+                <?php endwhile; endif; ?>
+            </ol>
 
-        <a class="cta-archive cta-archive--white" href="<?= sl_get_page_url('template-program.php'); ?>">
-            <span class="cta-archive__text">Voir les évènements sur ces lieux</span>
-        </a>
+            <a class="cta-archive cta-archive--white" href="<?= sl_get_page_url('template-program.php'); ?>">
+                <span class="cta-archive__text">Voir les évènements sur ces lieux</span>
+            </a>
+        </div>
     </section>
 
     <section class="useful__other">
