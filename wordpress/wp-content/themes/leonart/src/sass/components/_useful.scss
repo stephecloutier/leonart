@@ -40,4 +40,29 @@
     &__places-link {
         margin-left: 1rem;
     }
+
+
+    &__block {
+        &--parking {
+
+        }
+        &--transport {
+
+        }
+    }
+    &__svg {
+        filter: url("#svg-colored-dropshadow");
+        .bus {
+            fill: $raspberry;
+        }
+        .tree {
+            fill: $pink;
+        }
+        .parking-sign {
+            fill: $yellow;
+        }
+        .car {
+            fill: $raspberry;
+        }
+    }
 }

@@ -12,7 +12,32 @@
     </head>
 
     <body>
-
+        <svg class="svgDefs">
+            <defs>
+                <filter id="svg-colored-dropshadow" height="130%" class="svg__shadow">
+                    <feOffset dx="0" dy="2" result="offOut" />
+                    <feGaussianBlur stdDeviation="4" in="offOut" result="blurOut" />
+                    <feComponentTransfer>
+                        <feFuncA type="linear" slope="0.5" />
+                    </feComponentTransfer>
+                    <feMerge>
+                        <feMergeNode />
+                        <feMergeNode in="SourceGraphic" />
+                    </feMerge>
+                </filter>
+                <filter id="svg-black-dropshadow" height="130%" class="svg__shadow">
+                    <feOffset dx="0" dy="2" in="SourceAlpha" result="offOut" />
+                    <feGaussianBlur stdDeviation="4" in="offOut" result="blurOut" />
+                    <feComponentTransfer>
+                        <feFuncA type="linear" slope="0.5" />
+                    </feComponentTransfer>
+                    <feMerge>
+                        <feMergeNode />
+                        <feMergeNode in="SourceGraphic" />
+                    </feMerge>
+                </filter>
+            </defs>
+        </svg>
     <header class="header">
         <h1 class="header__main-title">
             <a href="<?= get_home_url(); ?>" title="Aller à l'accueil" class="c-logo">
