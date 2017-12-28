@@ -6,7 +6,6 @@ $fields = get_fields();
 $image = $fields['news-img'];
 $currentID = $post->ID;
 get_header();
-
  ?>
 
 <main>
@@ -15,7 +14,10 @@ get_header();
     <h1><?= $fields['news-title']; ?></h1>
     <div class="news__content">
         <time class="news__date" datetime="<?= get_the_date('Y-m-d'); ?>"><?= get_the_date('j F Y'); ?></time>
-        <img src="<?= $image['url']; ?>" width="<?= $image['sizes']['large-width'] ?>" height="<?= $image['sizes']['large-height'] ?>" alt="<?php if(sl_get_image_alt('news-img')) echo sl_get_image_alt('news-img'); else echo 'Image de la news ' . $fields['news-title']; ?>">
+        <img src="<?= $image['url']; ?>"
+            width="<?= $image['sizes']['large-width'] ?>"
+            height="<?= $image['sizes']['large-height'] ?>"
+            alt="<?= sl_get_image_alt($image) ? sl_get_image_alt($image) : 'Image de la news ' . $fields['news-title']; ?>">
         <div class="news__text">
             <?= $fields['news-content']; ?>
         </div>

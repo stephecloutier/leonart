@@ -122,7 +122,7 @@ get_header();
                 <?php if($posts->have_posts()) : while($posts->have_posts()) : $posts->the_post(); ?>
                 <?php $shows = get_fields(); $image = $shows['event-work-img']; ?>
                 <a href="#" title="Voir l'image de l'œuvre <?= $shows['event-work-title']; ?> en plus grand" class="work__link">
-                    <img class="work__img" src="<?= $image['sizes']['smallest']; ?>" alt="<?php echo (sl_get_image_alt($image) ? sl_get_image_alt : 'Image de l\'œuvre ' . $shows['event-work-title']); ?>">
+                    <img class="work__img" src="<?= $image['sizes']['smallest']; ?>" alt="<?php echo (sl_get_image_alt($image) ? sl_get_image_alt($image) : $shows['event-work-title']); ?>">
                 </a>
                 <?php endwhile; endif; ?>
             </div>
@@ -180,7 +180,7 @@ get_header();
                         <a href="<?= the_permalink(); ?>" title="Aller sur la page de l’artiste <?= $fields['artist-name']; ?>" class="artists__link">
                             <figure class="artists__figure">
                                 <?php $image = $fields['artist-img'];?>
-                                <img src="<?= $image['url']; ?>"  alt="Photo de l’artiste <?= $fields['artist-name']; ?>" class="artists__img">
+                                <img src="<?= $image['url']; ?>"  alt="<?= sl_get_image_alt($image) ? sl_get_image_alt($image) : $fields['artist-name']; ?>" class="artists__img">
                                 <div class="artists__overlay">
                                     <span class="artists__link-text">Visiter sa page</span>
                                 </div>

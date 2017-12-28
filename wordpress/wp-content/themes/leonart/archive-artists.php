@@ -17,7 +17,7 @@ get_header();
                 <a href="<?= the_permalink(); ?>" title="Aller sur la page de l’artiste <?= $fields['artist-name']; ?>" class="artists__link">
                     <figure class="artists__figure">
                         <?php $image = $fields['artist-img'];?>
-                        <img src="<?= $image['url']; ?>"  alt="Photo de l’artiste <?= $fields['artist-name']; ?>" class="artists__img">
+                        <img src="<?= $image['url']; ?>"  alt="<?= sl_get_image_alt($image) ? sl_get_image_alt($image) : $fields['artist-name']; ?>" class="artists__img">
                         <div class="artists__overlay">
                             <span class="artists__link-text">Visiter sa page</span>
                         </div>

@@ -53,7 +53,7 @@ get_header();
         <div class="artist__line">
             <div class="artist__block artist__picture">
                 <?php $artistImage = $fields['artist-img']; ?>
-                <img class="artist__photo" src="<?= $artistImage['url']; ?>" alt="Photo de l'artiste <?= $fields['artist-name']; ?>">
+                <img class="artist__photo" src="<?= $artistImage['url']; ?>" alt="<?= sl_get_image_alt($artistImage) ? sl_get_image_alt($artistImage) : $fields['artist-name']; ?>">
                 <div class="artist__contact">
                     <?php if($fields['artist-phone']): ?>
                     <span class="artist__phone artist__contact-line"><?= $fields['artist-phone']; ?></span>

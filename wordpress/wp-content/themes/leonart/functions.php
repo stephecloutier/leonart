@@ -214,10 +214,7 @@ function sl_get_page_url($templateName) {
     Returns string corresponding to the alt from given ACF image
 */
 
-function sl_get_image_alt($fieldName) {
-    if(get_field($fieldName)) $image = get_field($fieldName);
-    if(get_sub_field($fieldName)) $image = get_sub_field($fieldName);
-    if(!get_field($fieldName) &&!get_sub_field($fieldName)) $image = $fieldName;
+function sl_get_image_alt($image) {
     if(!$image) return false;
     if($image['alt']) return $image['alt'];
     if($image['description']) return $image['description'];
