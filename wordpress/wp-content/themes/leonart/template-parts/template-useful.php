@@ -35,14 +35,16 @@ get_header();
                 <?php $placesFields = get_fields(); ?>
                 <li class="useful__places-item">
                     <span class="useful__places-number"><?= $placesFields['place-number']; ?></span>
-                    <a class="useful__places-link" href="<?= the_permalink(); ?>">
-                        <?= $placesFields['place-name']; ?>
-                    </a>
+                    <span class="useful__places-name">
+                        <a class="useful__places-link" href="<?= the_permalink(); ?>">
+                            <?= $placesFields['place-name']; ?>
+                        </a>
+                    </span>
                 </li>
                 <?php endwhile; endif; ?>
             </ol>
 
-            <a class="cta-archive cta-archive--white useful__cta" href="<?= sl_get_page_url('template-program.php'); ?>">
+            <a class="cta-archive cta-archive--white-yellow useful__cta" href="<?= sl_get_page_url('template-program.php'); ?>">
                 <span class="cta-archive__text">Voir les évènements sur ces lieux</span>
             </a>
         </div>

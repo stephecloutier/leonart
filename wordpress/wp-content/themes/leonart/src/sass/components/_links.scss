@@ -81,6 +81,16 @@
             color: white;
         }
     }
+    &--white-yellow {
+        color: black;
+        background-color: white;
+        &::before {
+            background-color: $yellow;
+        }
+        &:hover, &:focus {
+            color: black;
+        }
+    }
 }
 
 .link-back {

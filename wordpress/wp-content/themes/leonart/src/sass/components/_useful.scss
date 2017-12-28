@@ -22,7 +22,7 @@
         letter-spacing: 1px;
         column-count: 3;
         font-size: 1.125rem;
-        line-height: 1.2;
+        line-height: 1.3;
         list-style-type: none;
         text-align: left;
     }
@@ -34,11 +34,23 @@
     }
     &__places-number {
         font-weight: 600;
-        min-width: 22px;
+        min-width: 29px;
         text-align: right;
+        padding: 0.2em;
+    }
+    &__places-name {
+        margin-left: 1rem;
+        transition: 0.2s ease-out;
     }
     &__places-link {
-        margin-left: 1rem;
+        display: inline-block;
+        padding: 0.2em;
+        transition: 0.3s ease-out;
+        background-color: transparent;
+        &:hover, &:focus {
+            color: $purple;
+            background-color: white;
+        }
     }
 
 
