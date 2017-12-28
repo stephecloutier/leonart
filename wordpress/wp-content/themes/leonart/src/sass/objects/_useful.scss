@@ -1,14 +1,25 @@
 .useful {
+    &__intro {
+        margin-bottom: 10rem;
+    }
     &__places {
         width: 100%;
+        text-align: center;
     }
     &__places--inner {
         max-width: $max-width;
         margin: 0 auto;
+        position: relative;
+        top: -10rem;
     }
     &__map {
         max-width: $max-width;
         width: 100%;
+        margin-top: 1rem;
         margin-bottom: 2rem;
+    }
+    &__cta {
+        //margin-top: 1rem;
+        margin-bottom: -7rem;
     }
 }

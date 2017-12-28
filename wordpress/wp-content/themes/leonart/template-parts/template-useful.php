@@ -12,7 +12,7 @@ get_header();
 <main>
     <h1 class="main-title">En Pratique</h1>
     <?php if($fields['useful-intro']): ?>
-    <div class="intro">
+    <div class="intro useful__intro">
         <?= $fields['useful-intro']; ?>
     </div>
     <?php endif; ?>
@@ -41,7 +41,7 @@ get_header();
                 <?php endwhile; endif; ?>
             </ol>
 
-            <a class="cta-archive cta-archive--white" href="<?= sl_get_page_url('template-program.php'); ?>">
+            <a class="cta-archive cta-archive--white useful__cta" href="<?= sl_get_page_url('template-program.php'); ?>">
                 <span class="cta-archive__text">Voir les évènements sur ces lieux</span>
             </a>
         </div>

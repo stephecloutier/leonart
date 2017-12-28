@@ -1,6 +1,7 @@
 .useful {
     &__subtitle {
         @include subtitle($raspberry);
+        text-align: left;
     }
 
     &__subtitle-underlined {
@@ -11,6 +12,10 @@
         @include bg-gradient(right, $darkberry, $purple);
     }
 
+    &__map {
+        @include subtleShadow($shadow25);
+    }
+
     &__places-list {
         color: white;
         text-transform: uppercase;
@@ -19,6 +24,7 @@
         font-size: 1.125rem;
         line-height: 1.2;
         list-style-type: decimal;
+        text-align: left;
     }
     &__places-item {
         margin-bottom: 0.5em;
