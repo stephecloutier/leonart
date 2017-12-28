@@ -34,6 +34,7 @@ get_header();
                 <?php if($posts->have_posts()) : while($posts->have_posts()) : $posts->the_post(); ?>
                 <?php $placesFields = get_fields(); ?>
                 <li class="useful__places-item">
+                    <span class="useful__places-number"><?= $placesFields['place-number']; ?></span>
                     <a class="useful__places-link" href="<?= the_permalink(); ?>">
                         <?= $placesFields['place-name']; ?>
                     </a>
