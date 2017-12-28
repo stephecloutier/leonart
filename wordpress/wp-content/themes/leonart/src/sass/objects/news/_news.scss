@@ -12,6 +12,7 @@
 
 .single-news {
     width: 46%;
+
     &__inner {
         display: flex;
         flex-direction: column;
@@ -21,11 +22,14 @@
     &__title {
         margin-bottom: -0.3rem;
     }
+    &__date {
+        margin-bottom: 1rem;
+    }
     &__figure {
         width: 100%;
         max-height: 200px;
         overflow: hidden;
-        margin: 1rem 0;
+        margin-bottom: 1rem;
     }
     &__img {
         width: 100%;

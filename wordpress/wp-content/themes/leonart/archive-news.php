@@ -27,7 +27,7 @@ get_header();
         <?php
                 $paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
                 $posts = new WP_Query([
-                    'posts_per_page' => 6,
+                    'posts_per_page' => 2,
                     'paged' => $paged,
                     'post_type' => 'news',
                     'orderby' => [

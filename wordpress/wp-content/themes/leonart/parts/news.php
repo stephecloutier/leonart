@@ -13,10 +13,12 @@
             <time class="single-news__date" datetime="<?= $datetime; ?>">
                 <?= strftime('%d %B %Y', $date->getTimestamp()); ?>
             </time>
-            <?php $image = $fields['news-img'];?>
+            <?php if($fields['news-img']): ?>
+                <?php $image = $fields['news-img'];?>
             <figure class="single-news__figure">
-                <img class="single-news__img" src="<?= $image['sizes']['smallest']; ?>" alt="<?php if(sl_get_image_alt('news-img')) echo sl_get_image_alt('news-img'); else echo 'Image de la news ' . $fields['news-title']; ?>">
+                <img class="single-news__img" src="<?= $image['sizes']['smallest']; ?>" alt="<?= sl_get_image_alt($image) ? sl_get_image_alt($image) : 'Image de la news ' . $fields['news-title']; ?>">
             </figure>
+            <?php endif; ?>
             <p class="single-news__content"><?= sl_get_the_excerpt($newsContent, 280); ?></p>
             <span href="<?= the_permalink(); ?>" class="single-news__link arrow-link arrow-link--raspberry">
                 En lire plus<span class="hidden"> sur <?= $fields['news-title']; ?></span><!--
