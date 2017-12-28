@@ -38,8 +38,19 @@
         &--inner {
             max-width: 50%;
         }
-    }
-    &__block+&__block {
-        align-self: flex-end;
+        &--parking {
+            .useful__block--inner {
+                margin-right: 6rem;
+            }
+            .useful__block--svg {
+                width: 40%;
+            }
+        }
+        &--transport {
+            .useful__block--inner {
+                margin-left: 6rem;
+                order: 2;
+            }
+        }
     }
 }
