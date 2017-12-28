@@ -28,5 +28,16 @@
     }
     &__places-item {
         margin-bottom: 0.5em;
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-start;
+    }
+    &__places-number {
+        font-weight: 600;
+        min-width: 22px;
+        text-align: right;
+    }
+    &__places-link {
+        margin-left: 1rem;
     }
 }
