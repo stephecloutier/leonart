@@ -101,6 +101,9 @@
                 <li class="l-program-nav__item">
                     <a class="l-program-nav__link" href="#divers">Évènements divers</a>
                 </li>
+                <li class="l-program-nav__item">
+                    <a class="l-program-nav__link" href="#artistes">Artistes</a>
+                </li>
             </ul>
         </nav>
         <?php endif; ?>
