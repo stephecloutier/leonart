@@ -10,17 +10,7 @@ get_header();
     <h1 class="main-title">News</h1>
 
     <div class="news__sorting">
-        <span class="news__sorting-title"> Trier par &hellip;</span>
-        <form action="#" method="GET">
-            <select class="" name="dates">
-                <option value="DESC">Plus récentes</option>
-                <option value="ASC">Plus anciennces</option>
-            </select>
-            <select class="" name="categories">
-                <option value="">Catégories</option>
-            </select>
-            <!-- Catégories de news ?? Création d'une autre taxonomie ? -->
-        </form>
+
     </div>
 
     <div class="news__wrapper">
@@ -34,6 +24,7 @@ get_header();
             );
             $posts = new WP_Query($args);
          ?>
+        <?php get_template_part('parts/switcher_session'); ?>
         <?php get_template_part('parts/news'); ?>
     </div>
     <?php if(function_exists('wp_pagenavi')): ?>

@@ -382,6 +382,7 @@ function wpse45436_admin_posts_filter_restrict_manage_posts(){
     }
 }
 
+/* adding filter to wordpress administration (activities post type) */
 
 add_filter( 'parse_query', 'wpse45436_posts_filter' );
 
@@ -394,5 +395,58 @@ function wpse45436_posts_filter( $query ){
     if ( 'activities' == $type && is_admin() && $pagenow=='edit.php' && isset($_GET['ADMIN_FILTER_FIELD_VALUE']) && $_GET['ADMIN_FILTER_FIELD_VALUE'] != '') {
         $query->query_vars['meta_key'] = 'event-type';
         $query->query_vars['meta_value'] = $_GET['ADMIN_FILTER_FIELD_VALUE'];
+    }
+}
+
+/* session */
+add_action( 'init', 'switch_session' );
+function switch_session() {
+    // Session init
+    if( ! session_id() )
+        session_start();
+
+    // If switcher is used, change values
+    if( isset( $_POST[ 'post-order' ] ) ) {
+        $_SESSION[ 'post-order' ] = ( 'ASC' == $_POST['post-order'] ) ? 'ASC' : 'DESC';
+    }
+
+    /*
+    if( isset( $_GET[ 'post-order-by' ] ) ) {
+        $_SESSION[ 'post-order-by' ] = ( 'price' == $_GET['post-order-by'] ) ? 'price' : 'date';
+    }
+    */
+
+    // Default values
+    if( ! isset( $_SESSION[ 'post-order' ] ) )
+        $_SESSION[ 'post-order' ] = 'ASC';
+
+    /*
+    if( ! isset( $_SESSION[ 'post-order-by' ] ) )
+        $_SESSION[ 'post-order-by' ] = 'price';
+    */
+}
+
+/* filter query elements */
+add_action( 'pre_get_posts', 'switch_output_order' );
+function switch_output_order($query) {
+    if( !is_admin() ) {
+
+        // tri par prix
+        /*
+        if( 'price' == $_SESSION[ 'post-order-by' ] ) {
+            $query->set( 'meta_key', '_price' );
+            $query->set( 'orderby', 'meta_value_num');
+        }
+        */
+        /*
+        * Par défaut, WordPress tri par date, donc il n'y a pas besoin d'effectuer'
+        * un autre overide pour le tri par date 
+        *
+        * Sauf si, par exemple, vous voulez trier selon une date
+        * autre que la publication de l'article...
+        */
+
+        // Tri croissant ou décroissant
+        $query->set( 'order', $_SESSION[ 'post-order' ] );
     }
 }
