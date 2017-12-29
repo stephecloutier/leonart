@@ -25,16 +25,15 @@ get_header();
 
     <div class="news__wrapper">
         <?php
-                $paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
-                $posts = new WP_Query([
-                    'posts_per_page' => 2,
-                    'paged' => $paged,
-                    'post_type' => 'news',
-                    'orderby' => [
-                        'meta_value'=>'DESC',
-                    ],
-                ]);
-        ?>
+            $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+            $args = array(
+                'paged' => $paged,
+                'posts_per_page' => 2,
+                'post_type' => 'news',
+                'order' => 'DESC'
+            );
+            $posts = new WP_Query($args);
+         ?>
         <?php get_template_part('parts/news'); ?>
     </div>
     <?php if(function_exists('wp_pagenavi')): ?>
