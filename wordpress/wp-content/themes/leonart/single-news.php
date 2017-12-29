@@ -31,7 +31,7 @@ get_header();
             $posts = new WP_Query([
                 'showposts' => 2,
                 'post_type' => 'news',
-                'post__not_in' => array($post->ID),
+                'post__not_in' => array($currentID),
             ]);
         ?>
         <?php get_template_part('parts/news'); ?>
