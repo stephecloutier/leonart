@@ -7,7 +7,7 @@ get_header();
  ?>
 
 <main>
-    <h1>News</h1>
+    <h1 class="main-title">News</h1>
 
     <div class="news__sorting">
         <span class="news__sorting-title"> Trier par &hellip;</span>

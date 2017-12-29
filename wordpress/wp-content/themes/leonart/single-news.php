@@ -11,7 +11,7 @@ get_header();
 <main>
     <a href="<?= get_post_type_archive_link('news'); ?>" class="link-back" title="Aller sur la page de news">Retourner aux news</a>
 
-    <h1><?= $fields['news-title']; ?></h1>
+    <h1 class="main-title"><?= $fields['news-title']; ?></h1>
     <div class="news__content">
         <time class="news__date" datetime="<?= get_the_date('Y-m-d'); ?>"><?= get_the_date('j F Y'); ?></time>
         <img src="<?= $image['url']; ?>"
