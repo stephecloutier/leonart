@@ -429,7 +429,7 @@ function switch_session() {
 /* filter query elements */
 add_action( 'pre_get_posts', 'switch_output_order' );
 function switch_output_order($query) {
-    if( !is_admin() && is_post_type_archive('news') ) {
+    if( !is_admin() && (is_post_type_archive('news') || is_page_template('archive-news.php'))  ) {
 
         // tri par prix
         /*

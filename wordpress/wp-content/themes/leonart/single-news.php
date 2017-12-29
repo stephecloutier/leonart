@@ -9,24 +9,32 @@ get_header();
  ?>
 
 <main>
-    <a href="<?= get_post_type_archive_link('news'); ?>" class="link-back" title="Aller sur la page de news">Retourner aux news</a>
+    <div class="individual-news__wrapper">
+        <a href="<?= get_post_type_archive_link('news'); ?>" class="link-back" title="Aller sur la page de news">Retourner aux news</a>
+        <div class="individual-news__inner">
+            <h1 class="main-title individual-news__title"><?= $fields['news-title']; ?></h1>
+            <div class="individual-news__content">
+                <time class="individual-news__date" datetime="<?= get_the_date('Y-m-d'); ?>"><?= get_the_date('j F Y'); ?></time>
+                <?php if($image): ?>
+                <div class="individual-news__img-wrapper">
+                    <img src="<?= $image['url']; ?>"
+                        width="<?= $image['sizes']['large-width'] ?>"
+                        height="<?= $image['sizes']['large-height'] ?>"
+                        alt="<?= sl_get_image_alt($image) ? sl_get_image_alt($image) : 'Image de la news ' . $fields['news-title']; ?>"
+                        class="individual-news__img">
+                </div>
+                <?php endif; ?>
+                <div class="individual-news__text wysiwyg">
+                    <?= $fields['news-content']; ?>
+                </div>
 
-    <h1 class="main-title"><?= $fields['news-title']; ?></h1>
-    <div class="news__content">
-        <time class="news__date" datetime="<?= get_the_date('Y-m-d'); ?>"><?= get_the_date('j F Y'); ?></time>
-        <img src="<?= $image['url']; ?>"
-            width="<?= $image['sizes']['large-width'] ?>"
-            height="<?= $image['sizes']['large-height'] ?>"
-            alt="<?= sl_get_image_alt($image) ? sl_get_image_alt($image) : 'Image de la news ' . $fields['news-title']; ?>">
-        <div class="news__text">
-            <?= $fields['news-content']; ?>
+                [Partage facebook &amp; Twitter]
+            </div>
         </div>
-
-        [Partage facebook &amp; Twitter]
     </div>
 
-    <h2>Les dernières news</h2>
-    <div class="news__last">
+    <section class="individual-news__last">
+        <h2 class="individual-news__subtitle">Les dernières news</h2>
         <?php
             $posts = new WP_Query([
                 'showposts' => 2,
@@ -35,9 +43,9 @@ get_header();
             ]);
         ?>
         <?php get_template_part('parts/news'); ?>
-    </div>
+    </section>
 
-    <a href="<?= get_post_type_archive_link('news'); ?>" class="news__back">Retourner aux news</a>
+    <a href="<?= get_post_type_archive_link('news'); ?>" class="link-back link-back--bottom">Retourner aux news</a>
 </main>
 
 <?php get_footer(); ?>

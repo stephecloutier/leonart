@@ -98,9 +98,11 @@
     letter-spacing: 1px;
     display: block;
     max-width: $max-width;
-    margin: 2rem auto 0;
+    margin: 0 auto;
+    padding-top: 1rem;
     &--bottom {
-        margin-top: 7rem;
+        padding-top: 0;
+        margin-top: 3rem;
         //margin: 2rem auto 0;
     }
     &::before {
