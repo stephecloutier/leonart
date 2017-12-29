@@ -429,7 +429,7 @@ function switch_session() {
 /* filter query elements */
 add_action( 'pre_get_posts', 'switch_output_order' );
 function switch_output_order($query) {
-    if( !is_admin() ) {
+    if( !is_admin() && is_post_type_archive('news') ) {
 
         // tri par prix
         /*
@@ -440,7 +440,7 @@ function switch_output_order($query) {
         */
         /*
         * Par défaut, WordPress tri par date, donc il n'y a pas besoin d'effectuer'
-        * un autre overide pour le tri par date 
+        * un autre overide pour le tri par date
         *
         * Sauf si, par exemple, vous voulez trier selon une date
         * autre que la publication de l'article...

@@ -9,16 +9,12 @@ get_header();
 <main>
     <h1 class="main-title">News</h1>
 
-    <div class="news__sorting">
-
-    </div>
-
     <div class="news__wrapper">
         <?php
             $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
             $args = array(
                 'paged' => $paged,
-                'posts_per_page' => 2,
+                'posts_per_page' => 6,
                 'post_type' => 'news',
                 'order' => 'DESC'
             );
