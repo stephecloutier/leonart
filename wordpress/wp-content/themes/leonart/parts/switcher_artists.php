@@ -5,7 +5,7 @@
         'hide_empty' => true,
     ]);
  ?>
-<form method="GET" class="switcher sorting__form">
+<form method="GET" class="switcher sorting__form" id="filter-artists">
     <label for="post-filter-artists" class="sorting__label">Filtrer les artistes &hellip;</label>
     <select id="post-filter-artists" name="post-filter-artists" onchange="this.form.submit()" class="sorting__select">
         <option value="ALL" class="sorting__option">Tous</option>
