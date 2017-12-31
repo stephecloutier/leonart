@@ -223,7 +223,7 @@ function sl_get_image_alt($image) {
 }
 
 /*
-    Echoes taxonomy list
+    Echoes beautify taxonomy list
 */
 
 function sl_get_taxonomies($postID, $taxonomyName) {
@@ -241,6 +241,22 @@ function sl_get_taxonomies($postID, $taxonomyName) {
     }
     return $taxonomies;
 }
+
+/*
+    Looping through terms array & displaying terms
+*/
+function sl_display_taxonomy_terms($id, $taxonomy, $display) {
+    $result = '';
+    $terms = wp_get_post_terms($id, $taxonomy, [
+        'hide_empty' => true,
+    ]);
+    foreach($terms as $term) {
+        $result .= $term->$display . ' ';
+    }
+    return $result;
+}
+
+
 
 /*
     Retrieves posts of a related post using the ID, the related post-type and the key that makes the relation

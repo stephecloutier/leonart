@@ -20,7 +20,7 @@ get_header();
             );
             $posts = new WP_Query($args);
          ?>
-        <?php get_template_part('parts/switcher_session'); ?>
+        <?php get_template_part('parts/switcher_news'); ?>
         <?php get_template_part('parts/news'); ?>
     </div>
     <?php if(function_exists('wp_pagenavi')): ?>

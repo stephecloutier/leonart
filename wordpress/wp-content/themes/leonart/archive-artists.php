@@ -8,12 +8,13 @@ get_header();
 <main>
     <a href="<?= sl_get_page_url('template-program.php'); ?>" class="link-back" title="Retourner sur la page du programme">Retourner au programme</a>
     <h1 class="main-title">Les Artistes</h1>
+    <?php get_template_part('parts/switcher_artists'); ?>
     <div class="artists archive-artists">
         <ul class="artists__list">
             <?php $posts = new WP_Query(['showposts' => -1, 'post_type' => 'artists', 'orderby' => 'rand',]); ?>
             <?php if($posts->have_posts()) : while($posts->have_posts()) : $posts->the_post(); ?>
             <?php $fields = get_fields(); ?>
-            <li class="artists__item">
+            <li class="artists__item <?= sl_display_taxonomy_terms($post->ID, 'artistic-disciplines', 'slug'); ?>">
                 <a href="<?= the_permalink(); ?>" title="Aller sur la page de l’artiste <?= $fields['artist-name']; ?>" class="artists__link">
                     <figure class="artists__figure">
                         <?php $image = $fields['artist-img'];?>
@@ -23,7 +24,10 @@ get_header();
                         </div>
                         <div class="artists__text-bg">
                             <div class="artists__info">
-                                <span class="artists__name"><?= $fields['artist-name']; ?></span>
+                                <span
+                                    class="artists__name">
+                                    <?= $fields['artist-name']; ?>
+                                </span>
                                 <?php $artistID = $post->ID; ?>
                                 <?php if(sl_get_taxonomies($artistID, 'artistic-disciplines')): ?>
                                 <p class="artists__disciplines"><?= sl_get_taxonomies($artistID, 'artistic-disciplines'); ?></p>
