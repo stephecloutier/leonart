@@ -17,14 +17,49 @@
     }
     &__aside {
         width: 30%;
-        margin-right: 2rem;
+        margin-right: 4rem;
+        padding: 2rem 1.5rem;
     }
     &__form {
         width: 70%;
+        padding: 2rem;
+        &-info {
+            display: inline-block;
+        }
+        .form {
+            &__input {
+                width: 100%;
+                padding: 0.5rem;
+            }
+            &__label {
+                display: block;
+                margin-top: 1.25rem;
+                margin-bottom: 0.25rem;
+            }
+            &__button {
+                align-self: flex-end;
+                cursor: pointer;
+                display: inline-block;
+                margin-top: 2rem;
+                padding: 0.75rem 3rem;
+            }
+        }
+        .wpcf7-form {
+            display: flex;
+            flex-direction: column;
+            align-items: stretch;
+
+        }
+        .wpcf7-validation-errors, .wpcf7-not-valid-tip {
+            margin-top: 0.5rem;
+        }
+        .screen-reader-response {
+            @include hidden;
+        }
     }
 
     &__cta {
         margin-top: 0;
-        padding-top: 9rem;
+        padding-top: 10rem;
     }
 }

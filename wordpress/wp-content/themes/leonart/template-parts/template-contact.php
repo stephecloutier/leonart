@@ -13,7 +13,7 @@ get_header();
         <div class="contact__inner">
             <section class="contact__aside">
                 <h2 class="hidden">Informations sur l'ASBL organisatrice</h2>
-                <h3><?= $fields['contact-organizer-name']; ?></h3>
+                <span class="contact__name"><?= $fields['contact-organizer-name']; ?></span>
                 <div class="contact__infos">
                     <span class="contact__infos--phone"><?= $fields['contact-organizer-phone']; ?></span>
                     <div class="contact__infos--address">
@@ -25,6 +25,7 @@ get_header();
 
             <section class="contact__form">
                 <h2 class="hidden">Formulaire de contact</h2>
+                <span class="contact__form-info">Les champs munis d'un * sont obligatoires</span>
                 <?= do_shortcode('[contact-form-7 id="308" title="Formulaire de contact"]'); ?>
             </section>
         </div>

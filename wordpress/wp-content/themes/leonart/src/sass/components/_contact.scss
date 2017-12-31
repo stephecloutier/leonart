@@ -3,4 +3,60 @@
         background-color: white;
         @include subtleShadow($shadow25);
     }
+
+    &__name {
+        color: $raspberry;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        font-size: 1.2rem;
+    }
+    &__infos {
+        letter-spacing: 1px;
+        margin-top: 0.5em;
+        display: flex;
+        flex-direction: column;
+        &--phone, &--address {
+            margin-bottom: 0.25em;
+        }
+        &--mail {
+            color: $raspberry;
+            font-weight: 500;
+            transition: 0.2s ease-out;
+            &:hover, :focus {
+                color: $pink;
+            }
+        }
+    }
+    &__form {
+        &-info {
+            letter-spacing: 1px;
+        }
+        .form {
+            &__button {
+                font-size: 1rem;
+                border: 2px solid $black;
+            }
+            &__label {
+                color: $raspberry;
+                letter-spacing: 1px;
+                font-size: 1.2rem;
+            }
+            &__input {
+                font-family: $sourcesans;
+                font-size: 0.889rem;
+            }
+        }
+        .wpcf7-validation-errors, .wpcf7-not-valid-tip {
+            color: red;
+            font-family: $sourcesans;
+            font-size: 1rem;
+        }
+        .wpcf7-validation-errors {
+            font-weight: 500;
+        }
+        .wpcf7-mail-sent-ok {
+            color: limegreen;
+        }
+    }
 }
