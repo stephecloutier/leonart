@@ -34,4 +34,27 @@
             fill: $raspberry;
         }
     }
+
+    &__orga {
+        &-list {
+
+        }
+        &-figure {
+            border: 4px solid $black;
+            @include subtleShadow($shadow25);
+        }
+        &-infos {
+            background-color: $black;
+            color: white;
+        }
+        &-name {
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-weight: 600;
+        }
+        &-function {
+            letter-spacing: 0.5px;
+            display: block;
+        }
+    }
 }

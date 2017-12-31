@@ -34,10 +34,12 @@ get_header();
     <section class="about__orga">
         <h2 class="about__subtitle">Les organisateurs</h2>
         <ul class="about__orga-list">
-            <?php while(have_rows('about-organizers')) : the_row(); ?>
-                <li class="about__orga-item">
-                    <img class="about__orga-name" src="<?= get_sub_field('img')['sizes']['smallest']; ?>" alt="<?= sl_get_image_alt(get_sub_field('img')) ? sl_get_image_alt(get_sub_field('img')) : 'Image de l\'organisateur ' . get_sub_field('name');  ?>">
-                    <div class="about__orga-infos">
+            <?php while(have_rows('about-organizers')) : the_row(); ?><!--
+                --><li class="about__orga-item">
+                    <figure class="about__orga-figure">
+                        <img class="about__orga-img" src="<?= get_sub_field('img')['url']; ?>" alt="<?= sl_get_image_alt(get_sub_field('img')) ? sl_get_image_alt(get_sub_field('img')) : get_sub_field('name');  ?>">
+                    </figure><!--
+                    --><div class="about__orga-infos">
                         <span class="about__orga-name">
                             <?= get_sub_field('name'); ?>
                         </span>
@@ -45,8 +47,8 @@ get_header();
                         <span class="about__orga-function"><?= get_sub_field('function'); ?></span>
                         <?php endif; ?>
                     </div>
-                </li>
-            <?php endwhile; ?>
+                </li><!--
+            --><?php endwhile; ?>
         </ul>
     </section>
     <?php endif; ?>
