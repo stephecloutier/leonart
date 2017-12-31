@@ -1,0 +1,37 @@
+.about {
+    &__subtitle {
+        @include subtitle-underlined($raspberry);
+        text-align: left;
+    }
+
+    &__objectives {
+        &-item {
+            display: flex;
+            align-items: flex-start;
+            font-size: 1.2rem;
+            letter-spacing: 1px;
+            line-height: 1.3;
+            &::before {
+                content: url('../images/bullet-par.svg');
+                display: inline-block;
+            }
+        }
+        &-item+&-item {
+            margin-top: 0.75rem;
+        }
+    }
+    &__objective {
+        margin-left: 1rem;
+    }
+    &__objectives-svg {
+        .objectives-svg {
+            filter: url('#svg-colored-dropshadow');
+        }
+        .obj-tree {
+            fill: $pink;
+        }
+        .obj-table {
+            fill: $raspberry;
+        }
+    }
+}

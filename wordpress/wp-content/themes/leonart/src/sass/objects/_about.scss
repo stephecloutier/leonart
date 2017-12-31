@@ -6,4 +6,18 @@
         max-width: $max-width;
         margin: 0 auto;
     }
+
+
+    &__objectives {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 5rem 0;
+    }
+
+    &__objectives-svg {
+        max-width: 40%;
+        order: -1;
+        margin-right: 6rem;
+    }
 }
