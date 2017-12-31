@@ -6,7 +6,7 @@ $fields = get_fields();
 get_header();
 ?>
 
-<main>
+<main class="about__wrapper">
     <h1 class="main-title">À propos</h1>
     <div class="intro"><?= $fields['about-intro']; ?></div>
 
