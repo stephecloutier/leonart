@@ -6,6 +6,9 @@
 .intro {
     max-width: 800px;
     margin: 0 auto;
-    padding: 2rem 2.5rem;
+    padding: 1rem 2.5rem;
     text-align: center;
+    &--home {
+        padding: 2rem 2.5rem;
+    }
 }
