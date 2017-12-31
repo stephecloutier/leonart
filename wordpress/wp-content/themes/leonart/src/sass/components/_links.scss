@@ -103,7 +103,9 @@
     &--bottom {
         padding-top: 0;
         margin-top: 3rem;
-        //margin: 2rem auto 0;
+    }
+    &--artists {
+        margin-top: 8rem;
     }
     &::before {
         content: "a";
