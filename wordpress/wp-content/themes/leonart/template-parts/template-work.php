@@ -22,9 +22,9 @@ get_header();
             'orderby' => 'rand',
         ]); ?>
         <?php if($posts->have_posts()) : while($posts->have_posts()) : $posts->the_post(); ?>
-        <?php $shows = get_fields(); $image = $shows['event-work-img']; ?>
-        <a href="#" title="Voir l'image de l'œuvre <?= $shows['event-work-title']; ?> en plus grand" class="work__link">
-            <img class="work__img" src="<?= $image['sizes']['smallest']; ?>" alt="<?php echo (sl_get_image_alt($image) ? sl_get_image_alt : 'Image de l\'œuvre ' . $shows['event-work-title']); ?>">
+        <?php $oeuvres = get_fields(); $image = $oeuvres['event-work-img']; ?>
+        <a href="<?= $image['url']; ?>" title="Voir l'œuvre <?= $oeuvres['event-work-title']; ?> en plus grand" class="work__link"  data-lightbox="gallery-oeuvres" data-title="<?php echo (sl_get_image_alt($image) ? sl_get_image_alt($image) : 'Image de l\'œuvre ' . $oeuvres['event-work-title']); ?>" data-alt>
+            <img class="work__img" src="<?= $image['sizes']['smallest']; ?>" alt="<?php echo (sl_get_image_alt($image) ? sl_get_image_alt($image) : 'Image de l\'œuvre ' . $oeuvres['event-work-title']); ?>">
         </a>
         <?php endwhile; endif; ?>
     </div>
