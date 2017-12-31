@@ -9,6 +9,7 @@
         <title><?php wp_title(''); ?></title>
 
         <link rel="stylesheet" href="<?= get_template_directory_uri(); ?>/assets/css/main.css">
+        <link rel="stylesheet" href="<?= get_template_directory_uri(); ?>/assets/css/lightbox.css">
     </head>
 
     <body>

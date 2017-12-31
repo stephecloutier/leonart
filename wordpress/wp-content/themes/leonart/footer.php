@@ -80,5 +80,6 @@
                 </div>
             </footer>
             </div>
+        <script src="<?= get_template_directory_uri(); ?>/assets/js/lightbox-plus-jquery.js"></script>
     </body>
 </html>

@@ -96,7 +96,17 @@ get_header();
                         <?php foreach($images as $image): ?>
                             <?php $alt = sl_get_image_alt($image); ?>
                         <li class="artist__img-item">
-                            <img class="artist__work" src="<?= $image['sizes']['smallest']; ?>" alt="<?= ($alt ? $alt : '&OElig;uvre de l’artiste ' . $fields['artist-name']); ?>">
+                            <a
+                                href="<?= $image['url']; ?>"
+                                data-lightbox="gallery-artist"
+                                data-title="<?= ($alt ? $alt : '&OElig;uvre de l’artiste ' . $fields['artist-name']); ?>"
+                                data-alt
+                                title="Voir l'image en plus grand">
+                                <img
+                                    class="artist__work"
+                                    src="<?= $image['sizes']['smallest']; ?>"
+                                    alt="<?= ($alt ? $alt : '&OElig;uvre de l’artiste ' . $fields['artist-name']); ?>">
+                            </a>
                         </li>
                         <?php endforeach; ?>
                     </ul>
