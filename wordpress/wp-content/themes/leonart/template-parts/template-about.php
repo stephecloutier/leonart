@@ -71,7 +71,7 @@ get_header();
     </section>
     <?php endif; ?>
 
-    <div class="cta">
+    <div class="cta cta--reverse">
         <div class="cta--inner">
             <span class="cta__catch-phrase">Découvrez nos partenaires pour l'évènement&nbsp;!</span>
             <a href="<?= sl_get_page_url('template-partners.php'); ?>" class="cta-archive cta-archive--white" title="Aller sur la page des partenaires"><span class="cta-archive__text">Voir les partenaires</span></a>
@@ -93,7 +93,7 @@ get_header();
             <div>
                 <h3><?= $doc['documents-name']; ?></h3>
                 <div><?= $doc['documents-desc']; ?></div>
-                <a href="<?= $doc['documents-file']['url']; ?>" title="Télécharger le document <?= $doc['documents-name']; ?>">Télécharger <span class="hidden">le document <?= $doc['documents-name']; ?></span></a>
+                <a href="<?= $doc['documents-file']['url']; ?>" title="Télécharger le document <?= $doc['documents-name']; ?>">Télécharger<span class="hidden"> le document <?= $doc['documents-name']; ?></span></a>
             </div>
             <?php endwhile; endif; ?>
         </div>

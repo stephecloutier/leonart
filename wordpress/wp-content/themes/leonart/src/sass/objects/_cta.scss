@@ -27,4 +27,25 @@
     &--straight::after {
         transform: none;
     }
+    &--reverse {
+        padding: 10rem 0 8rem;
+        &::after {
+            content: "";
+            background-color: transparent;
+            height: 0;
+            width: 0;
+            transform: none;
+            position: static;
+        }
+        &::before {
+            content: "";
+            background-color: white;
+            height: 8rem;
+            width: 100%;
+            display: block;
+            transform: skewY(-4deg);
+            position: absolute;
+            top: -4rem;
+        }
+    }
 }

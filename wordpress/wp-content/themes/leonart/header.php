@@ -58,8 +58,8 @@
         <nav class="l-social-nav">
             <h2 class="hidden">Navigation des réseaux sociaux</h2>
             <ul class="l-social-nav__list">
-                <?php $posts = new WP_Query(['showposts' => -1, 'post_type' => 'social-medias']); ?>
-                <?php if($posts->have_posts()) : while($posts->have_posts()) : $posts->the_post(); ?>
+                <?php $icons = new WP_Query(['showposts' => -1, 'post_type' => 'social-medias']); ?>
+                <?php if($icons->have_posts()) : while($icons->have_posts()) : $icons->the_post(); ?>
                     <?php
                         $socialFields = get_fields();
                         $socialIcons = socialIcons();
@@ -108,3 +108,5 @@
         </nav>
         <?php endif; ?>
     </header>
+
+    <?php wp_reset_query(); ?>
