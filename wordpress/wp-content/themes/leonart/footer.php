@@ -45,7 +45,7 @@
                 </div>
                 <div class="footer__line footer__line--2">
                     <div class="footer__partenaires footer__column partenaires">
-                        <span class="footer__title">Avec la collaboration et le soutiens de</span>
+                        <a title="Aller sur la page des partenaires" href="<?= sl_get_page_url('template-partners'); ?>" class="footer__title">Avec la collaboration et le soutiens de</a>
                         <ul class="partenaires__list">
                             <?php $posts = new WP_Query(['showposts' => -1, 'post_type' => 'partners']); ?>
                             <?php if($posts->have_posts()) : while($posts->have_posts()) : $posts->the_post(); ?>
