@@ -1,0 +1,18 @@
+.partners {
+    &__link {
+        border: 2px solid $raspberry;
+        transition: 0.2s ease-out;
+        &:hover, &:focus {
+            border: 2px solid $pink;
+        }
+    }
+    &__border {
+        border: 2px solid $raspberry;
+    }
+
+    &__name {
+        font-family: $playfair;
+        font-weight: 600;
+        font-size: 1.2rem;
+    }
+}

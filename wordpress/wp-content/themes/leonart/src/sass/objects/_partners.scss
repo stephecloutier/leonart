@@ -1,0 +1,48 @@
+.partners {
+    &__wrapper {
+        max-width: $max-width;
+        margin: 0 auto;
+    }
+
+    margin-top: 2rem;
+    margin-left: -3.5%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    &__link, &__border {
+        display: block;
+        padding: 1.5rem;
+        height: 200px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    &__item {
+        display: inline-block;
+        margin: 0 0 1rem 3.5%;
+        width: 28%;
+
+    }
+
+    &__img {
+        display: block;
+        height: 100%;
+        width: auto;
+    }
+
+    &__social-icons {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        width: 100%;
+    }
+
+    &__social {
+        .icon-svg {
+            width: 2.5em !important;
+        }
+    }
+}
