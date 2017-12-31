@@ -14,11 +14,11 @@ get_header();
     <a href="#press" title="Défiler jusqu'à l'espace presse">Besoin de documents&nbsp;? Aller sur l'espace presse</a>
     <?php endif; ?>
 
-    <section>
+    <section class="about__objectives">
         <h2 class="subtitle--underline">Les objectifs</h2>
-        <ul>
+        <ul class="about__objectives-list">
             <?php while(have_rows('about-objectives')) : the_row(); ?>
-                <li>
+                <li class="about__objectives-item">
                     <?= get_sub_field('objective'); ?>
                 </li>
             <?php endwhile; ?>
@@ -26,16 +26,20 @@ get_header();
     </section>
 
     <?php if($fields['about-organizers']): ?>
-    <section>
+    <section class="about__orga">
         <h2 class="subtitle--underline">Les organisateurs</h2>
-        <ul>
+        <ul class="about__orga-list">
             <?php while(have_rows('about-organizers')) : the_row(); ?>
-                <li>
-                    <?= get_sub_field('name'); ?>
-                    <?php if(get_sub_field('function')): ?>
-                    <span class="organizer-function"><?= get_sub_field('function'); ?></span>
-                    <?php endif; ?>
-                    <img src="<?= get_sub_field('img')['sizes']['smallest']; ?>" alt="<?= sl_get_image_alt(get_sub_field('img')) ? sl_get_image_alt(get_sub_field('img')) : 'Image de l\'organisateur ' . get_sub_field('name');  ?>">
+                <li class="about__orga-item">
+                    <img class="about__orga-name" src="<?= get_sub_field('img')['sizes']['smallest']; ?>" alt="<?= sl_get_image_alt(get_sub_field('img')) ? sl_get_image_alt(get_sub_field('img')) : 'Image de l\'organisateur ' . get_sub_field('name');  ?>">
+                    <div class="about__orga-infos">
+                        <span class="about__orga-name">
+                            <?= get_sub_field('name'); ?>
+                        </span>
+                        <?php if(get_sub_field('function')): ?>
+                        <span class="about__orga-function"><?= get_sub_field('function'); ?></span>
+                        <?php endif; ?>
+                    </div>
                 </li>
             <?php endwhile; ?>
         </ul>
