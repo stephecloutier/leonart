@@ -1,0 +1,30 @@
+.contact {
+    &__wrapper {
+        @include bg-gradient(right, $peach, $pink);
+        transform: skewY(4deg);
+        z-index: 100;
+    }
+    &__inner {
+        max-width: $max-width;
+        margin: 0 auto;
+        transform: skewY(-4deg);
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        position: relative;
+        top: 5rem;
+
+    }
+    &__aside {
+        width: 30%;
+        margin-right: 2rem;
+    }
+    &__form {
+        width: 70%;
+    }
+
+    &__cta {
+        margin-top: 0;
+        padding-top: 9rem;
+    }
+}

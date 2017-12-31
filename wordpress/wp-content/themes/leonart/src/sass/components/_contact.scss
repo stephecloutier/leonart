@@ -1,0 +1,6 @@
+.contact {
+    &__aside, &__form {
+        background-color: white;
+        @include subtleShadow($shadow25);
+    }
+}
