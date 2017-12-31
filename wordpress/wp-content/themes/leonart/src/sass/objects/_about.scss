@@ -80,4 +80,32 @@
             margin-bottom: 1.5rem;
         }
     }
+
+    &__press {
+        padding: 5rem 0;
+    }
+
+    &__subtitle-press {
+        margin-bottom: 3rem;
+    }
+    &__subtitle-document {
+        margin-bottom: 0.5rem;
+    }
+    &__documents {
+        margin-top: 2rem;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: flex-start;
+    }
+
+    &__document {
+        width: 50%;
+        margin-bottom: 5rem;
+        &-link {
+            margin-top: 1rem;
+        }
+        &-desc {
+            width: 90%;
+        }
+    }
 }

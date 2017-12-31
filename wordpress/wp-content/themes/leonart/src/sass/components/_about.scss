@@ -3,6 +3,13 @@
         @include subtitle-underlined($raspberry);
         text-align: left;
     }
+    &__subtitle-press {
+        @include subtitle($raspberry);
+        text-align: center;
+    }
+    &__subtitle-document {
+        @include subtitle-underlined-small($black);
+    }
 
     &__objectives {
         &-item {
@@ -71,6 +78,35 @@
         &-svg {
             fill: $pink;
             filter: url('#svg-colored-dropshadow');
+        }
+    }
+
+    &__document {
+        &-link {
+            letter-spacing: 1px;
+            display: block;
+            color: $raspberry;
+            text-transform: uppercase;
+            font-weight: 500;
+            &::after {
+                content: "a";
+                font-family: "l-icons";
+                text-transform: none;
+                font-size: 0.8em;
+                margin-left: 0.5em;
+                display: inline-block;
+                transform: rotate(90deg);
+                transition: 0.2s ease-out;
+                position: relative;
+                top: 0.1em;
+            }
+            &:hover::after, &:focus::after {
+                transform: translateY(0.25em) rotate(90deg);
+            }
+        }
+        &-desc {
+            line-height: 1.5;
+            letter-spacing: 1px;
         }
     }
 }

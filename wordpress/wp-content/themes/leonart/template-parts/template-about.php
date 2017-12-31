@@ -97,8 +97,8 @@ get_header();
 
     <?php if($fields['about-show-press']): ?>
     <section id="press" class="about__press">
-        <h2 class="subtitle--simple">Espace presse</h2>
-        <div>
+        <h2 class="about__subtitle-press">Espace presse</h2>
+        <div class="about__documents">
             <?php
                 $posts = new WP_Query([
                     'showposts' => -1,
@@ -107,10 +107,10 @@ get_header();
             ?>
             <?php if($posts->have_posts()) : while($posts->have_posts()) : $posts->the_post(); ?>
             <?php $doc = get_fields(); ?>
-            <div>
-                <h3><?= $doc['documents-name']; ?></h3>
-                <div><?= $doc['documents-desc']; ?></div>
-                <a href="<?= $doc['documents-file']['url']; ?>" title="Télécharger le document <?= $doc['documents-name']; ?>">Télécharger<span class="hidden"> le document <?= $doc['documents-name']; ?></span></a>
+            <div class="about__document">
+                <h3 class="about__subtitle-document"><?= $doc['documents-name']; ?></h3>
+                <div class="about__document-desc"><?= $doc['documents-desc']; ?></div>
+                <a class="about__document-link" href="<?= $doc['documents-file']['url']; ?>" title="Télécharger le document <?= $doc['documents-name']; ?>">Télécharger<span class="hidden"> le document <?= $doc['documents-name']; ?></span></a>
             </div>
             <?php endwhile; endif; ?>
         </div>
