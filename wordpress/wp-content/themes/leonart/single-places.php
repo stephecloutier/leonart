@@ -26,22 +26,45 @@ get_header();
             <?php endif; ?>
         </div>
 
-        <div class="place__address"><?= $fields['place-address']; ?></div>
-        [google map]
+        <div class="place__text">
+            <div class="place__infos">
 
-        <div class="place__desc">
-            <?php if(isset($fields['place-phone']) || isset($fields['place-mail'])): ?>
-            <div class="place__contact">
-                <?php if(isset($fields['place-phone'])): ?>
-                    <a href="tel:<?= $fields['place-phone']; ?>"><?= $fields['place-phone']; ?></a>
+                <?php if($fields['place-time']): ?>
+                <div class="place__time">
+                    <?= $fields['place-time']; ?>
+                </div>
                 <?php endif; ?>
-                <?php if(isset($fields['place-mail'])): ?>
-                    <a href="mailto:<?= $fields['place-mail']; ?>"><?= $fields['place-mail']; ?></a>
+                <?php if($fields['place-phone'] || $fields['place-mail']): ?>
+                <div class="place__contact">
+                    <?php if($fields['place-phone']): ?>
+                        <a class="place__phone" href="tel:<?= $fields['place-phone']; ?>"><?= $fields['place-phone']; ?></a>
+                    <?php endif; ?>
+                    <?php if($fields['place-mail']): ?>
+                        <a class="place__mail" href="mailto:<?= $fields['place-mail']; ?>"><?= $fields['place-mail']; ?></a>
+                    <?php endif; ?>
+                </div>
+                <?php endif; ?>
+                <?php if($fields['place-map']): ?>
+                <a
+                    href="https://www.google.com/maps/search/?api=1&query=<?= $fields['place-map']['address']; ?>"
+                    title="Aller sur Google Maps"
+                    class="place__map-link">
+                    <img
+                        src="https://maps.googleapis.com/maps/api/staticmap?&center=<?= $fields['place-map']['lat'] . ',' . $fields['place-map']['lng']; ?>&zoom=15&size=350x200&maptype=roadmap&language=fr&markers=color=red|<?= $fields['place-map']['lat'] . ',' . $fields['place-map']['lng']; ?>&key=AIzaSyCZURCUTjeBBlDuFfr7_O7a_cg31pHEL58"
+                        alt=""
+                        class="place__map-img"
+                        width="350"
+                        height="200">
+                </a>
+                <?php endif; ?>
+                <?php if(isset($fields['place-address'])): ?>
+                <div class="place__address">
+                    <?= $fields['place-address']; ?>
+                </div>
                 <?php endif; ?>
             </div>
-            <?php endif; ?>
 
-            <div class="place__description">
+            <div class="place__description wysiwyg">
                 <?= $fields['place-desc']; ?>
             </div>
         </div>

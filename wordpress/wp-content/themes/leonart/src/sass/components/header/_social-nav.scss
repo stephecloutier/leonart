@@ -3,6 +3,9 @@
         fill: white;
         .icon-svg {
             width: 3em;
+            &--website {
+                width: 2.25em;
+            }
         }
         .circle {
             stroke: transparent;
@@ -11,10 +14,16 @@
             transform-origin: 50% 50%;
             transition: 0.2s ease-out;
         }
+        .arrow {
+            transition: 0.2s ease-out;
+        }
         &:hover, &:focus {
             .circle {
                 stroke: white;
                 transform: scale(1.4);
+            }
+            .arrow {
+                transform: translate(2px, -2px);
             }
         }
     }

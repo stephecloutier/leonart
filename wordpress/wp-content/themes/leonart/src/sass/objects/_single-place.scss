@@ -1,20 +1,59 @@
 .place {
+    &__social {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .icon-svg--website {
+            margin-right: 1em;
+        }
+    }
     &__inner {
         max-width: $max-width;
         margin: 0 auto;
+    }
+
+    &__text {
+        display: flex;
+        align-items: flex-start;
+        margin: 3rem 0;
+    }
+    &__infos {
+        width: 40%;
+        margin-right: 2rem;
+        display: flex;
+        flex-direction: column;
+    }
+    &__time {
+        margin-bottom: 0.5rem;
+    }
+    &__contact {
+        margin-bottom: 0.5rem;
+    }
+
+    &__address {
+        margin-top: 0.5rem;
+    }
+
+    &__map-link {
+        display: block;
+    }
+    &__map-img {
+        display: block;
+    }
+
+    &__description {
+        max-width: 60%;
     }
 
     &__images {
         width: 100%;
         display: flex;
         align-items: stretch;
+        max-height: 300px;
     }
     &__image {
         flex: 1;
         object-fit: cover;
         object-position: center;
-    }
-    &__social {
-        text-align: center;
     }
 }
