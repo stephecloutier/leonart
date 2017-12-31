@@ -24,7 +24,7 @@ get_header();
 
     <section>
         <h2 class="hidden">Formulaire de contact</h2>
-        <?= do_shortcode('[ninja_form id=1]'); ?>
+        <?= do_shortcode('[contact-form-7 id="308" title="Formulaire de contact"]'); ?>
     </section>
 </main>
 
