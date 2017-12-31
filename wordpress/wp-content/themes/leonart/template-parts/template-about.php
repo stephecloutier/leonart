@@ -11,7 +11,7 @@ get_header();
     <div class="intro"><?= $fields['about-intro']; ?></div>
 
     <?php if($fields['about-show-press']): ?>
-    <a href="#press" title="Défiler jusqu'à l'espace presse">Besoin de documents&nbsp;? Aller sur l'espace presse</a>
+    <a class="about__anchor anchor-link" href="#press" title="Défiler jusqu'à l'espace presse">Besoin de documents&nbsp;? Aller sur l'espace presse</a>
     <?php endif; ?>
 
     <section class="about__objectives">
@@ -53,7 +53,7 @@ get_header();
     </div>
 
     <?php if($fields['about-numbers']): ?>
-    <section>
+    <section class="about__numbers">
         <h2 class="subtitle--underline">L'année <?= $fields['about-year']; ?> en chiffres</h2>
         <ul class="numbers">
             <li>
@@ -83,7 +83,7 @@ get_header();
     </div>
 
     <?php if($fields['about-show-press']): ?>
-    <section id="press">
+    <section id="press" class="about__press">
         <h2 class="subtitle--simple">Espace presse</h2>
         <div>
             <?php

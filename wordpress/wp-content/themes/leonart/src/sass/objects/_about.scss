@@ -1,0 +1,9 @@
+.about {
+    &__anchor {
+        display: block;
+    }
+    &__objectives, &__orga, &__numbers, &__anchor, &__press {
+        max-width: $max-width;
+        margin: 0 auto;
+    }
+}
