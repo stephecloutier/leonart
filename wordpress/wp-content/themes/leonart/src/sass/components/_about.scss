@@ -57,4 +57,20 @@
             display: block;
         }
     }
+
+    &__numbers {
+        &-item {
+            text-align: center;
+            font-size: 2.5rem;
+            color: $raspberry;
+            line-height: 1;
+        }
+        &-num {
+            font-weight: 600;
+        }
+        &-svg {
+            fill: $pink;
+            filter: url('#svg-colored-dropshadow');
+        }
+    }
 }
