@@ -120,12 +120,11 @@ get_header();
         <a href="<?= sl_get_page_url('template-agenda.php'); ?>" title="Aller sur la page de l'agenda" class="cta-archive cta-archive--agenda"><span class="cta-archive__text">Voir l'agenda complet</span></a>
     </section>
 
-    <section class="newsletter newsletter--home home-section">
+    <section class="newsletter newsletter--home home-section" id="newsletter">
         <h2 class="newsletter__title home-title home-title--white">
             Vous voulez rester informé&nbsp;?
         </h2>
-        <h3 class="newsletter__subtitle">Inscrivez-vous à la <em>newsletter&nbsp;!</em></h3>
-        [insérer le form ici]
+        <?= do_shortcode('[mc4wp_form id="309"]'); ?>
     </section>
 
     <section class="news news--home home-section">

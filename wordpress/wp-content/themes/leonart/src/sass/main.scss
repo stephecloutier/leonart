@@ -17,6 +17,7 @@
 @import "generic/reset";
 @import "generic/box-sizing";
 @import "generic/links";
+@import "generic/english";
 
 @import "base/body";
 @import "base/hidden";
@@ -39,6 +40,7 @@
 @import "objects/about";
 @import "objects/partners";
 @import "objects/contact";
+@import "objects/newsletters";
 
 @import "components/header/logo";
 @import "components/header/main-nav";
@@ -69,3 +71,4 @@
 @import "components/about";
 @import "components/partners";
 @import "components/contact";
+@import "components/newsletters";

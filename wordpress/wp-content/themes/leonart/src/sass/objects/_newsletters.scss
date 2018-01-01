@@ -1,0 +1,27 @@
+.mc4wp-form {
+    width: 80%;
+    .mc4wp-form-fields {
+        text-align: center;
+    }
+    margin-top: -0.5rem;
+
+    .newsletter__label {
+        display: block;
+        margin-bottom: 0.5rem;
+        margin-right: 0;
+    }
+    .mc4wp-success {
+
+    }
+    .newsletter__button {
+        margin-left: 0;
+        cursor: pointer;
+    }
+}
+
+.newsletter {
+    &__input {
+        width: 40%;
+        padding: 0.8rem;
+    }
+}
