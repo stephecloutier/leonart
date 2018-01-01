@@ -44,7 +44,7 @@
                 </div>
                 <div class="footer__line footer__line--2">
                     <div class="footer__partenaires footer__column partenaires">
-                        <a title="Aller sur la page des partenaires" href="<?= sl_get_page_url('template-partners'); ?>" class="footer__title">Avec la collaboration et le soutiens de</a>
+                        <a title="Aller sur la page des partenaires" href="<?= sl_get_page_url('template-partners.php'); ?>" class="footer__title">Avec la collaboration et le soutiens de</a>
                         <ul class="partenaires__list">
                             <?php $posts = new WP_Query(['showposts' => -1, 'post_type' => 'partners']); ?>
                             <?php if($posts->have_posts()) : while($posts->have_posts()) : $posts->the_post(); ?>
@@ -75,7 +75,9 @@
                     </ul>
                 </nav>
                 <div class="footer__credits">
-                    <small>&copy; 2017 Stéphanie Cloutier</small>
+                    <a href="http://stephanie.cloutier.pro" title="Visiter le portfolio de Stéphanie Cloutier">
+                        <small>&copy; 2017 Stéphanie Cloutier</small>
+                    </a>
                 </div>
             </footer>
             </div>
