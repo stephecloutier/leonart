@@ -38,9 +38,8 @@
                             <a href="mailto:<?= $contact['contact-organizer-mail']; ?>" class="contact__mail" title="Envoyer un mail à <?= $contact['contact-organizer-name']; ?>"><?= $contact['contact-organizer-mail']; ?></a>
                         </div>
                     </div>
-                    <div class="footer__newsletter footer__column">
-                        <span class="footer__title">Inscrivez-vous à notre <em class="english-word">newsletter</em>&nbsp;!</span>
-                        [insérer le form ici]
+                    <div class="footer__newsletter footer__column newsletter--footer">
+                        <?= do_shortcode('[mc4wp_form id="309"]'); ?>
                     </div>
                 </div>
                 <div class="footer__line footer__line--2">

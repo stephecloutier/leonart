@@ -1,26 +1,23 @@
-//mc4wp-alert mc4wp-success
-
-
-.mc4wp-form {
-    font-family: $sourcesans;
-
-    .newsletter__label {
+.newsletter {
+    .mc4wp-form {
+        font-family: $sourcesans;
+        .mc4wp-success, .mc4wp-error {
+            font-size: 1.2rem;
+            text-align: center;
+            color: white;
+        }
+    }
+    &__label {
         color: white;
         font-size: 1.2rem;
         letter-spacing: 1px;
     }
-    .mc4wp-success, .mc4wp-error {
-        font-size: 1.2rem;
-        text-align: center;
-        color: white;
-    }
-
-    .newsletter__input {
+    &__input {
         font-size: 1rem;
         border: 2px solid $black;
         border-right: 0px;
     }
-    .newsletter__button {
+    &__button {
         font-size: 1rem;
         text-transform: uppercase;
         letter-spacing: 1px;
@@ -57,6 +54,25 @@
             width: 100%;
             height: 4000%;
             opacity: 1;
+        }
+    }
+    &--footer {
+        .newsletter {
+            &__label {
+                color: $raspberry;
+                font-weight: 500;
+            }
+            &__input {
+                border-right: 2px solid $black;
+            }
+            &__button {
+                padding: 0.5rem;
+                background-color: $raspberry;
+                color: white;
+                &:hover, &:focus {
+                    color: $raspberry;
+                }
+            }
         }
     }
 }
