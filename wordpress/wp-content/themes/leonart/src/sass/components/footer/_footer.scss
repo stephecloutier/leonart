@@ -82,4 +82,10 @@
     &__credits {
         font-size: 0.889rem;
     }
+    .partenaires {
+        &__item {
+            font-weight: 600;
+            font-family: $playfair;
+        }
+    }
 }
