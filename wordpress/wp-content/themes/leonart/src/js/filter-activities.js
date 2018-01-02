@@ -11,9 +11,8 @@ if($activitiesForm) {
 
     let aActivities = Array.from(document.getElementsByClassName('activity'));
     let aDates = Array.from(document.getElementsByClassName('agenda__day'));
-    console.log(aDates);
 
-    let iCountActivities = 0;
+
 
     const fFilterActivities = (filter) => {
         aActivities.forEach((activity) => {
@@ -23,6 +22,26 @@ if($activitiesForm) {
                 activity.classList.add('hide');
             }
         })
+        console.clear();
+
+        aDates.forEach((date) => {
+            let aDateActivities = Array.from(date.getElementsByClassName('activity'));
+            let iCountActivities = 0;
+
+            aDateActivities.forEach((activity) => {
+
+                console.log(activity.classList);
+                if(!activity.classList.contains('hide')) {
+                    date.classList.remove('hide');
+                    return;
+                } else {
+                    iCountActivities++;
+                }
+                if(iCountActivities == aDateActivities.length) {
+                    date.classList.add('hide');
+                }
+            })
+        });
 
     }
 
