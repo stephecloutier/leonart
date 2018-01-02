@@ -13,7 +13,7 @@ $posts = new WP_Query([
         [
             'key' => 'event-datetimes',
             'compare' => 'EXISTS',
-        ]
+        ],
     ],
 ]);
 
@@ -26,7 +26,7 @@ get_header();
     <?php get_template_part('parts/switcher_agenda'); ?>
     <div class="agenda">
         <div class="agenda__inner">
-            <?php if(have_rows('agenda-dates')): ?>
+            <?php if($fields['agenda-dates']): ?>
                 <?php foreach($fields['agenda-dates'] as $dates): ?>
                     <?php
                         $date = new DateTime($dates['agenda-date']);
@@ -54,7 +54,7 @@ get_header();
 
                                     ?>
                                     <?php if($activityDay == $day): ?>
-                                        <div class="activity <?= sl_display_taxonomy_terms($post->ID, 'artistic-disciplines', 'slug'); ?>">
+                                        <div class="activity <?= sl_display_taxonomy_terms($post->ID, 'artistic-disciplines', 'slug'); ?> <?= strftime('%d/%m', $activityDate->getTimestamp()); ?>">
                                             <time class="activity__time" datetime="<?= strftime('%Y-%m-%d', $activityDate->getTimestamp()) . 'T' . strftime('%Hh%M', $activityStartTime->getTimestamp()); ?>">
                                                 <?= strftime('%Hh%M', $activityStartTime->getTimestamp()); ?>
                                                 <?php if($datetimes['event-end-time']): ?>

@@ -11,7 +11,9 @@ if($activitiesForm) {
 
     let aActivities = Array.from(document.getElementsByClassName('activity'));
     let aDates = Array.from(document.getElementsByClassName('agenda__day'));
+    console.log(aDates);
 
+    let iCountActivities = 0;
 
     const fFilterActivities = (filter) => {
         aActivities.forEach((activity) => {
@@ -21,6 +23,7 @@ if($activitiesForm) {
                 activity.classList.add('hide');
             }
         })
+
     }
 
     const fFilterDates = (filter) => {

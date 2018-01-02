@@ -51,6 +51,7 @@ get_header();
                     </figure>
                 </a>
                 <?php endwhile; endif; ?>
+                <?php wp_reset_query(); ?>
             </li>
         </ul>
         <a href="<?= get_post_type_archive_link('artists'); ?>" title="Aller sur la page de tous les artistes" class="cta-archive cta-archive--artists"><span class="cta-archive__text">Voir tous les artistes</span></a>
@@ -58,64 +59,103 @@ get_header();
 
     <section class="agenda agenda--home home-section">
         <h2 class="agenda__title home-title">
-            Les évènements à venir
+            Aperçu de l'agenda
         </h2>
         <?php
-            //$posts = new WP_Query(['showposts' => 3, 'post_type' => 'activities']);
             $agendaFields = get_fields(sl_get_page_id_from_template('template-agenda.php'));
         ?>
-        <?php
-            $posts = new WP_Query([
-            'showposts' => 3,
-            'post_type' => 'activities',
-            'meta_query' => array(
-                array(
-                    'key' => 'event-datetimes',
-                    'compare' => 'EXISTS',
-                )
-            ),
-            ]);
-        ?>
         <div class="agenda__inner">
-            <?php foreach($agendaFields['agenda-dates'] as $dates): ?>
-                <div class="agenda__day">
+            <?php if($agendaFields['agenda-dates']): ?>
+                <?php foreach($agendaFields['agenda-dates'] as $dates): ?>
                     <?php
                         $date = new DateTime($dates['agenda-date']);
                         $day = strftime('%d', $date->getTimestamp());
-                    ?>
-                    <div class="agenda__date agenda__date--<?= strftime('%A', $date->getTimestamp()); ?>">
-                        <time class="agenda__time" datetime="<?= strftime($htmlTimestampFormat, $date->getTimestamp()); ?>">
-                            <span class="agenda__date--day"><?= strftime('%A', $date->getTimestamp()); ?></span>
-                            <span class="agenda__date--numbers"><?= strftime('%d/%m', $date->getTimestamp()); ?></span>
-                        </time>
-                    </div>
-                    <div class="agenda__activities">
-                    <?php if($posts->have_posts()) : while($posts->have_posts()) : $posts->the_post(); ?>
-                        <?php $activity = get_fields($post->ID); ?>
-                        <?php foreach($activity['event-datetimes'] as $datetimes): ?>
+                        $formattedDate = strftime('%Y%m%d', $date->getTimestamp());
+                        $theDatetime = strftime('%d-%m-%Y', $date->getTimestamp());
+                     ?>
+                    <div class="agenda__day <?= strftime('%d/%m', $date->getTimestamp()); ?>">
+                        <!-- start of one day -->
+
+                        <div class="agenda__date agenda__date--<?= strftime('%A', $date->getTimestamp()); ?>">
+                            <time class="agenda__time" datetime="<?= strftime($htmlTimestampFormat, $date->getTimestamp()); ?>">
+                                <span class="agenda__date--day"><?= strftime('%A', $date->getTimestamp()); ?></span>
+                                <span class="agenda__date--numbers"><?= strftime('%d/%m', $date->getTimestamp()); ?></span>
+                            </time>
+                        </div>
+                        <div class="agenda__activities">
                             <?php
-                                $activityDate = new DateTime($datetimes['event-datetime']);
-                                $activityDay = strftime('%d', $activityDate->getTimestamp());
-                            ?>
-                            <?php if($activityDay == $day): ?>
+                                $activities = new WP_Query([
+                                    'showposts' => 1,
+                                    'post_type' => 'activities',
+                                    'meta_query' => [
+                                        [
+                                            'key' => 'event-datetimes_0_event-date',
+                                            'compare' => 'LIKE',
+                                            'value' => $formattedDate,
+                                        ],
+                                    ],
+                                    'orderby' => 'rand',
+                                ]);
+                             ?>
+
+                             <?php if($activities->have_posts()) : while($activities->have_posts()) : $activities->the_post(); ?>
+                                <?php
+                                    $activity = get_fields($post->ID);
+                                    $datetimes = $activity['event-datetimes'];
+                                    $counter = 0;
+                                    while($counter < count($datetimes)) {
+                                        if($datetimes[$counter]['event-date'] == $theDatetime) {
+                                            $activityDate = new DateTime($datetimes[$counter]['event-date']);
+                                            $activityDay = strftime('%d', $activityDate->getTimestamp());
+                                            $activityStartTime = new DateTime($datetimes[$counter]['event-time']);
+                                            $activityEndTime = new DateTime($datetimes[$counter]['event-end-time']);
+                                            $arrayIndex = $counter;
+                                            $counter = count($datetimes);
+                                        }
+                                        $counter++;
+                                    }
+                                ?>
+                            <!-- début de l'activité random -->
                             <div class="activity">
-                                <time class="activity__time"><?= strftime('%Hh%M', $activityDate->getTimestamp()); ?></time>
-                                <div class="activity__title"><?= $activity['event-title']; ?></div>
+                                <time class="activity__time" datetime="<?= strftime('%Y-%m-%d', $activityDate->getTimestamp()) . 'T' . strftime('%Hh%M', $activityStartTime->getTimestamp()); ?>">
+                                    <?= strftime('%Hh%M', $activityStartTime->getTimestamp()); ?>
+                                    <?php if($datetimes[$arrayIndex]['event-end-time']): ?>
+                                    <span class="activity__endtime"> - <?= strftime('%Hh%M', $activityEndTime->getTimestamp()); ?></span>
+                                    <?php endif; ?>
+                                </time>
+
+                                <div class="activity__infos">
+                                    <span class="activity__title">
+                                        <?= $activity['event-title']; ?>
+                                    </span>
                                     <?php if($activity['event-has-place']): ?>
                                         <?php
                                             $relationPlace = $activity['event-place'];
                                             $place = get_fields($relationPlace[0]->ID);
                                         ?>
+                                        <div class="activity__address">
+                                            <a href="<?= get_permalink($relationPlace[0]->ID) ?>" title="Visiter la page du lieu <?= $place['place-name']; ?>">
+                                                <span class="activity__address-name">
+                                                    <?= $place['place-name']; ?>
+                                                </span>
+                                                <?= $place['place-address']; ?>
+                                            </a><!--
+                                        --></div>
                                     <?php elseif($activity['event-address']): ?>
-
+                                        <div class="activity__address">
+                                            <?= $activity['event-address']; ?>
+                                        </div>
                                     <?php endif; ?>
+                                </div>
                             </div>
-                            <?php endif; ?>
-                        <?php endforeach; ?>
-                    <?php endwhile; endif; ?>
+                            <!-- fin de l'activité -->
+                        <?php endwhile; endif; ?>
+                        </div>
+                        <!-- end of one day -->
                     </div>
-                </div>
-            <?php endforeach; ?>
+                <?php endforeach; ?>
+            <?php endif; ?>
+            <?php wp_reset_query(); ?>
         </div>
         <a href="<?= sl_get_page_url('template-agenda.php'); ?>" title="Aller sur la page de l'agenda" class="cta-archive cta-archive--agenda"><span class="cta-archive__text">Voir l'agenda complet</span></a>
     </section>
@@ -133,6 +173,7 @@ get_header();
         </h2>
         <?php $posts = new WP_Query(['showposts' => 2, 'post_type' => 'news']); ?>
         <?php get_template_part('parts/news'); ?>
+        <?php wp_reset_query(); ?>
         <a href="<?= get_post_type_archive_link('news'); ?>" title="Aller sur la page des news" class="cta-archive cta-archive--news"><span class="cta-archive__text">Voir toutes les news</span></a>
     </section>
 
