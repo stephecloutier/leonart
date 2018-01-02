@@ -13,7 +13,7 @@
         align-items: stretch;
     }
     &__date {
-        width: 20%;
+        min-width: 210px;
         &--day {
             width: 100%;
         }
@@ -36,8 +36,14 @@
         &+.activity {
             margin-top: 2rem;
         }
+        &__infos {
+            margin-left: 3rem;
+        }
         &__time {
-            margin-right: 3rem;
+            min-width: 120px;
+        }
+        &__address {
+            //display: block;
         }
     }
 }

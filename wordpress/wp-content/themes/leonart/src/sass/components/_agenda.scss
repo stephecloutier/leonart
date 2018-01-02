@@ -1,6 +1,7 @@
 .agenda {
     &__inner {
         border: 4px solid $black;
+        @include subtleShadow($shadow25);
     }
     &__day {
         &+.agenda__day {
@@ -43,6 +44,9 @@
         &__time {
             font-weight: 500;
             color: $black;
+        }
+        &__address {
+            font-size: 1rem;
         }
     }
 
