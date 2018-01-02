@@ -178,15 +178,13 @@ get_header();
     </section>
 
     <?php if(get_field('enable-instagram')): ?>
-        <!--
     <section class="instagram home-section">
         <h2 class="instagram__title home-title home-title--white">
             Notre fil instagram
         </h2>
-        [insérer le fil instagram ici]
-        <a href="" title="Aller sur notre fil instagram" class="cta-archive cta-archive--instagram"><span class="cta-archive__text">Aller sur notre fil instagram</span></a>
+        <?= do_shortcode('[instagram-feed id="528259662"]'); ?>
+        <a href="" title="Aller sur notre fil instagram" class="cta-archive cta-archive--white"><span class="cta-archive__text">Aller sur notre fil instagram</span></a>
     </section>
--->
     <?php endif; ?>
 </main>
 

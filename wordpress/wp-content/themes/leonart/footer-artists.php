@@ -82,5 +82,6 @@
             </footer>
             </div>
         <script src="<?= get_template_directory_uri(); ?>/assets/js/filter-artists.js"></script>
+        <?php wp_footer(); ?>
     </body>
 </html>

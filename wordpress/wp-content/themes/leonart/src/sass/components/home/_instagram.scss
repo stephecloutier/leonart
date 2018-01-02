@@ -1,0 +1,8 @@
+.instagram {
+    @include bg-gradient(right, $pink, $peach);
+    .sbi {
+        &_type_image {
+            border: 4px solid white;
+        }
+    }
+}

@@ -2,6 +2,7 @@
 
 add_action('init', 'sl_register_types');
 add_filter('wp_title', 'custom_wp_title');
+add_filter('show_admin_bar', '__return_false');
 
 
 // image thumbnails \\
