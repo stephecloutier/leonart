@@ -28,12 +28,13 @@ get_header();
         <div class="agenda__inner">
             <?php if(have_rows('agenda-dates')): ?>
                 <?php foreach($fields['agenda-dates'] as $dates): ?>
-                    <div class="agenda__day">
+                    <?php
+                        $date = new DateTime($dates['agenda-date']);
+                        $day = strftime('%d', $date->getTimestamp());
+                     ?>
+                    <div class="agenda__day <?= strftime('%d/%m', $date->getTimestamp()); ?>">
                         <!-- start of one day -->
-                        <?php
-                            $date = new DateTime($dates['agenda-date']);
-                            $day = strftime('%d', $date->getTimestamp());
-                         ?>
+
                         <div class="agenda__date agenda__date--<?= strftime('%A', $date->getTimestamp()); ?>">
                             <time class="agenda__time" datetime="<?= strftime($htmlTimestampFormat, $date->getTimestamp()); ?>">
                                 <span class="agenda__date--day"><?= strftime('%A', $date->getTimestamp()); ?></span>

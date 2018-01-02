@@ -26,7 +26,7 @@ $dates = get_fields(sl_get_page_id_from_template('template-agenda.php'))['agenda
                 <option value="none" class="sorting__option">Toutes</option>
                 <?php foreach($dates as $date): ?>
                     <?php $theDate = new DateTime($date['agenda-date']); $formattedDate = strftime('%d/%m', $theDate->getTimestamp()); ?>
-                <option value="<?= $date['agenda-date']; ?>"><?= $formattedDate; ?></option>
+                <option value="<?= $formattedDate; ?>"><?= $formattedDate; ?></option>
                 <?php endforeach; ?>
             </select>
         </div>
