@@ -14,5 +14,11 @@
             margin: 0 0 2rem 2.5%;
             overflow: hidden;
         }
+        &_photo {
+            &:hover, &:focus {
+                opacity: 1;
+                outline: 1;
+            }
+        }
     }
 }

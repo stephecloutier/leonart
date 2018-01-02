@@ -183,7 +183,7 @@ get_header();
             Notre fil instagram
         </h2>
         <?= do_shortcode('[instagram-feed id="528259662"]'); ?>
-        <a href="" title="Aller sur notre fil instagram" class="cta-archive cta-archive--white"><span class="cta-archive__text">Aller sur notre fil instagram</span></a>
+        <a href="<?= get_field('instagram-link'); ?>" title="Aller sur notre fil instagram" class="cta-archive cta-archive--white"><span class="cta-archive__text">Aller sur notre fil instagram</span></a>
     </section>
     <?php endif; ?>
 </main>
