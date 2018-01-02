@@ -54,7 +54,7 @@ get_header();
 
                                     ?>
                                     <?php if($activityDay == $day): ?>
-                                        <div class="activity">
+                                        <div class="activity <?= sl_display_taxonomy_terms($post->ID, 'artistic-disciplines', 'slug'); ?>">
                                             <time class="activity__time" datetime="<?= strftime('%Y-%m-%d', $activityDate->getTimestamp()) . 'T' . strftime('%Hh%M', $activityStartTime->getTimestamp()); ?>">
                                                 <?= strftime('%Hh%M', $activityStartTime->getTimestamp()); ?>
                                                 <?php if($datetimes['event-end-time']): ?>
