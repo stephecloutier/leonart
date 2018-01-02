@@ -83,6 +83,14 @@ get_header();
                                                         $relationPlace = $activity['event-place'];
                                                         $place = get_fields($relationPlace[0]->ID);
                                                     ?>
+                                                    <div class="activity__address">
+                                                        <a href="<?= get_permalink($relationPlace[0]->ID) ?>" title="Visiter la page du lieu <?= $place['place-name']; ?>">
+                                                            <span class="activity__address-name">
+                                                                <?= $place['place-name']; ?>
+                                                            </span>
+                                                            <?= $place['place-address']; ?>
+                                                        </a><!--
+                                                    --></div>
                                                 <?php elseif($activity['event-address']): ?>
                                                     <div class="activity__address">
                                                         <?= $activity['event-address']; ?>

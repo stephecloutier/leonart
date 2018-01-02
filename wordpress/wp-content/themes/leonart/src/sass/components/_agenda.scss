@@ -47,6 +47,9 @@
         }
         &__address {
             font-size: 1rem;
+            &-name {
+                font-style: italic;
+            }
         }
     }
 
