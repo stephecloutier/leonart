@@ -81,6 +81,6 @@
                 </div>
             </footer>
             </div>
-        <script src="<?= get_template_directory_uri(); ?>/assets/js/lightbox-plus-jquery.js"></script>
+        <script src="<?= get_template_directory_uri(); ?>/assets/js/filter-activities.js"></script>
     </body>
 </html>

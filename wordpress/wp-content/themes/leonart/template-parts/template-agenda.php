@@ -23,20 +23,7 @@ get_header();
 
 <main>
     <h1 class="main-title">Agenda</h1>
-    <!--
-    <div class="agenda__sorting">
-        <span>Trier par...</span>
-        <select name="date" id="">
-
-        </select>
-        <select name="type" id="">
-
-        </select>
-        <select name="lieu" id="">
-
-        </select>
-    </div>
--->
+    <?php get_template_part('parts/switcher_agenda'); ?>
     <div class="agenda">
         <div class="agenda__inner">
             <?php if(have_rows('agenda-dates')): ?>
@@ -117,4 +104,4 @@ get_header();
     </div>
 </main>
 
-<?php get_footer(); ?>
+<?php get_footer('activities'); ?>
