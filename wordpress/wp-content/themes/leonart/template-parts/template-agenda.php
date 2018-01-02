@@ -67,7 +67,7 @@ get_header();
                                     ?>
                                     <?php if($activityDay == $day): ?>
                                         <div class="activity">
-                                            <time class="activity__time" datetime="<?= strftime($htmlTimestampFormat, $activityStartTime->getTimestamp()); ?>">
+                                            <time class="activity__time" datetime="<?= strftime('%Y-%m-%d', $activityDate->getTimestamp()) . 'T' . strftime('%Hh%M', $activityStartTime->getTimestamp()); ?>">
                                                 <?= strftime('%Hh%M', $activityStartTime->getTimestamp()); ?>
                                                 <?php if($datetimes['event-end-time']): ?>
                                                 <span class="activity__endtime"> - <?= strftime('%Hh%M', $activityEndTime->getTimestamp()); ?></span>
