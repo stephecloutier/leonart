@@ -17,13 +17,15 @@
                 if($fields['news-img']) {
                     $image = $fields['news-img'];
                     $imageSize = $image['sizes']['smallest'];
+                    $imageAlt = sl_get_image_alt($image) ? sl_get_image_alt($image) : 'Image de la news ' . $fields['news-title'];
                 } else {
                     $image = get_template_directory_uri() . '/assets/images/banner-image.jpg';
                     $imageSize = $image;
+                    $imageAlt = 'Image de la news ' . $fields['news-title'];
                 }
             ?>
             <figure class="single-news__figure">
-                <img class="single-news__img" src="<?= $imageSize; ?>" alt="<?= sl_get_image_alt($image) ? sl_get_image_alt($image) : 'Image de la news ' . $fields['news-title']; ?>">
+                <img class="single-news__img" src="<?= $imageSize; ?>" alt="<?= $imageAlt; ?>">
             </figure>
             <p class="single-news__content"><?= sl_get_the_excerpt($newsContent, 280); ?></p>
             <span href="<?= the_permalink(); ?>" class="single-news__link arrow-link arrow-link--raspberry">
