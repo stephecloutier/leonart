@@ -50,6 +50,7 @@
         display: flex;
         align-items: stretch;
         max-height: 300px;
+        overflow: hidden;
     }
     &__image {
         flex: 1;

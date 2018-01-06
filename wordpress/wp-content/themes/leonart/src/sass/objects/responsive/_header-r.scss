@@ -4,6 +4,8 @@
         width: 90%;
         &__link {
             padding: 0.5em;
+            display: inline-block;
+            margin: 0;
         }
     }
     .header {
@@ -19,7 +21,7 @@
         max-width: 95%;
         width: 95%;
         &__link {
-            padding: 0.35em;
+            padding: 0.25em;
         }
     }  
     .header {
@@ -99,9 +101,7 @@
         }
         &__item+.l-main-nav__item::before {
             content: "";
-            font-size: 0;
-            margin: 0;
-            margin-right: 0;
+            @include hidden;
         }
         &__link {
             display: inline-block;

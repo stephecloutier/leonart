@@ -48,7 +48,6 @@
             display: flex;
             flex-direction: column;
             align-items: stretch;
-
         }
         .wpcf7-validation-errors, .wpcf7-not-valid-tip {
             margin-top: 0.5rem;
@@ -61,5 +60,6 @@
     &__cta {
         margin-top: 0;
         padding-top: 10rem;
+        z-index: -1;
     }
 }

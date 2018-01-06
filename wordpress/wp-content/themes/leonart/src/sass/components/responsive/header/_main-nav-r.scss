@@ -6,8 +6,15 @@
 
 @media screen and (max-width: 920px) {
     .l-main-nav {
+        &__item:first-of-type::before {
+            content: "";
+            @include hidden;
+            position: absolute;
+        }
         &__item+.l-main-nav__item::before {
             content: "";
+            @include hidden;
+            position: absolute;
         }
     }
 }
