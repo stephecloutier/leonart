@@ -5,3 +5,9 @@
         margin-bottom: 1rem;
     }
 }
+
+@media screen and (max-width: 380px) {
+    .main-title {
+        font-size: 3rem;
+    }
+}
