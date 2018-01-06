@@ -1,0 +1,33 @@
+@media screen and (max-width: 1100px) {
+    .artists {
+        &__list, &__list-program {
+            max-width: 95%;
+            text-align: center;
+        }
+        &__item {
+            min-width: 210px;
+            margin-bottom: 1rem;
+        }
+    }
+ }
+
+ @media screen and (max-width: 760px) {
+    .artists {
+        &__item {
+            width: 40%;
+        }
+    }
+ }
+
+ @media screen and (max-width: 500px) {
+    .artists {
+        &__list {
+        }
+        &__list-program {
+            margin-left: 2.5%;
+        }
+        &__item {
+            width: 80%;
+        }
+    }
+ }

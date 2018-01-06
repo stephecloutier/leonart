@@ -172,7 +172,7 @@ get_header();
         <div class="artists artists-program">
             <div class="artists__list">
                 <h2 class="program__title program__title--artists">Les artistes</h2>
-                <ul>
+                <ul class="artists__list-program">
                     <?php $posts = new WP_Query(['showposts' => 8, 'post_type' => 'artists', 'orderby' => 'rand',]); ?>
                     <?php if($posts->have_posts()) : while($posts->have_posts()) : $posts->the_post(); ?>
                     <?php $fields = get_fields(); ?>
