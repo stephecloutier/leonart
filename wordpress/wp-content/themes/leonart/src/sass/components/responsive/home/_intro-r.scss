@@ -1,0 +1,7 @@
+@media screen and (max-width: 450px) {
+    .intro {
+        &--home {
+            border: 3px solid $raspberry;
+        }
+    }
+}
