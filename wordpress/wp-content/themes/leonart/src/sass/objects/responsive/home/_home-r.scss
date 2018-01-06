@@ -10,6 +10,18 @@
             max-width: 95%;
         }
     }
+    .newsletter {
+        &--home {
+            .mc4wp-form {
+                width: 90%;
+            }
+            .newsletter {
+                &__input {
+                    width: 50%;
+                }
+            }
+        } 
+    }
 }
 
 @media screen and (max-width: 965px) {
@@ -53,6 +65,14 @@
             font-size: 1rem;
         }
     }
+    .newsletter {
+        &--home {
+            .home-title {
+                margin-bottom: 1.5rem;
+            }
+        }
+        
+    }
 }
 
 @media screen and (max-width: 850px) {
@@ -78,6 +98,15 @@
         .sbi {
             &_type_image {
                 margin: 0 0 1rem 2.5%;
+            }
+        }
+    }
+    .newsletter {
+        &--home {
+            .newsletter {
+                &__input {
+                    width: 60%;
+                }
             }
         }
     }
@@ -162,6 +191,13 @@
             }
         }
     }
+    .newsletter {
+        &--home {
+            .mc4wp-form {
+                width: 100%;
+            }
+        } 
+    }
 }
 
 @media screen and (max-width: 350px) {
@@ -180,6 +216,15 @@
                 width: 90% !important;
                 min-width: 90%;
                 max-height: 250px;
+            }
+        }
+    }
+    .newsletter {
+        &--home {
+            .newsletter {
+                &__input {
+                    width: 50%;
+                }
             }
         }
     }
