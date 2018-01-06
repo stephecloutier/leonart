@@ -78,7 +78,7 @@
             </ul>
         </nav>
 
-        <nav class="l-main-nav <?php if(is_front_page()) echo 'l-main-nav--home'; ?> hide-nav">
+        <nav id="main-nav" class="l-main-nav <?php if(is_front_page()) echo 'l-main-nav--home'; ?> hide-nav">
             <h2 class="hidden">Navigation principale</h2>
             <ul class="l-main-nav__list">
                 <?php foreach(sl_get_nav_items('main') as $item): ?>
