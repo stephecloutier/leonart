@@ -1,0 +1,99 @@
+@media screen and (max-width: 1100px) {
+    .useful {
+        &__places--inner, &__other {
+            max-width: 95%;
+        }
+    }
+}
+
+
+@media screen and (max-width: 850px) {
+    .useful {
+        &__subtitle-underlined {
+            font-size: 1.5rem;
+        }
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .useful {
+        &__places-list {
+            column-count: 2;
+        }
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .useful {
+        &__block {
+            &--parking {
+                .useful__block--inner {
+                    margin-right: 3rem;
+                }
+            }
+            &--transport {
+                .useful__block--inner {
+                    margin-left: 3rem;
+                }
+            }
+        }
+    }
+}
+
+
+@media screen and (max-width: 630px) {
+    .useful {
+        &__block {
+            padding: 1.5rem 0;
+            flex-direction: column;
+            align-items: center;
+            &--inner {
+                max-width: 95%;
+            }
+            &--parking {
+                .useful__block--inner {
+                    order: 2;
+                    margin-right: 0;
+                    margin-top: 2rem;
+                }
+            }
+            &--transport {
+                .useful__block--svg {
+                    width: 50%;
+                }
+                .useful__block--inner {
+                    order: 2;
+                    margin-left: 0;
+                    margin-top: 2rem;
+                }
+            }
+        }
+    }
+}
+
+
+@media screen and (max-width: 500px) {
+    .useful {
+        &__places-list {
+            column-count: 1;
+            margin-bottom: -2rem;
+        }
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .useful {
+        &__block {
+            &--parking {
+                .useful__block--svg {
+                    display: none;
+                }
+            }
+            &--transport {
+                .useful__block--svg {
+                    display: none;
+                }
+            }
+        }
+    }
+}
