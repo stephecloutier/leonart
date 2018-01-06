@@ -41,6 +41,8 @@
             </defs>
         </svg>
     <header class="header">
+        <svg id="burger-menu" class="burger-menu" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M24 3c0-.6-.4-1-1-1H1c-.6 0-1 .4-1 1v2c0 .6.4 1 1 1h22c.6 0 1-.4 1-1V3zM24 11c0-.6-.4-1-1-1H1c-.6 0-1 .4-1 1v2c0 .6.4 1 1 1h22c.6 0 1-.4 1-1v-2zM24 19c0-.6-.4-1-1-1H1c-.6 0-1 .4-1 1v2c0 .6.4 1 1 1h22c.6 0 1-.4 1-1v-2z"/></svg>
+
         <h1 class="header__main-title">
             <a href="<?= get_home_url(); ?>" title="Aller à l'accueil" class="c-logo">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 108 86" class="c-logo__svg" preserveAspectRatio="xMidYMid meet">
@@ -76,7 +78,7 @@
             </ul>
         </nav>
 
-        <nav class="l-main-nav <?php if(is_front_page()) echo 'l-main-nav--home'; ?>">
+        <nav class="l-main-nav <?php if(is_front_page()) echo 'l-main-nav--home'; ?> hide-nav">
             <h2 class="hidden">Navigation principale</h2>
             <ul class="l-main-nav__list">
                 <?php foreach(sl_get_nav_items('main') as $item): ?>

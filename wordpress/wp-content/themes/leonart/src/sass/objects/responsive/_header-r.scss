@@ -1,0 +1,94 @@
+@media screen and (max-width: 1100px) {
+    .l-main-nav {
+        max-width: 90%;
+        width: 90%;
+        &__link {
+            padding: 0.5em;
+        }
+    }
+   
+}
+
+@media screen and (max-width: 965px) {
+    .l-main-nav {
+        max-width: 95%;
+        width: 95%;
+        &__link {
+            padding: 0.35em;
+        }
+    }    
+}
+
+
+@media screen and (max-width: 800px) {
+    .l-main-nav {
+        padding: 1em 0;
+        &__list {
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        &__item {
+            margin: 0.75em;
+        }
+    }
+}
+
+@media screen and (max-width: 545px) {
+    .l-main-nav {
+        &__item {
+            margin: 0.5em;
+        }
+        &__link {
+            padding: 0.3em;
+        }
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .l-main-nav {
+        position: absolute;
+        top: 6rem;
+        left: 0;
+        width: 100%;
+        max-width: 100%;
+        padding: 0; 
+        z-index: 100;
+        &__list {
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start;
+        }
+        &__item {
+            padding: 0;
+            margin: 0;
+            border: none;
+            width: 100%;
+        }
+        &__item+.l-main-nav__item::before {
+            content: "";
+            font-size: 0;
+            margin: 0;
+            margin-right: 0;
+        }
+        &__link {
+            display: inline-block;
+            width: 100%;
+            padding: 1em 0 1em 2rem;
+        }
+    }
+    .burger-menu {
+        display: block;
+        fill: white;
+        width: 2.5rem;
+        height: 2.5rem;
+        position: absolute;
+        top: 2rem;
+        left: 2rem;
+        cursor: pointer;
+    }
+    /* toggle on burger menu click
+    .hide-nav {
+        display: none;
+    }
+    */
+}
