@@ -6,7 +6,12 @@
             padding: 0.5em;
         }
     }
-   
+    .header {
+        .l-social-nav {
+            max-width: 90%;
+            width: 90%;
+        } 
+    } 
 }
 
 @media screen and (max-width: 965px) {
@@ -16,7 +21,13 @@
         &__link {
             padding: 0.35em;
         }
-    }    
+    }  
+    .header {
+        .l-social-nav {
+            max-width: 95%;
+            width: 95%;
+        } 
+    }   
 }
 
 
@@ -45,6 +56,11 @@
 }
 
 @media screen and (max-width: 450px) {
+    .header {
+        .l-social-nav {
+            margin-top: 2rem;
+        } 
+    } 
     .l-main-nav {
         position: absolute;
         top: 6rem;
