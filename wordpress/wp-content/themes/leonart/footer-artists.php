@@ -62,7 +62,7 @@
                     </div>
                 </div>
                 <div class="footer__line footer__line--3">
-                    Icônes par Dave Gandy, Bogdan Rosu, SimpleIcon, Zurb, Freepik et Smashicons sur <a class="footer__link" href="www.flaticon.com" title="Aller sur le site flaticon">flaticon.com</a>
+                    <p>Icônes par Dave Gandy, Bogdan Rosu, SimpleIcon, Zurb, Freepik et Smashicons sur <a class="footer__link" href="www.flaticon.com" title="Aller sur le site flaticon">flaticon.com</a></p>
                 </div>
                 <nav class="footer__nav">
                     <h2 class="hidden">Navigation principale</h2>
