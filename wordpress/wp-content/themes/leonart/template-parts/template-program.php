@@ -81,9 +81,18 @@ get_header();
                     <h3 class="program__subtitle program__subtitle--show"><?= $shows['event-title']; ?></h3>
                     <ul class="show__datetimes">
                         <?php while(have_rows('event-datetimes')) : the_row(); ?>
-                            <?php $date = new DateTime(get_sub_field('event-datetime')); ?>
+                            <?php 
+                                $date = new DateTime(get_sub_field('event-date')); 
+                                $time = new DateTime(get_sub_field('event-time'));
+                                $endTime = new DateTime(get_sub_field('event-end-time'));
+                            ?>
                             <li>
-                                <time datetime="<?= strftime($htmlTimestampFormat, $date->getTimestamp()); ?>"><?= ucfirst(strftime("%A %e %B - %kh%M", $date->getTimestamp())); ?></time>
+                                <time datetime="<?= strftime('%Y-%m-%d', $date->getTimestamp()) . 'T' . strftime('%Hh%M', $time->getTimestamp()); ?>">
+                                    <?= ucfirst(strftime("%A %e %B", $date->getTimestamp())) . ' // ' . strftime('%Hh%M', $time->getTimestamp()); ?>
+                                    <?php if(get_sub_field('event-end-time')): ?>
+                                    <span class="activity__endtime"> - <?= strftime('%Hh%M', $endTime->getTimestamp()); ?></span>
+                                    <?php endif; ?>
+                                </time>
                             </li>
                         <?php endwhile; ?>
                     </ul>
@@ -141,9 +150,18 @@ get_header();
                     <?php if($various['event-datetimes']): ?>
                     <ul class="various__datetimes">
                         <?php while(have_rows('event-datetimes')) : the_row(); ?>
-                            <?php $date = new DateTime(get_sub_field('event-datetime')); ?>
+                            <?php 
+                                $date = new DateTime(get_sub_field('event-date')); 
+                                $time = new DateTime(get_sub_field('event-time'));
+                                $endTime = new DateTime(get_sub_field('event-end-time'));
+                            ?>
                         <li>
-                            <time datetime="<?= strftime($htmlTimestampFormat, $date->getTimestamp()); ?>"><?= ucfirst(strftime("%A %e %B - %kh%M", $date->getTimestamp())); ?></time>
+                            <time datetime="<?= strftime('%Y-%m-%d', $date->getTimestamp()) . 'T' . strftime('%Hh%M', $time->getTimestamp()); ?>">
+                                    <?= ucfirst(strftime("%A %e %B", $date->getTimestamp())) . ' // ' . strftime('%Hh%M', $time->getTimestamp()); ?>
+                                    <?php if(get_sub_field('event-end-time')): ?>
+                                        <span class="activity__endtime"> - <?= strftime('%Hh%M', $endTime->getTimestamp()); ?></span>
+                                    <?php endif; ?>
+                            </time>
                         </li>
                         <?php endwhile; ?>
                     </ul>
