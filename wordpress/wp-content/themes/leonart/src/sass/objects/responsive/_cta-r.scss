@@ -1,0 +1,32 @@
+@media screen and (max-width: 1100px) {
+    .cta {
+        &--inner {
+            max-width: 95%;
+            width: 95%;
+        }
+    }
+}
+
+@media screen and (max-width: 660px) {
+    .cta {
+        padding: 3rem 0 5rem;
+        &--inner {
+            max-width: 80%;
+            width: 80%;
+        }
+        &__catch-phrase {
+            font-size: 2rem;
+        }
+        &--reverse {
+            padding: 5rem 0 1rem;
+            &::before {
+                height: 4rem;
+                top: -2rem;
+            }
+        }
+        &::after {
+            height: 4rem;
+            bottom: -2rem;
+        }
+    }
+}
