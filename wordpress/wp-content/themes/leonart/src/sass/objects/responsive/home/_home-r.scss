@@ -5,6 +5,11 @@
             padding: 2rem;
         }
     }
+    .instagram {
+        .sbi {
+            max-width: 95%;
+        }
+    }
 }
 
 @media screen and (max-width: 965px) {
@@ -12,6 +17,20 @@
         max-width: 95%;
     }
 }
+
+@media screen and (max-width: 935px) {
+    .home-title {
+        margin-bottom: 2rem;
+    }
+    .instagram {
+        .sbi {
+            &_type_image {
+                margin: 0 0 1.5rem 2.5%;
+            }
+        }
+    }
+}
+
 
 @media screen and (max-width: 890px) {
     .banner {
@@ -55,6 +74,13 @@
             max-width: 70%;
         }
     }
+    .instagram {
+        .sbi {
+            &_type_image {
+                margin: 0 0 1rem 2.5%;
+            }
+        }
+    }
 }
 
 @media screen and (max-width: 600px) {
@@ -84,6 +110,13 @@
         &--home {
             padding: 1.5rem;
         }
+    }
+    .home-title {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+    }
+    .home-section {
+        padding: 2rem 0;
     }
 }
 
@@ -120,6 +153,15 @@
             margin-bottom: -4em;
         }
     }
+    .instagram {
+        .sbi {
+            &_type_image {
+                width: 45% !important;
+                min-width: 45%;
+                max-height: 200px;
+            }
+        }
+    }
 }
 
 @media screen and (max-width: 350px) {
@@ -128,6 +170,17 @@
             width: 98%;
             max-width: 98%;
             padding: 0.75em;
+        }
+    }
+    .instagram {
+        width: 98%;
+        max-width: 98%;
+        .sbi {
+            &_type_image {
+                width: 90% !important;
+                min-width: 90%;
+                max-height: 250px;
+            }
         }
     }
 }
