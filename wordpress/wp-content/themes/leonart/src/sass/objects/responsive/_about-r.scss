@@ -1,0 +1,114 @@
+@media screen and (max-width: 1100px) {
+    .about {
+        &__objectives, &__orga, &__numbers, &__anchor, &__press {
+            max-width: 95%;
+        }
+        &__orga {
+            &-item {
+                min-width: 200px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .about {
+        &__objectives-wrapper {
+           max-width: 80%;
+        }
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .about {
+        &__numbers {
+           &-item {
+               font-size: 2rem;
+           }
+           &-list {
+               width: 100%;
+           }
+        }
+    }
+}
+
+
+@media screen and (max-width: 750px) {
+    .about {
+        &__objectives {
+            padding: 3rem 0;
+            flex-direction: column;
+            justify-content: flex-start;
+        }
+        &__objectives-svg {
+            max-width: 50%;
+            margin-bottom: 1.5rem;
+        }
+        &__objectives-wrapper {
+            max-width: 95%;
+            margin-left: 0;
+        }
+        &__documents {
+            flex-direction: column;
+            flex-wrap: nowrap;
+            align-items: center;
+        }
+        &__document {
+            width: 95%;
+            margin-bottom: 4rem;
+        }
+        &__press {
+            padding-bottom: 0;
+        }
+    }
+}
+
+@media screen and (max-width: 660px) {
+    .about {
+        &__wrapper {
+            .cta--about {
+                padding: 5rem 0;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .about {
+        &__objectives-svg {
+            display: none;
+        }
+        &__orga {
+            &-item {
+                min-width: 95%;
+            }
+            &-figure {
+                max-height: none;
+            }
+            &-infos {
+                font-size: 1.5em;
+            }
+        }
+        &__numbers {
+            &-list {
+                flex-direction: column;
+                width: 80%;
+            }
+            &-item {
+                font-size: 3rem;
+                margin-bottom: 2rem;
+            }
+            &-svg {
+                margin-bottom: 0.25rem;
+            }
+         }
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .about {
+        &__subtitle {
+            font-size: 1.5rem;
+        }
+    }
+}

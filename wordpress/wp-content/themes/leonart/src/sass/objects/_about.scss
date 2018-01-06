@@ -17,11 +17,14 @@
             margin-top: 1rem;
         }
     }
+    &__objectives-wrapper {
+        max-width: 60%;
+        margin-left: 3rem;
+    }
 
     &__objectives-svg {
-        max-width: 40%;
         order: -1;
-        margin-right: 6rem;
+        max-width: 40%;
     }
 
     &__orga {
@@ -33,12 +36,14 @@
         &-list {
             list-style: none;
             text-align: left;
-            margin-left: -2.5%;
-            margin-top: 1rem;
+            margin: 1rem auto 0 -2.5%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
         }
         &-item {
             display: inline-block;
-            margin: 0 0 2rem 2.5%;
+            margin: 0 0 1rem 2.5%;
             width: 22.5%;
             position: relative;
         }
@@ -58,7 +63,7 @@
             bottom: 0;
             left: 0;
             width: 100%;
-            height: 30%;
+            min-height: 30%;
             padding: 1em;
         }
     }

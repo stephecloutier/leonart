@@ -15,7 +15,7 @@ get_header();
     <?php endif; ?>
 
     <section class="about__objectives">
-        <div>
+        <div class="about__objectives-wrapper">
             <h2 class="about__subtitle">Les objectifs</h2>
             <ul class="about__objectives-list">
                 <?php while(have_rows('about-objectives')) : the_row(); ?>
@@ -52,7 +52,7 @@ get_header();
         </ul>
     </section>
     <?php endif; ?>
-    <div class="cta cta--raspberry">
+    <div class="cta cta--raspberry cta--about">
         <div class="cta--inner">
             <span class="cta__catch-phrase">Des questions sur Saint-Léon'Art&nbsp;?</span>
             <a href="<?= sl_get_page_url('template-contact.php'); ?>" class="cta-archive cta-archive--white" title="Aller sur la page contact"><span class="cta-archive__text">Contactez-nous&nbsp;!</span></a>
