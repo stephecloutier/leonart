@@ -85,7 +85,7 @@
         width: 100%;
         max-width: 100%;
         padding: 0; 
-        z-index: 100;
+        z-index: 1000;
         &__list {
             flex-direction: column;
             justify-content: flex-start;

@@ -1,8 +1,60 @@
+@media screen and (max-width: 1100px) {
+    .contact {
+        &__inner {
+            max-width: 95%;
+        }
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .contact {
+        &__aside {
+            margin-right: 2rem;
+        }
+    }
+}
+
+@media screen and (max-width: 680px) {
+    .contact {
+        &__aside {
+            margin-right: 1rem;
+        }
+    }
+}
 
 @media screen and (max-width: 660px) {
     .contact {
+        &__inner {
+            flex-direction: column;
+            top: 2rem;
+        }
+        &__aside {
+            width: 40%;
+            margin-bottom: 1.5rem;
+            min-width: 230px;
+        }
+        &__form {
+            width: 100%;
+        }
         &__cta {
             padding-top: 7rem;
+        }
+    }
+}
+
+@media screen and (max-width: 545px) {
+    .contact {
+        &__inner {
+            align-items: center;
+        }
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .contact {
+        &__aside {
+            width: 100%;
+            margin: 0 auto 1rem;
         }
     }
 }
