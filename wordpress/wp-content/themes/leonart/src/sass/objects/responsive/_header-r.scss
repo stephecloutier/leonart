@@ -42,6 +42,14 @@
             margin: 0.75em;
         }
     }
+    .header {
+        &__main-title {
+            margin-bottom: 1.5em;
+            text-align: center;
+            width: 150px;
+        }
+    }   
+    
 }
 
 @media screen and (max-width: 545px) {
@@ -53,6 +61,11 @@
             padding: 0.3em;
         }
     }
+    .header {
+        &__main-title {
+            margin-bottom: 1em;
+        }
+    }
 }
 
 @media screen and (max-width: 450px) {
@@ -60,6 +73,9 @@
         .l-social-nav {
             margin-top: 2rem;
         } 
+        &__main-title {
+            margin-top: 1rem;
+        }
     } 
     .l-main-nav {
         position: absolute;
