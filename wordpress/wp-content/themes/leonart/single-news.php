@@ -16,19 +16,17 @@ get_header();
             <div class="individual-news__content">
                 <time class="individual-news__date" datetime="<?= get_the_date('Y-m-d'); ?>"><?= get_the_date('j F Y'); ?></time>
                 <?php if($image): ?>
-                <div class="individual-news__img-wrapper">
-                    <img src="<?= $image['url']; ?>"
-                        width="<?= $image['sizes']['large-width'] ?>"
-                        height="<?= $image['sizes']['large-height'] ?>"
+                <div class="individual-news__img-wrapper"><!--
+                    --><img src="<?= $image['url']; ?>"
                         alt="<?= sl_get_image_alt($image) ? sl_get_image_alt($image) : 'Image de la news ' . $fields['news-title']; ?>"
-                        class="individual-news__img">
-                </div>
+                        class="individual-news__img"><!--
+                --></div>
                 <?php endif; ?>
                 <div class="individual-news__text wysiwyg">
                     <?= $fields['news-content']; ?>
                 </div>
 
-                [Partage facebook &amp; Twitter]
+                <!--[Partage facebook &amp; Twitter]-->
             </div>
         </div>
     </div>
