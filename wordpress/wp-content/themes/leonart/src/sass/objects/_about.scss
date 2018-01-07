@@ -25,6 +25,10 @@
     &__objectives-svg {
         order: -1;
         max-width: 40%;
+        svg {
+            max-width: 400px;
+            width: 100%;
+        }
     }
 
     &__orga {
@@ -87,6 +91,9 @@
         &-svg {
             width: 70%;
             margin-bottom: 1.5rem;
+            svg {
+                width: 100%;
+            }
         }
     }
 
