@@ -32,7 +32,7 @@ get_header();
     <div class="cta">
         <div class="cta--inner">
             <span class="cta__catch-phrase">Besoin d'informations sur Saint-Léon'Art&nbsp;?</span>
-            <a href="<?= sl_get_page_url('template-infos.php'); ?>" class="cta-archive cta-archive--white" title="Aller sur la page en pratique"><span class="cta-archive__text">Voir les infos pratiques</span></a>
+            <a href="<?= sl_get_page_url('template-useful.php'); ?>" class="cta-archive cta-archive--white" title="Aller sur la page en pratique"><span class="cta-archive__text">Voir les infos pratiques</span></a>
         </div>
     </div>
 </main>
