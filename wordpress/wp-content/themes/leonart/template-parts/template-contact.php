@@ -31,7 +31,7 @@ get_header();
         </div>
     </div>
 
-    <div class="cta cta--raspberry contact__cta">
+    <div class="cta cta--raspberry cta--straight contact__cta">
         <div class="cta--inner">
             <span class="cta__catch-phrase">Envie de voir notre programmation&nbsp;?</span>
             <a href="<?= sl_get_page_url('template-program.php'); ?>" class="cta-archive cta-archive--white" title="Aller sur la page programme"><span class="cta-archive__text">Découvrez le programme</span></a>
